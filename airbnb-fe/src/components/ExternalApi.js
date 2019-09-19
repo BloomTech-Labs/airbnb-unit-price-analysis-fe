@@ -15,7 +15,7 @@ const ExternalApi = () => {
           Authorization: `Bearer ${token}`
         }
       });
-
+ 
       const responseData = await response.json();
 
       setShowResult(true);
