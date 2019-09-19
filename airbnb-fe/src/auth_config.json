@@ -1,4 +1,5 @@
 {
-    "domain": "dev-8yfcgox1.auth0.com",
-    "clientId": "npZv8TEzhexinY3SQLOM0qsEkCS8Ar7R"
-}
+    "domain": "dev-cz8-jv29.auth0.com",
+    "clientId": "fkABaEr28eZ7mra6DDNs3aFBbWdqrMRW",
+    "audience": "https://airbnbupa"
+  }
