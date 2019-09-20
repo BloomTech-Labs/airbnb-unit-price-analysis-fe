@@ -1,5 +1,14 @@
 import React, {Component} from 'react';
 import Week from './Week';
+import styled from 'styled-components'
+
+const Month = styled.div`
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 60vh;
+    width: 60vw;
+`
 
 class Calendar extends Component {
     state = {
@@ -95,15 +104,108 @@ class Calendar extends Component {
                 date: '09/30/2019'
             },
             
+        ],
+        October: [
+            {
+                date: "10/01/2019"
+            },
+            {
+                date: "10/02/2019"
+            },
+            {
+                date: "10/03/2019"
+            },
+            {
+                date: "10/04/2019"
+            },
+            {
+                date: "10/05/2019"
+            },
+            {
+                date: "10/06/2019"
+            },
+            {
+                date: "10/07/2019"
+            },
+            {
+                date: "10/08/2019"
+            },
+            {
+                date: "10/09/2019"
+            },
+            {
+                date: "10/10/2019"
+            },
+            {
+                date: "10/11/2019"
+            },
+            {
+                date: "10/12/2019"
+            },
+            {
+                date: "10/13/2019"
+            },
+            {
+                date: "10/14/2019"
+            },
+            {
+                date: "10/15/2019"
+            },
+            {
+                date: "10/16/2019"
+            },
+            {
+                date: "10/17/2019"
+            },
+            {
+                date: "10/18/2019"
+            },
+            {
+                date: "10/19/2019"
+            },
+            {
+                date: "10/20/2019"
+            },
+            {
+                date: "10/21/2019"
+            },
+            {
+                date: "10/22/2019"
+            },
+            {
+                date: "10/23/2019"
+            },
+            {
+                date: "10/24/2019"
+            },
+            {
+                date: "10/25/2019"
+            },
+            {
+                date: "10/26/2019"
+            },
+            {
+                date: "10/27/2019"
+            },
+            {
+                date: "10/28/2019"
+            },
+            {
+                date: "10/29/2019"
+            },
+            {
+                date: "10/30/2019"
+            }
+            
         ]
     }
 
-    monthToWeeks = () => {
+    monthToWeeks = (month) => {
         let weeks = [
             [], [], [], [], []
         ]
         // Day of week of first day of month
-        const firstDay = new Date(this.state.September[0].date).getDay(); 
+        const firstDay = new Date(month[0].date).getDay(); 
         // Adds blank days to beginning of first week
         for(let i = 0; i < firstDay; i++){ 
             weeks[0].unshift({
@@ -112,26 +214,28 @@ class Calendar extends Component {
         }
         //Populate weeks
         let weekIterator = 0
-        for(let i = 0; i < this.state.September.length; i++){
-            if (new Date(this.state.September[i].date).getDay() === 0 && weeks[0].length !== 0){
+        for(let i = 0; i < month.length; i++){
+            if (new Date(month[i].date).getDay() === 0 && weeks[0].length !== 0){
                 weekIterator++ // If day is Sunday and first week isn't empty, move on to next week
             }
-            weeks[weekIterator].push(this.state.September[i])
+            weeks[weekIterator].push(month[i])
         }
         return weeks
     }
 
 
     render(){
-        let calendarArray = this.monthToWeeks()
+        let calendarArray = this.monthToWeeks(this.state.October)
+        // let calendarArray = this.monthToWeeks(this.state.September)
+
         return(
-            <div>
+            <Month>
                 {calendarArray.map(week => {
                     return(
                         <Week week = {week} key = {Math.random()} />
                     )
                 })}
-            </div>
+            </Month>
         )
     }
 }
