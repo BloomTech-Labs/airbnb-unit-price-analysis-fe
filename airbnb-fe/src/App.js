@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Profile from "./components/Profile";
 import PrivateRoute from './components/PrivateRoute';
 import ExternalApi from "./components/ExternalApi";
+import Calendar from "./components/Calendar";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Router>
         <header>
           <NavBar />
+          <Calendar />
         </header>
         <Switch>
           <Route path="/" exact />
