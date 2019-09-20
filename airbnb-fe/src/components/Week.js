@@ -15,7 +15,6 @@ class Week extends Component {
     }
 
     render(){
-        console.log(this.props.week)
         return(
             <WeekRow>
                 {this.props.week.map(day => {

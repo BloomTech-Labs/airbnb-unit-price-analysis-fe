@@ -11,11 +11,10 @@ class Day extends Component {
     state = {}
 
     render(){
-        console.log(this.props.day)
         return(
             <DaySquare>
                 {this.props.day.date === "blank" 
-                    ? (<h4></h4>) 
+                    ? (<></>) 
                     : (<h4>{this.props.day.date}</h4>)
                 }
             </DaySquare>
