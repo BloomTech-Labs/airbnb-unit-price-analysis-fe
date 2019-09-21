@@ -30,6 +30,13 @@ const Links = styled.div`
 	width: 40vw;
 	display: flex;
 	justify-content: space-around;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 18px;
+	line-height: 1.4;
+`
+
+const Button = styled.button`
+	background-color: none;
 `
 
 const NavBar = () => {
@@ -43,10 +50,10 @@ const NavBar = () => {
 				<div>How It Works</div>
 
 				{!isAuthenticated && (
-					<button onClick={() => loginWithRedirect({})}>Log in</button>
+					<Button onClick={() => loginWithRedirect({})}>Log in</Button>
 				)}
 
-				{isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+				{isAuthenticated && <Button onClick={() => logout()}>Log out</Button>}
 			</Links>
 			{isAuthenticated && (
 				<span>

@@ -2,7 +2,9 @@ import React from "react";
 import styled from 'styled-components';
 
 const Q1div = styled.div`
-    height: 77vh;
+    // height: 45vw;        //<- Dynamic height
+    // min-height: 600px;   //<- Dynamic height
+    height: 77vh;           //<- Static height
     width: 100%;
     background-color: grey;
 `
