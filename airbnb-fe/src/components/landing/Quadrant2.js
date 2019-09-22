@@ -33,13 +33,52 @@ const QuadrantLimiter = styled.div`
         z-index: 1;
         position: relative;
         right: 10%;
+        display: flex;
+        box-sizing: border-box;
     `
+        const Half = styled.div`
+            width: 45%;
+            height: 100%;
+            box-sizing: border-box;
+        `
+
+        const Half2 = styled(Half)`
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        `
+
+        const H1 = styled.h1`
+            font-family: 'Varela Round', sans-serif;
+            font-size: 26px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            padding-right: 80px;
+        `
+        const Text = styled.div`
+            font-family: 'Varela Round', sans-serif;
+            font-size: 25px;
+            line-height: 1.4;
+            padding: 0px 60px 0px 10px;
+            margin-bottom: 170px;
+        `
+
 
 function Quadrant2() {
   return (
     <Q2div>
         <SmallerDiv/>
-        <BiggerDiv/>
+        <BiggerDiv>
+            <Half />
+            <Half2>
+                <H1>Our purpose</H1>
+                <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna elit, aliquam eget ornare vitae, scelerisque quis dui. Curabitur rhoncus urna ut bibendum viverra. Pellentesque tincidunt odio eleifend, volutpat turpis sed
+                </Text>
+            </Half2>
+        </BiggerDiv>
     </Q2div>
   );
 }

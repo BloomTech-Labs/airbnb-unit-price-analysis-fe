@@ -36,7 +36,11 @@ const Links = styled.div`
 `
 
 const Button = styled.button`
-	background-color: none;
+	background: none;
+	border: none;
+	font-family: 'Varela Round', sans-serif;
+	font-size: 18px;
+	line-height: 1.4;
 `
 
 const NavBar = () => {
