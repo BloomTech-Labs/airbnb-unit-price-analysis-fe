@@ -7,6 +7,7 @@ import PrivateRoute from './components/PrivateRoute';
 import ExternalApi from "./components/ExternalApi";
 import Calendar from "./components/calendar/Calendar";
 import Landing from './components/landing/Landing';
+import Confirmation from './components/confirmation/Confirmation';
 
 import { useAuth0 } from "./react-auth0-wrapper";
 import styled from 'styled-components';
@@ -30,7 +31,8 @@ function App() {
           )}
         </header>
         <Switch>
-          <Route path="/" exact component={Landing}/>
+          <Route path="/" exact component={Confirmation}/>
+          {/* <Route path="/" exact component={Landing}/> */}
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/external-api" component={ExternalApi} />
         </Switch>

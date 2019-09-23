@@ -58,7 +58,6 @@ function Header() {
         <ButtonDiv>
             <Button2>Join now</Button2>
             <Button>Demo</Button>
-
         </ButtonDiv>
 
     </Container>
