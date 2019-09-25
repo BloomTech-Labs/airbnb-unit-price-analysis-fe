@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    width: 70%;
+    width: 60%;
     height: 100%;
 `
 
@@ -35,12 +35,6 @@ function Text(){
 
             <Feature>Entired serviced apartment</Feature>
             <Detail>8 guests  3 bedrooms  4beds  2baths</Detail>
-
-            <Feature>Sparkling clean</Feature>
-            <Detail>5 recent guests said this place was sparkling clean</Detail>
-
-            <Feature>Self check-in</Feature>
-            <Detail>you can check in with the doorman</Detail>      
                  
         </Container>
     );
