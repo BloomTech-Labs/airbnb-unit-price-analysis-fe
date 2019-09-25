@@ -16,6 +16,7 @@ S.Container = styled.div`
     background-color: #f0f0f0;
     border-radius: 6px;
     box-shadow: 0 8px 8px -5px gray;
+    width: 60%;
 `
 
 S.Result = styled.div`
@@ -28,7 +29,7 @@ S.Result = styled.div`
 `
 
 S.ImageDiv = styled.div`
-    width: 30%;
+    width: 40%;
     height: 100%;
     box-sizing: border-box;
     display: flex;
@@ -42,16 +43,7 @@ S.Image = styled.div`
     background-color: #cfcfcf;
 `
 
-S.ConfirmButton = styled.button`
-    width: 100%;
-    height: 15%;
-    box-sizing: border-box;
-    font-size: 20px;
-    font-weight: 600;
-    background: none;
-    border: none;
-    border-top: solid grey 1px;
-`
+
 
 
 function ResultBox(){
@@ -63,7 +55,6 @@ function ResultBox(){
                 </S.ImageDiv>
                 <Text />
             </S.Result>
-            <S.ConfirmButton>This is my house</S.ConfirmButton>
         </S.Container>
     );
 }
