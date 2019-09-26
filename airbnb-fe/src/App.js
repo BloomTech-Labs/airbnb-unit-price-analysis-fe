@@ -28,18 +28,18 @@ function App() {
       <Router>
         <header>
           <NavBar />
-          {isAuthenticated && (
+          {/* {isAuthenticated && (
             <span>
               <Calendar />
             </span>
-          )}
+          )} */}
         </header>
         <Switch>
           {/* <Route path="/" exact component={Confirmation} /> */}
           {/* <Route path="/" exact component={Calendar} /> */}
           {/* <Route path="/" exact component={Listing} /> */}
-          <Route path="/" exact component={Dashboard} />
-          {/* <Route path="/" exact component={Landing} /> */}
+          <Route path="/" exact component={Landing} />
+          <PrivateRoute path="/dashboard" exact component={Dashboard} />
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/external-api" component={ExternalApi} />
         </Switch>

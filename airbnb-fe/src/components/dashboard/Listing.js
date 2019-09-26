@@ -9,6 +9,7 @@ const Listing = ({ listing }) => {
                 <h2>{listing.name}</h2>
                 <Location>{listing.street}</Location>
                 <p>{listing.guests_included} Guests • {listing.bedrooms} Bedrooms • {listing.beds} Beds • {listing.bathrooms} Baths </p>
+                <ViewMore>View More</ViewMore>
             </ListingDetails>
         </ListingCard>
     );
@@ -18,7 +19,7 @@ const ListingCard = styled.div`
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
-    padding: 6px;
+    padding: 6px 18px 6px 6px;
     display: flex;
     margin-bottom: 25px;
 `;
@@ -32,7 +33,7 @@ const Picture = styled.img`
 const ListingDetails = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width: 100%;
 
     h2 {
         margin-bottom: 0;
@@ -42,6 +43,14 @@ const ListingDetails = styled.div`
 const Location = styled.p`
     margin-top: 9px;
     font-size: 0.85rem;
+`;
+
+const ViewMore = styled.h4`
+    color: #00bfa5;
+    margin-bottom: 0;
+    margin-top: 10px;
+    margin-left: auto;
+    cursor: pointer;
 `;
 
 export default Listing;
