@@ -54,6 +54,7 @@ const StyledLink = styled(Link)`
   color: black;
 `;
 
+
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
@@ -70,6 +71,7 @@ const NavBar = () => {
           <Button onClick={() => loginWithRedirect({})}>Sign In</Button>
         )}
 
+
         {isAuthenticated && (
           <div>
             <StyledLink to="/dashboard">Dashboard</StyledLink>
@@ -82,6 +84,7 @@ const NavBar = () => {
           <StyledLink to="/">Home</StyledLink>&nbsp;
           <StyledLink to="/profile">Profile</StyledLink>
           <StyledLink to="/external-api">External API</StyledLink>
+
         </span>
       )}
     </NavDiv>
