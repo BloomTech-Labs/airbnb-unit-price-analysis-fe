@@ -39,12 +39,15 @@ function App() {
         <Switch>
           {/* <Route path="/" exact component={Confirmation} /> */}
           {/* <Route path="/" exact component={Calendar} /> */}
+
+
           {/* <Route path="/" exact component={Listing} /> */}
           <Route path="/" exact component={Landing} />
 
           <PrivateRoute path="/dashboard" exact component={Dashboard} />
 
           <PrivateRoute path="/profile" component={Profile} />
+
           <PrivateRoute path="/external-api" component={ExternalApi} />
         </Switch>
       </Router>

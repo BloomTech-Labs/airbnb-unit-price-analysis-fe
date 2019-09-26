@@ -6,40 +6,29 @@ import Text from './Text';
 
 const S = {}
 
+
+
 S.Container = styled.div`
     display: flex;
-    flex-direction: column;
     align-items: center;
-    height: 85%;
+    height: 100%;
+    width: 59%; //was 100
     box-sizing: border-box;
-    padding-top: 30px;
-    background-color: #f0f0f0;
     border-radius: 6px;
-    box-shadow: 0 8px 8px -5px gray;
-    width: 60%;
-`
-
-S.Result = styled.div`
-    display: flex;
-    align-items: center;
-    height: 85%;
-    width: 100%;
-    box-sizing: border-box;
-
+    justify-content: space-between;
 `
 
 S.ImageDiv = styled.div`
-    width: 40%;
+    width: 44%;
     height: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    align-items: center;
 `
 
 S.Image = styled.div`
-    width: 75%;
-    height: 80%;
+    width: 100%;
+    height: 90%;
     background-color: #cfcfcf;
 `
 
@@ -49,12 +38,10 @@ S.Image = styled.div`
 function ResultBox(){
     return(
         <S.Container>
-            <S.Result>
-                <S.ImageDiv>
-                    <S.Image />
-                </S.ImageDiv>
-                <Text />
-            </S.Result>
+            <S.ImageDiv>
+                <S.Image />
+            </S.ImageDiv>
+            <Text />
         </S.Container>
     );
 }
