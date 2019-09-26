@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+
+import device from "../../devices";
 import Banner from "../../img/LandingBanner.png";
 
 import Header from "./Header";
@@ -12,6 +14,11 @@ const Q1div = styled.div`
   background-image: url(${Banner});
   display: flex;
   align-items: center;
+
+  @media ${device.desktop} {
+    height: 85vh;
+    background-size: 100%;
+  }
 `;
 
 function Quadrant1() {
