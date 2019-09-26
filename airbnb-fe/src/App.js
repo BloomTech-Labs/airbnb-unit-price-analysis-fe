@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 import Profile from "./components/Profile";
 import PrivateRoute from "./components/PrivateRoute";
@@ -11,7 +11,7 @@ import Landing from "./components/landing/Landing";
 import Confirmation from "./components/confirmation/Confirmation";
 import Listing from "./components/listing/Listing";
 
-import Dashboard from './components/dashboard/Dashboard';
+import Dashboard from "./components/dashboard/Dashboard";
 
 import "./index.css";
 
@@ -39,7 +39,6 @@ function App() {
         <Switch>
           {/* <Route path="/" exact component={Confirmation} /> */}
           {/* <Route path="/" exact component={Calendar} /> */}
-
 
           {/* <Route path="/" exact component={Listing} /> */}
           <Route path="/" exact component={Landing} />

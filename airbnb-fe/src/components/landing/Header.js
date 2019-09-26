@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import device from "../../devices";
+
 const Container = styled.div`
   width: 50%;
   height: 46%;
@@ -10,6 +12,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   color: white;
+
+  @media ${device.desktop} {
+    height: 35%;
+  }
 `;
 
 const H1 = styled.h1`
@@ -32,6 +38,10 @@ const ButtonDiv = styled.div`
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
+
+  @media ${device.desktop} {
+    width: 40%;
+  }
 `;
 
 const Button = styled.button`

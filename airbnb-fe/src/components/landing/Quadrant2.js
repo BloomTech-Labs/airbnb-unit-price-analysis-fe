@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import device from "../../devices";
 import Quad2 from "../../img/quad2.png";
 
 function Quadrant2() {
@@ -88,6 +89,11 @@ const H1 = styled.h1`
   margin-top: 30%;
   margin-bottom: 40px;
   color: white;
+
+  @media ${device.desktop} {
+    font-size: 32px;
+    margin-top: 20%;
+  }
 `;
 
 const Text = styled.div`
@@ -99,6 +105,11 @@ const Text = styled.div`
   margin-bottom: 170px;
   width: 90%;
   color: white;
+
+  @media ${device.desktop} {
+    font-size: 26px;
+    margin-bottom: 200px;
+  }
 `;
 
 export default Quadrant2;
