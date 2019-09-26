@@ -2,13 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    width: 60%;
+    width: 54%;
     height: 100%;
+`
+
+const WidthLimiter = styled.div`
+    margin: auto;
+    width: 95%;
 `
 
 const H1 = styled.h1`
     margin: 0px;
-    margin-top: 15px;
+    font-size: 31px;
+    line-height: 1;
 `
 const Location = styled.div`
     margin: 0px;
@@ -29,13 +35,14 @@ const Detail = styled.div`
 function Text(){
     return(
         <Container>
+            {/* <WidthLimiter> */}
 
-            <H1>Miami Beach 8 guests 3 Bedroom Apartment (20)</H1>
-            <Location>Miami Beach</Location>
+                <H1>Miami Beach 8 guests 3 Bedroom Apartment (20)</H1>
+                <Location>Miami Beach</Location>
 
-            <Feature>Entired serviced apartment</Feature>
-            <Detail>8 guests  3 bedrooms  4beds  2baths</Detail>
-                 
+                <Feature>Entired serviced apartment</Feature>
+                <Detail>8 guests  3 bedrooms  4beds  2baths</Detail>
+            {/* </WidthLimiter>      */}
         </Container>
     );
 }

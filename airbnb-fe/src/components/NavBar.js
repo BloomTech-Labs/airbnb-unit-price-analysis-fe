@@ -49,6 +49,12 @@ const Button = styled.button`
   line-height: 1.4;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+`;
+
+
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
@@ -65,13 +71,20 @@ const NavBar = () => {
           <Button onClick={() => loginWithRedirect({})}>Sign In</Button>
         )}
 
-        {isAuthenticated && <Button onClick={() => logout()}>Log out</Button>}
+
+        {isAuthenticated && (
+          <div>
+            <StyledLink to="/dashboard">Dashboard</StyledLink>
+            <Button onClick={() => logout()}>Log out</Button>
+          </div>
+        )}
       </Links>
       {isAuthenticated && (
         <span>
-          <Link to="/">Home</Link>&nbsp;
-          <Link to="/profile">Profile</Link>
-          <Link to="/external-api">External API</Link>
+          <StyledLink to="/">Home</StyledLink>&nbsp;
+          <StyledLink to="/profile">Profile</StyledLink>
+          <StyledLink to="/external-api">External API</StyledLink>
+
         </span>
       )}
     </NavDiv>
