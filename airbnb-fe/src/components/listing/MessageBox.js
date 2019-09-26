@@ -33,7 +33,6 @@ function MessageBox(){
             <S.Bold>Last month you miss out</S.Bold>
             <S.Bold>$2,970</S.Bold>
             <S.Underlined>Sign up to not lose more</S.Underlined>
-
         </S.Container>
     )
 }
