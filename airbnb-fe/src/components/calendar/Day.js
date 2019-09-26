@@ -51,16 +51,18 @@ const Price = styled.div`
 class Day extends Component {
     state = {}
 
+    
     returnDay = (date) => {
-        //input date format: dd/mm/yyyy
+    // Convert dd/mm/yyyy => [dd, mm, yyyy]
         let dateSplit = date.split("/");
         //=====================
         let mm = dateSplit[0];
         let dd = dateSplit[1];
         let yyyy = dateSplit[2];
         //====================
+        
+    // If the first digit is 0 (ie: 09), return only the second digit (ie: 9)
         let ddSplit = dd.split("")
-        //If the first digit is 0 (ie: 09), return only the second digit (ie: 9)
         if(parseFloat(ddSplit[0]) === 0){
             return ddSplit[1]
         }else{
