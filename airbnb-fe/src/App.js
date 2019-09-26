@@ -31,8 +31,8 @@ function App() {
           )}
         </header>
         <Switch>
-          <Route path="/" exact component={Confirmation}/>
-          {/* <Route path="/" exact component={Landing}/> */}
+          {/* <Route path="/" exact component={Confirmation}/> */}
+          <Route path="/" exact component={Landing}/>
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/external-api" component={ExternalApi} />
         </Switch>
