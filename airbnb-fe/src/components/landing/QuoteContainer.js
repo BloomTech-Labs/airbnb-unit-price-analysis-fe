@@ -8,11 +8,19 @@ const Container = styled.div`
   flex-direction: column;
   box-sizing: border-box;
 `;
+
 const Body = styled.div`
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   display: flex;
+`;
+
+const Image = styled.div`
+  height: 100%;
+  width: 40%;
+  background-color: #c7c7c7;
+  border-radius: 8px;
 `;
 
 const QuoteBox = styled.div`
