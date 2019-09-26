@@ -222,8 +222,8 @@ class Calendar extends Component {
   };
 
   render() {
-    let calendarArray = this.monthToWeeks(this.state.September);
-    // let calendarArray = this.monthToWeeks(this.state.September)
+    // let calendarArray = this.monthToWeeks(this.state.October);
+    let calendarArray = this.monthToWeeks(this.state.September)
 
     return (
       <Month>
