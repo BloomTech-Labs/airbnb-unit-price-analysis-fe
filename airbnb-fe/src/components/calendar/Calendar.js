@@ -6,9 +6,10 @@ const Month = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  height: 100%;
+  height: 90%;
   width: 100%;
   margin: auto;
+  margin-top: 1%;
 `;
 
 class Calendar extends Component {
@@ -221,7 +222,7 @@ class Calendar extends Component {
   };
 
   render() {
-    let calendarArray = this.monthToWeeks(this.state.October);
+    let calendarArray = this.monthToWeeks(this.state.September);
     // let calendarArray = this.monthToWeeks(this.state.September)
 
     return (
