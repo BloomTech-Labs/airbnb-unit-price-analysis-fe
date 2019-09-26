@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import Profile from "./components/Profile";
 import PrivateRoute from "./components/PrivateRoute";
@@ -9,6 +10,9 @@ import Calendar from "./components/calendar/Calendar";
 import Landing from "./components/landing/Landing";
 import Confirmation from "./components/confirmation/Confirmation";
 import Listing from "./components/listing/Listing";
+
+import Dashboard from './components/dashboard/Dashboard';
+
 import "./index.css";
 
 import { useAuth0 } from "./react-auth0-wrapper";
@@ -26,18 +30,24 @@ function App() {
       <Router>
         <header>
           <NavBar />
-          {isAuthenticated && (
+          {/* {isAuthenticated && (
             <span>
               <Calendar />
             </span>
-          )}
+          )} */}
         </header>
         <Switch>
           {/* <Route path="/" exact component={Confirmation} /> */}
           {/* <Route path="/" exact component={Calendar} /> */}
-          <Route path="/" exact component={Listing} />
-          {/* <Route path="/" exact component={Landing} /> */}
-          {/* <PrivateRoute path="/profile" component={Profile} /> */}
+
+
+          {/* <Route path="/" exact component={Listing} /> */}
+          <Route path="/" exact component={Landing} />
+
+          <PrivateRoute path="/dashboard" exact component={Dashboard} />
+
+          <PrivateRoute path="/profile" component={Profile} />
+
           <PrivateRoute path="/external-api" component={ExternalApi} />
         </Switch>
       </Router>
