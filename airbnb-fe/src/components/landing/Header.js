@@ -1,65 +1,70 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Container = styled.div`
-    width: 50%;
-    height: 42%;
-    position: relative;
-    bottom: 40px;
-    left: 50px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-`
+  width: 50%;
+  height: 46%;
+  position: relative;
+  bottom: 40px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+`;
 
 const H1 = styled.h1`
-    font-family: 'Varela Round', sans-serif;
-    font-size: 40px;
-    line-height: 1.4;
-`
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  line-height: 1.4;
+  font-weight: 500;
+`;
 
 const Text = styled.div`
-    font-family: 'Varela Round', sans-serif;
-    font-size: 35px;
-    line-height: 1;
-`
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+  line-height: 1;
+  font-weight: 300;
+`;
 
 const ButtonDiv = styled.div`
-    width: 50%;
-    height: 20%;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-`
+  width: 50%;
+  height: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+`;
 
 const Button = styled.button`
-    background: none;
-    border-radius: 5px;
-    color: white;
-	border: solid white 3px;
-	font-family: 'Varela Round', sans-serif;
-	font-size: 18px;
-    line-height: 1.4;
-    width: 45%;
-    height: 100%;
-`
+  background: none;
+  border-radius: 5px;
+  color: white;
+  border: solid white 2px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  width: 45%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+`;
 
 const Button2 = styled(Button)`
-    background-color: white;
-    color: grey;
-    font-weight: bold;
-`
+  background-color: #ff5a5f;
+  color: white;
+  font-weight: bold;
+  border: solid #ff5a5f 2px;
+`;
 
 function Header() {
   return (
     <Container>
-        <H1>We value what you value</H1>
-        <Text>Stop undervaluing your rentals and start making the profit you deserve</Text>
-        <ButtonDiv>
-            <Button2>Join now</Button2>
-            <Button>Demo</Button>
-        </ButtonDiv>
-
+      <H1>We value what you value</H1>
+      <Text>
+        Stop undervaluing your rentals and start making the profit you deserve
+      </Text>
+      <ButtonDiv>
+        <Button>Demo</Button>
+        <Button2>Join now</Button2>
+      </ButtonDiv>
     </Container>
   );
 }
