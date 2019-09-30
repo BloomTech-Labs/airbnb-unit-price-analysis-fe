@@ -1,6 +1,6 @@
-import React from "react";
-
+import React, { Component } from "react";
 import styled from "styled-components";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import Arrow from "../../img/sliderArrow.png";
 import Ana from "../../img/Ana.png";
@@ -12,218 +12,351 @@ import Ridley from "../../img/Ridley.png";
 import Vlad from "../../img/Vlad.png";
 import Zach from "../../img/Zach.png";
 
-import ReactSiema from "react-siema";
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from "reactstrap";
 
-//carousel needs functionality
-const Carousel = () => {
-  let slider;
+const C = {};
 
+const AnaCard = () => {
   return (
-    <C.Container>
-      <C.Outside>
-        <C.Button onClick={() => slider.prev()}>
-          <C.Flipped src={Arrow} />
-        </C.Button>
-      </C.Outside>
-      <ReactSiema {...options} ref={siema => (slider = siema)}>
-        <C.Inside>
-          <C.InsideLeft>
-            <img src={Ana} />
-          </C.InsideLeft>
-          <C.InsideRight>
-            <C.RightTop>
-              <C.TopLeft>
-                <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopLeft>
-              <C.TopMiddle>
-                Working on “Price my Airbnb” have been a lot of fun, I’m
-                grateful and happy with the team who developed this platform.
-              </C.TopMiddle>
-              <C.TopRight>
-                <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopRight>
-            </C.RightTop>
-            <C.RightBottom>
-              - Ana Rosa Lerma <br></br>UX Designer
-            </C.RightBottom>
-          </C.InsideRight>
-        </C.Inside>
-        <C.Inside>
-          <C.InsideLeft>
-            <img src={Cesar} />
-          </C.InsideLeft>
-          <C.InsideRight>
-            <C.RightTop>
-              <C.TopLeft>
-                <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopLeft>
-              <C.TopMiddle>
-                Price My Airbnb helped me realize what I was losing out on. Now
-                I know what I should value my House for. 💯
-              </C.TopMiddle>
-              <C.TopRight>
-                <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopRight>
-            </C.RightTop>
-            <C.RightBottom>
-              - Cristiano Ronaldo <br></br>UX Designer
-            </C.RightBottom>
-          </C.InsideRight>
-        </C.Inside>
-        <C.Inside>
-          <C.InsideLeft>
-            <img src={Cassandra} />
-          </C.InsideLeft>
-          <C.InsideRight>
-            <C.RightTop>
-              <C.TopLeft>
-                <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopLeft>
-              <C.TopMiddle>
-                Price My Airbnb has helped increase my income EXPONENTIALLY. I
-                can finally afford to travel the world!
-              </C.TopMiddle>
-              <C.TopRight>
-                <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopRight>
-            </C.RightTop>
-            <C.RightBottom>
-              - Cassandra Springer <br></br>Web Developer
-            </C.RightBottom>
-          </C.InsideRight>
-        </C.Inside>
-        <C.Inside>
-          <C.InsideLeft>
-            <img src={Ridley} />
-          </C.InsideLeft>
-          <C.InsideRight>
-            <C.RightTop>
-              <C.TopLeft>
-                <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopLeft>
-              <C.TopMiddle>
-                Price my Airbnb helped me increase my monthly profit by 200%!
-                Whoever developed this unicorn product deserves one million
-                "Who's a good boy" pets.
-              </C.TopMiddle>
-              <C.TopRight>
-                <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopRight>
-            </C.RightTop>
-            <C.RightBottom>
-              - Ridley Leisy <br></br>Data Scientist
-            </C.RightBottom>
-          </C.InsideRight>
-        </C.Inside>
-        <C.Inside>
-          <C.InsideLeft>
-            <img src={Lionel} />
-          </C.InsideLeft>
-          <C.InsideRight>
-            <C.RightTop>
-              <C.TopLeft>
-                <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopLeft>
-              <C.TopMiddle>
-                Price My Airbnb changed my life. With the extra cash, I was able
-                to save enough to realize my dream : Invest in a B&B in Vermont
-                that I can advertise on... Airbnb!!!
-              </C.TopMiddle>
-              <C.TopRight>
-                <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopRight>
-            </C.RightTop>
-            <C.RightBottom>
-              - Lionel Fotso Kamga <br></br>Data Scientist
-            </C.RightBottom>
-          </C.InsideRight>
-        </C.Inside>
-        <C.Inside>
-          <C.InsideLeft>
-            <img src={Vlad} />
-          </C.InsideLeft>
-          <C.InsideRight>
-            <C.RightTop>
-              <C.TopLeft>
-                <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopLeft>
-              <C.TopMiddle>
-                After trying Price My AirBnB and seeing how much time and money
-                it saved me, it was a no brainer! Definitely going back to
-                Wheelhouse!
-              </C.TopMiddle>
-              <C.TopRight>
-                <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopRight>
-            </C.RightTop>
-            <C.RightBottom>
-              - Vladislav Mogilevskiy <br></br>Web Developer
-            </C.RightBottom>
-          </C.InsideRight>
-        </C.Inside>
-        <C.Inside>
-          <C.InsideLeft>
-            <img src={Chris} />
-          </C.InsideLeft>
-          <C.InsideRight>
-            <C.RightTop>
-              <C.TopLeft>
-                <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopLeft>
-              <C.TopMiddle>
-                If only I'd known about Price My Airbnb earlier! I'm profiting
-                much more now than I was just a couple months ago!"
-              </C.TopMiddle>
-              <C.TopRight>
-                <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopRight>
-            </C.RightTop>
-            <C.RightBottom>
-              - Ted Mosby <br></br>Web Developer
-            </C.RightBottom>
-          </C.InsideRight>
-        </C.Inside>
-        <C.Inside>
-          <C.InsideLeft>
-            <img src={Zach} />
-          </C.InsideLeft>
-          <C.InsideRight>
-            <C.RightTop>
-              <C.TopLeft>
-                <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopLeft>
-              <C.TopMiddle>
-                After using PriceMyAirBnb I saw massive value added to the
-                listings I have posted everyday. All thanks to the awesome team
-                that created this app. Now I’m making an extra profit on my
-                listings with ease!
-              </C.TopMiddle>
-              <C.TopRight>
-                <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
-              </C.TopRight>
-            </C.RightTop>
-            <C.RightBottom>
-              - Zach Christy <br></br>Team Lead
-            </C.RightBottom>
-          </C.InsideRight>
-        </C.Inside>
-      </ReactSiema>
-      <C.Outside>
-        <C.Button onClick={() => slider.next()}>
-          <img src={Arrow} />
-        </C.Button>
-      </C.Outside>
-    </C.Container>
+    <C.Inside>
+      <C.InsideLeft>
+        <img src={Ana} />
+      </C.InsideLeft>
+      <C.InsideRight>
+        <C.RightTop>
+          <C.TopLeft>
+            <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
+          </C.TopLeft>
+          <C.TopMiddle>
+            Working on “Price my Airbnb” have been a lot of fun, I’m grateful
+            and happy with the team who developed this platform.
+          </C.TopMiddle>
+          <C.TopRight>
+            <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
+          </C.TopRight>
+        </C.RightTop>
+        <C.RightBottom>
+          - Ana Rosa Lerma <br></br>UX Designer
+        </C.RightBottom>
+      </C.InsideRight>
+    </C.Inside>
   );
 };
 
-const Slide = props => <C.Inside {...props} alt="slide" />;
+const items = [
+  { src: AnaCard }
+  // {
+  //   src: (
+  //     <C.Inside>
+  //       <C.InsideLeft>
+  //         <img src={Cesar} />
+  //       </C.InsideLeft>
+  //       <C.InsideRight>
+  //         <C.RightTop>
+  //           <C.TopLeft>
+  //             <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopLeft>
+  //           <C.TopMiddle>
+  //             Price My Airbnb helped me realize what I was losing out on. Now I
+  //             know what I should value my House for. 💯
+  //           </C.TopMiddle>
+  //           <C.TopRight>
+  //             <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopRight>
+  //         </C.RightTop>
+  //         <C.RightBottom>
+  //           - Cristiano Ronaldo <br></br>UX Designer
+  //         </C.RightBottom>
+  //       </C.InsideRight>
+  //     </C.Inside>
+  //   )
+  // },
+  // {
+  //   src: (
+  //     <C.Inside>
+  //       <C.InsideLeft>
+  //         <img src={Cassandra} />
+  //       </C.InsideLeft>
+  //       <C.InsideRight>
+  //         <C.RightTop>
+  //           <C.TopLeft>
+  //             <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopLeft>
+  //           <C.TopMiddle>
+  //             Price My Airbnb has helped increase my income EXPONENTIALLY. I can
+  //             finally afford to travel the world!
+  //           </C.TopMiddle>
+  //           <C.TopRight>
+  //             <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopRight>
+  //         </C.RightTop>
+  //         <C.RightBottom>
+  //           - Cassandra Springer <br></br>Web Developer
+  //         </C.RightBottom>
+  //       </C.InsideRight>
+  //     </C.Inside>
+  //   )
+  // },
+  // {
+  //   src: (
+  //     <C.Inside>
+  //       <C.InsideLeft>
+  //         <img src={Ridley} />
+  //       </C.InsideLeft>
+  //       <C.InsideRight>
+  //         <C.RightTop>
+  //           <C.TopLeft>
+  //             <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopLeft>
+  //           <C.TopMiddle>
+  //             Price my Airbnb helped me increase my monthly profit by 200%!
+  //             Whoever developed this unicorn product deserves one million "Who's
+  //             a good boy" pets.
+  //           </C.TopMiddle>
+  //           <C.TopRight>
+  //             <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopRight>
+  //         </C.RightTop>
+  //         <C.RightBottom>
+  //           - Ridley Leisy <br></br>Data Scientist
+  //         </C.RightBottom>
+  //       </C.InsideRight>
+  //     </C.Inside>
+  //   )
+  // },
+  // {
+  //   src: (
+  //     <C.Inside>
+  //       <C.InsideLeft>
+  //         <img src={Lionel} />
+  //       </C.InsideLeft>
+  //       <C.InsideRight>
+  //         <C.RightTop>
+  //           <C.TopLeft>
+  //             <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopLeft>
+  //           <C.TopMiddle>
+  //             Price My Airbnb changed my life. With the extra cash, I was able
+  //             to save enough to realize my dream : Invest in a B&B in Vermont
+  //             that I can advertise on... Airbnb!!!
+  //           </C.TopMiddle>
+  //           <C.TopRight>
+  //             <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopRight>
+  //         </C.RightTop>
+  //         <C.RightBottom>
+  //           - Lionel Fotso Kamga <br></br>Data Scientist
+  //         </C.RightBottom>
+  //       </C.InsideRight>
+  //     </C.Inside>
+  //   )
+  // },
+  // {
+  //   src: (
+  //     <C.Inside>
+  //       <C.InsideLeft>
+  //         <img src={Vlad} />
+  //       </C.InsideLeft>
+  //       <C.InsideRight>
+  //         <C.RightTop>
+  //           <C.TopLeft>
+  //             <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopLeft>
+  //           <C.TopMiddle>
+  //             After trying Price My AirBnB and seeing how much time and money it
+  //             saved me, it was a no brainer! Definitely going back to
+  //             Wheelhouse!
+  //           </C.TopMiddle>
+  //           <C.TopRight>
+  //             <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopRight>
+  //         </C.RightTop>
+  //         <C.RightBottom>
+  //           - Vladislav Mogilevskiy <br></br>Web Developer
+  //         </C.RightBottom>
+  //       </C.InsideRight>
+  //     </C.Inside>
+  //   )
+  // },
+  // {
+  //   src: (
+  //     <C.Inside>
+  //       <C.InsideLeft>
+  //         <img src={Chris} />
+  //       </C.InsideLeft>
+  //       <C.InsideRight>
+  //         <C.RightTop>
+  //           <C.TopLeft>
+  //             <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopLeft>
+  //           <C.TopMiddle>
+  //             If only I'd known about Price My Airbnb earlier! I'm profiting
+  //             much more now than I was just a couple months ago!"
+  //           </C.TopMiddle>
+  //           <C.TopRight>
+  //             <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopRight>
+  //         </C.RightTop>
+  //         <C.RightBottom>
+  //           - Ted Mosby <br></br>Web Developer
+  //         </C.RightBottom>
+  //       </C.InsideRight>
+  //     </C.Inside>
+  //   )
+  // },
+  // {
+  //   src: (
+  //     <C.Inside>
+  //       <C.InsideLeft>
+  //         <img src={Zach} />
+  //       </C.InsideLeft>
+  //       <C.InsideRight>
+  //         <C.RightTop>
+  //           <C.TopLeft>
+  //             <C.Quote src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopLeft>
+  //           <C.TopMiddle>
+  //             After using PriceMyAirBnb I saw massive value added to the
+  //             listings I have posted everyday. All thanks to the awesome team
+  //             that created this app. Now I’m making an extra profit on my
+  //             listings with ease!
+  //           </C.TopMiddle>
+  //           <C.TopRight>
+  //             <C.QuoteFlipped src="https://static.thenounproject.com/png/433486-200.png" />
+  //           </C.TopRight>
+  //         </C.RightTop>
+  //         <C.RightBottom>
+  //           - Zach Christy <br></br>Team Lead
+  //         </C.RightBottom>
+  //       </C.InsideRight>
+  //     </C.Inside>
+  //   )
+  // }
+];
 
-const options = {
-  loop: true
-};
+class PageCarousel extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeIndex: 0 };
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+    this.goToIndex = this.goToIndex.bind(this);
+    this.onExiting = this.onExiting.bind(this);
+    this.onExited = this.onExited.bind(this);
+  }
 
-const C = {};
+  onExiting() {
+    this.animating = true;
+  }
+
+  onExited() {
+    this.animating = false;
+  }
+
+  next() {
+    if (this.animating) return;
+    const nextIndex =
+      this.state.activeIndex === items.length - 1
+        ? 0
+        : this.state.activeIndex + 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  previous() {
+    if (this.animating) return;
+    const nextIndex =
+      this.state.activeIndex === 0
+        ? items.length - 1
+        : this.state.activeIndex - 1;
+    this.setState({ activeIndex: nextIndex });
+  }
+
+  goToIndex(newIndex) {
+    if (this.animating) return;
+    this.setState({ activeIndex: newIndex });
+  }
+
+  render() {
+    const { activeIndex } = this.state;
+
+    const slides = items.map(item => {
+      return (
+        <CarouselItem
+          onExiting={this.onExiting}
+          onExited={this.onExited}
+          key={item.src}
+        >
+          <img src={item.src} alt={item.altText} />
+          <CarouselCaption
+            captionText={item.caption}
+            captionHeader={item.caption}
+          />
+        </CarouselItem>
+      );
+    });
+
+    return (
+      <C.Container>
+        {/* <C.Outside> */}
+        {/* <C.Button>
+          <C.Flipped src={Arrow} />
+        </C.Button> */}
+        {/* </C.Outside> */}
+        <Carousel
+          activeIndex={activeIndex}
+          next={this.next}
+          previous={this.previous}
+        >
+          <CarouselIndicators
+            items={items}
+            activeIndex={activeIndex}
+            onClickHandler={this.goToIndex}
+          />
+          {slides}
+          <CarouselControl
+            direction="prev"
+            directionText="Previous"
+            onClickHandler={this.previous}
+          />
+          <CarouselControl
+            direction="next"
+            directionText="Next"
+            onClickHandler={this.next}
+          />
+        </Carousel>{" "}
+        {/* <C.Outside> */}
+        {/* <C.Button>
+          <img src={Arrow} />
+        </C.Button> */}
+        {/* </C.Outside> */}
+      </C.Container>
+    );
+  }
+}
+
+// const PageCarousel = () => {
+//   return (
+//     <C.Container>
+//       <C.Outside>
+//         {/* <C.Button>
+//           <C.Flipped src={Arrow} />
+//         </C.Button> */}
+//       </C.Outside>
+
+//       <C.Outside>
+//         {/* <C.Button>
+//           <img src={Arrow} />
+//         </C.Button> */}
+//       </C.Outside>
+//     </C.Container>
+//   );
+// };
 
 C.Container = styled.div`
   width: 100%;
@@ -305,4 +438,4 @@ C.Button = styled.button`
   outline: none;
 `;
 
-export default Carousel;
+export default PageCarousel;

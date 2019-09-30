@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Carousel from "./Carousel";
+import PageCarousel from "./Carousel";
 
 const Q4div = styled.div`
   height: 100vh;
@@ -24,7 +24,7 @@ function Quadrant4() {
   return (
     <Q4div>
       <Container>
-        <Carousel />
+        <PageCarousel />
       </Container>
     </Q4div>
   );
