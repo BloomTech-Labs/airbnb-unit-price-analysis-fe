@@ -24,7 +24,9 @@ function Quadrant4() {
   return (
     <Q4div>
       <Container>
+
         <PageCarousel />
+
       </Container>
     </Q4div>
   );

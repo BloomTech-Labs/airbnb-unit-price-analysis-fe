@@ -30,10 +30,10 @@ ReactDOM.render(
     redirect_uri={window.location.origin}
     audience={config.audience}
     onRedirectCallback={onRedirectCallback}
-  >
-    <Provider store={store}>
+>
+<Provider store={store}>
       <App />
-    </Provider>
+  </Provider>
   </Auth0Provider>,
   document.getElementById("root")
 );
