@@ -57,6 +57,36 @@ export const Auth0Provider = ({
     setIsAuthenticated(true);
   };
 
+  //=======================================================
+
+  // ********** C O D E  T O   A T T E M P T   A U T H 0   R E D I R E C T   A F T E R   L O G I N  (untested) ***********
+
+  // ************NEED TO TRANSLATE THIS****************
+
+  // $('#loginRedirect').click(async () => {
+  //   await auth0.loginWithRedirect({
+  //     redirect_uri: 'http://localhost:3000/'
+  //   });
+  // });
+
+
+  // ****************INTO THIS FORMAT******************
+
+  // const loginWithPopup = async (params = {}) => {
+  //   setPopupOpen(true);
+  //   try {
+  //     await auth0Client.loginWithPopup(params);
+  //   } catch (error) {
+  //     console.error(error);
+  //   } finally {
+  //     setPopupOpen(false);
+  //   }
+  //   const user = await auth0Client.getUser();
+  //   setUser(user);
+  //   setIsAuthenticated(true);
+  // };
+  //=======================================================
+
   const handleRedirectCallback = async () => {
     setLoading(true);
     await auth0Client.handleRedirectCallback();
