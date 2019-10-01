@@ -60,7 +60,7 @@ const NavBar = (props) => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   const redirectToDash = () => {
-    props.history.push("/dashboard")
+    props.history.push("/search")
   }
 
   return (
