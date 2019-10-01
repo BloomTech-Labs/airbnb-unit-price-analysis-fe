@@ -34,7 +34,7 @@ S.ImageDiv = styled.div`
   align-items: center;
 `;
 
-S.Image = styled.div`
+S.Image = styled.img`
   width: 75%;
   height: 80%;
   background-color: #cfcfcf;
@@ -52,14 +52,14 @@ S.ConfirmButton = styled.button`
   font-family: "Varela Round", sans-serif;
 `;
 
-function ResultBox() {
+function ResultBox(props) {
   return (
     <S.Container>
       <S.Result>
         <S.ImageDiv>
-          <S.Image />
+          <S.Image src = {props.listings[0].picture_url}/>
         </S.ImageDiv>
-        <Text />
+        <Text listings = {props.listings} />
       </S.Result>
       <S.ConfirmButton>This is my house</S.ConfirmButton>
     </S.Container>
