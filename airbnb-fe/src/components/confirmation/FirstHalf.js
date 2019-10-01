@@ -12,7 +12,7 @@ function FirstHalf(props) {
   return (
     <Container>
       <h2>Is this your airbnb?</h2>
-      <ResultBox listings = {props.listings} />
+      <ResultBox />
     </Container>
   );
 }

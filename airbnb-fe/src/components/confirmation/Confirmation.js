@@ -21,7 +21,7 @@ const Container = styled.div`
 function Confirmation(props) {
   return (
     <Container>
-      <FirstHalf listings = {props.listings} />
+      <FirstHalf />
       {/* <SecondHalf /> */}
     </Container>
   );
@@ -30,7 +30,7 @@ function Confirmation(props) {
 const mapStateToProps = (state) => {
   return {
       isFetching: state.isFetching,
-      listings: state.listings,
+      searchResult: state.searchResult,
       error: state.error
   }
 }

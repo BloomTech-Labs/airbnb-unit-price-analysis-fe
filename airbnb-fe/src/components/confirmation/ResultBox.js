@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from 'react-redux';
+
 
 import Text from "./Text";
 
@@ -53,17 +55,29 @@ S.ConfirmButton = styled.button`
 `;
 
 function ResultBox(props) {
+
+  const simulateApiCall = () => {
+
+  }
+  
   return (
     <S.Container>
       <S.Result>
         <S.ImageDiv>
-          <S.Image src = {props.listings[0].picture_url}/>
+          <S.Image src = {props.searchResult[0].picture_url}/>
         </S.ImageDiv>
-        <Text listings = {props.listings} />
+        <Text searchResult = {props.searchResult} />
       </S.Result>
-      <S.ConfirmButton>This is my house</S.ConfirmButton>
+      <S.ConfirmButton onClick = {(e) => simulateApiCall(e)}>This is my house</S.ConfirmButton>
     </S.Container>
   );
 }
 
-export default ResultBox;
+
+const mapStateToProps = (state) => {
+  return {
+      searchResult: state.searchResult,
+  }
+}
+
+export default connect(mapStateToProps, {})(ResultBox);

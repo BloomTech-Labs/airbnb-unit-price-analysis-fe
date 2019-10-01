@@ -54,10 +54,10 @@ function SearchBar(props){
     const [url, setUrl] = useState("")
 
     useEffect(() => {
-        if(props.listings.length > 0){
+        if(props.searchResult.length > 0){
             props.history.push('/confirmation');
         }
-    }, [props.listings.length])
+    }, [props.searchResult.length])
 
     const parseIdFromUrl = (url) => {
         // Will not work if not in "https://www.airbnb.com/rooms/20685563......" format
@@ -104,7 +104,7 @@ function SearchBar(props){
 
 const mapStateToProps = (state) => {
     return {
-        listings: state.listings
+        searchResult: state.searchResult
     }
 }
 

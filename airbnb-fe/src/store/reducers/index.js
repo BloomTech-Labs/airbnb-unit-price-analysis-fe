@@ -1,13 +1,15 @@
 import {
     FETCH_LISTING_START,
     FETCH_LISTING_SUCCESS,
-    FETCH_LISTING_FAILURE
+    FETCH_LISTING_FAILURE,
+    SIMULATION_API_CALL
 } from '../actions';
 
 const initialState = {
     isFetching: false,
     error: null,
-    listings: []
+    listings: [],
+    searchResult: [],
 };
 
 export const reducer = (state = initialState, action) => {
@@ -23,7 +25,7 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                listings: action.payload
+                searchResult: action.payload
             }
         case FETCH_LISTING_FAILURE:
             console.log("FETCHING_FAILURE!");
@@ -31,6 +33,12 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false,
                 error: action.payload
+            }
+        case SIMULATION_API_CALL:
+            console.log("SIMULATION_API_CALL");
+            return {
+                ...state,
+                listings: action.payload
             }
         default:
             return state;
