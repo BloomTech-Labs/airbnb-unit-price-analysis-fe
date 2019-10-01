@@ -49,6 +49,7 @@ function App() {
           <Route path="/" exact component={Landing} />
 
           <PrivateRoute path="/dashboard" exact component={Dashboard} />
+          <PrivateRoute path="/confirmation" exact component={Confirmation} />
           <PrivateRoute path="/search" exact component={Search} />
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/external-api" component={ExternalApi} />

@@ -55,7 +55,7 @@ function SearchBar(props){
 
     useEffect(() => {
         if(props.listings.length > 0){
-            props.history.push('/dashboard');
+            props.history.push('/confirmation');
         }
     }, [props.listings.length])
 
