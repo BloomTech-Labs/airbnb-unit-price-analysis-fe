@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Carousel from "./Carousel";
+import Caroucell from './Caroucell';
 
 const Q4div = styled.div`
   height: 100vh;
@@ -13,8 +13,8 @@ const Q4div = styled.div`
 `;
 
 const Container = styled.div`
-  height: 40%;
-  width: 70%;
+  height: 55%;
+  width: 80%;
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -23,9 +23,7 @@ const Container = styled.div`
 function Quadrant4() {
   return (
     <Q4div>
-      <Container>
-        <Carousel />
-      </Container>
+      <Caroucell />
     </Q4div>
   );
 }
