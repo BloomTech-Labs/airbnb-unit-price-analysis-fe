@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import Carousel from "./Carousel";
 import Caroucell from './Caroucell';
 
 const Q4div = styled.div`
@@ -24,7 +23,6 @@ const Container = styled.div`
 function Quadrant4() {
   return (
     <Q4div>
-      {/* <Carousel /> */}
       <Caroucell />
     </Q4div>
   );
