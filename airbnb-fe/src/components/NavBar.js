@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../img/Vector.png";
+import PrivateRoute from './PrivateRoute';
 
 import { useAuth0 } from "../react-auth0-wrapper";
 
@@ -55,8 +56,12 @@ const StyledLink = styled(Link)`
 `;
 
 
-const NavBar = () => {
+const NavBar = (props) => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+
+  const redirectToDash = () => {
+    props.history.push("/search")
+  }
 
   return (
     <NavDiv>
@@ -67,8 +72,16 @@ const NavBar = () => {
         <div>Mission</div>
         <div>How It Works</div>
 
+
+      
+{/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
+        {window.location.pathname !== props.location.pathname 
+          && props.history.push(`${window.location.pathname}`)
+        }
+
         {!isAuthenticated && (
-          <Button onClick={() => loginWithRedirect({})}>Sign In</Button>
+          // <Button onClick={() => loginWithRedirect({})}>Sign In</Button> //<- Original Auth0 Login Button
+          <Button onClick={() => redirectToDash()}>Sign In</Button>
         )}
 
 
@@ -91,4 +104,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default withRouter(NavBar);

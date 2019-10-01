@@ -5,7 +5,7 @@ import device from "../../devices";
 
 const Container = styled.div`
   width: 50%;
-  height: 46%;
+  height: 38%;
   position: relative;
   bottom: 40px;
   left: 50px;

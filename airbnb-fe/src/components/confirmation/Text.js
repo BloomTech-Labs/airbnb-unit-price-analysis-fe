@@ -41,24 +41,41 @@ const DetailP = styled.p`
   margin: 0;
 `;
 
-function Text() {
+function Text(props) {
   return (
+    // <Container>
+    //   <H1>Miami Beach 8 guests 3 Bedroom Apartment (20)</H1>
+    //   <Location>Miami Beach</Location>
+
+    //   <Feature>Entired serviced apartment</Feature>
+    //   <PDetails>
+    //     <DetailP>8 guests</DetailP> <DetailP>3 bedrooms</DetailP>{" "}
+    //     <DetailP>4beds</DetailP> <DetailP>2baths</DetailP>
+    //   </PDetails>
+
+    //   <Feature>Sparkling clean</Feature>
+    //   <Detail>5 recent guests said this place was sparkling clean</Detail>
+
+    //   <Feature>Self check-in</Feature>
+    //   <Detail>you can check in with the doorman</Detail>
+    // </Container>
+
     <Container>
-      <H1>Miami Beach 8 guests 3 Bedroom Apartment (20)</H1>
-      <Location>Miami Beach</Location>
+    <H1>{props.listings[0].name}</H1>
+    <Location>{props.listings[0].street}</Location>
 
-      <Feature>Entired serviced apartment</Feature>
-      <PDetails>
-        <DetailP>8 guests</DetailP> <DetailP>3 bedrooms</DetailP>{" "}
-        <DetailP>4beds</DetailP> <DetailP>2baths</DetailP>
-      </PDetails>
+    <Feature>Entired serviced apartment</Feature>
+    <PDetails>
+      <DetailP>8 guests</DetailP> <DetailP>3 bedrooms</DetailP>{" "}
+      <DetailP>4beds</DetailP> <DetailP>2baths</DetailP>
+    </PDetails>
 
-      <Feature>Sparkling clean</Feature>
-      <Detail>5 recent guests said this place was sparkling clean</Detail>
+    <Feature>Sparkling clean</Feature>
+    <Detail>5 recent guests said this place was sparkling clean</Detail>
 
-      <Feature>Self check-in</Feature>
-      <Detail>you can check in with the doorman</Detail>
-    </Container>
+    <Feature>Self check-in</Feature>
+    <Detail>you can check in with the doorman</Detail>
+  </Container>
   );
 }
 
