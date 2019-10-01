@@ -32,6 +32,7 @@ const Picture = styled.img`
 const Content = styled.div`
     display: flex;
     flex-direction: column;
+    min-width: 400px;
 `;
 
 const QuoteContainer = styled.div`

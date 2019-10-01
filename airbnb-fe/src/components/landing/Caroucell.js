@@ -16,6 +16,7 @@ const CaroucellContainer = styled.div`
     width: 80%;
     margin: 0;
     display: flex;
+    position: absolute;
 `;
 
 const Caroucell = () => {
