@@ -8,11 +8,11 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
-function FirstHalf() {
+function FirstHalf(props) {
   return (
     <Container>
       <h2>Is this your airbnb?</h2>
-      <ResultBox />
+      <ResultBox listings = {props.listings} />
     </Container>
   );
 }
