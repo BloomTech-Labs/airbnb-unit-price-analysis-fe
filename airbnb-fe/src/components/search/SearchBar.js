@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { connect } from 'react-redux';
-import { getListings } from '../../store/actions/index';
-import { Link, withRouter } from "react-router-dom";
+import { getListing } from '../../store/actions/index';
+import { withRouter } from "react-router-dom";
 
 
 const S = {};
@@ -68,7 +68,7 @@ function SearchBar(props){
     const handleSubmit = (e) => {
         e.preventDefault()
         let id = parseIdFromUrl(url);
-        props.getListings(id)
+        props.getListing(id)
     }
 
     const fillTestUrl = (e) => {
@@ -108,4 +108,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getListings })(withRouter(SearchBar));
+export default connect(mapStateToProps, { getListing })(withRouter(SearchBar));

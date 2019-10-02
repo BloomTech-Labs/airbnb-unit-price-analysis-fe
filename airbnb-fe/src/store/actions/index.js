@@ -6,7 +6,7 @@ export const FETCH_LISTING_FAILURE = "FETCH_LISTING_FAILURE";
 
 export const SIMULATION_API_CALL = "SIMULATION_API_CALL";
 
-export const getListings = (id) => (dispatch) => {
+export const getListing = (id) => (dispatch) => {
     // const id = 10280848;
     // const id = 20685563;
 

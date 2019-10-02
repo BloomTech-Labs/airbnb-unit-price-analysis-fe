@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from 'react-redux';
+import { simulateApiCall } from '../../store/actions';
+import { withRouter } from "react-router-dom";
+
 
 
 import Text from "./Text";
@@ -56,8 +59,11 @@ S.ConfirmButton = styled.button`
 
 function ResultBox(props) {
 
-  const simulateApiCall = () => {
 
+  const saveListing = (e) => {
+    e.preventDefault()
+    props.simulateApiCall(props.searchResult[0])
+    setTimeout(props.history.push("/dashboard"), 3000);
   }
   
   return (
@@ -68,7 +74,7 @@ function ResultBox(props) {
         </S.ImageDiv>
         <Text searchResult = {props.searchResult} />
       </S.Result>
-      <S.ConfirmButton onClick = {(e) => simulateApiCall(e)}>This is my house</S.ConfirmButton>
+      <S.ConfirmButton onClick = {(e) => saveListing(e)}>This is my house</S.ConfirmButton>
     </S.Container>
   );
 }
@@ -77,7 +83,8 @@ function ResultBox(props) {
 const mapStateToProps = (state) => {
   return {
       searchResult: state.searchResult,
+      listings: state.listings,
   }
 }
 
-export default connect(mapStateToProps, {})(ResultBox);
+export default connect(mapStateToProps, {simulateApiCall})(withRouter(ResultBox));

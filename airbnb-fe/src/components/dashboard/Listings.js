@@ -3,15 +3,22 @@ import React, { useEffect } from 'react';
 import Listing from './Listing';
 
 const Listings = (props) => {
-    useEffect(() => {
-        props.getListings();
-    }, []);
+    
+//   C A L L   B A C K E N D   A P I   H E R E
+    // useEffect(() => {
+    //     props.getListings();
+    // }, []);
 
     return (
         <div>
             {props.isFetching && <h2>Loading...</h2>}
 
-            {props.listings.length !== 0 && <Listing listing={props.listings[0]} />}
+            {props.listings.length !== 0 && 
+            props.listings.map(listing => {
+                return(
+                    <Listing listing={listing} />
+                )
+            })}
 
             {/* The code below is for when we're able to get multiple listings
             instead of time intervals of the same listing. */}

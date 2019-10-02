@@ -36,6 +36,7 @@ export const reducer = (state = initialState, action) => {
             }
         case SIMULATION_API_CALL:
             console.log("SIMULATION_API_CALL");
+            console.log(action.payload)
             return {
                 ...state,
                 listings: action.payload
