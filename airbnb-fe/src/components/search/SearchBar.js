@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { connect } from 'react-redux';
-import { getListings } from '../../store/actions/index';
-import { Link, withRouter } from "react-router-dom";
+import { getListing } from '../../store/actions/index';
+import { withRouter } from "react-router-dom";
 
 
 const S = {};
@@ -54,10 +54,10 @@ function SearchBar(props){
     const [url, setUrl] = useState("")
 
     useEffect(() => {
-        if(props.listings.length > 0){
+        if(props.searchResult.length > 0){
             props.history.push('/confirmation');
         }
-    }, [props.listings.length])
+    }, [props.searchResult.length])
 
     const parseIdFromUrl = (url) => {
         // Will not work if not in "https://www.airbnb.com/rooms/20685563......" format
@@ -68,7 +68,7 @@ function SearchBar(props){
     const handleSubmit = (e) => {
         e.preventDefault()
         let id = parseIdFromUrl(url);
-        props.getListings(id)
+        props.getListing(id)
     }
 
     const fillTestUrl = (e) => {
@@ -104,8 +104,8 @@ function SearchBar(props){
 
 const mapStateToProps = (state) => {
     return {
-        listings: state.listings
+        searchResult: state.searchResult
     }
 }
 
-export default connect(mapStateToProps, { getListings })(withRouter(SearchBar));
+export default connect(mapStateToProps, { getListing })(withRouter(SearchBar));

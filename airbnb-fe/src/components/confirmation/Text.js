@@ -61,8 +61,8 @@ function Text(props) {
     // </Container>
 
     <Container>
-    <H1>{props.listings[0].name}</H1>
-    <Location>{props.listings[0].street}</Location>
+    <H1>{props.searchResult[0].name}</H1>
+    <Location>{props.searchResult[0].street}</Location>
 
     <Feature>Entired serviced apartment</Feature>
     <PDetails>
