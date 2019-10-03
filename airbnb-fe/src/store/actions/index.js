@@ -4,7 +4,9 @@ export const FETCH_LISTING_START = "FETCH_LISTING_START";
 export const FETCH_LISTING_SUCCESS = "FETCH_LISTING_SUCCESS";
 export const FETCH_LISTING_FAILURE = "FETCH_LISTING_FAILURE";
 
-export const getListings = (id) => (dispatch) => {
+export const SIMULATION_API_CALL = "SIMULATION_API_CALL";
+
+export const getListing = (id) => (dispatch) => {
     // const id = 10280848;
     // const id = 20685563;
 
@@ -18,4 +20,9 @@ export const getListings = (id) => (dispatch) => {
             console.log(error)
             dispatch({ type: FETCH_LISTING_FAILURE, payload: error });
         })
+}
+
+export const simulateApiCall = (listing) => (dispatch) => {
+    // development substitute until we deploy backend
+    dispatch({ type: SIMULATION_API_CALL, payload: [listing, listing, listing]})
 }

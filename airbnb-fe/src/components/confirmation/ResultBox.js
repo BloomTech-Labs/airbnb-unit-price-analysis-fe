@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from 'react-redux';
+import { simulateApiCall } from '../../store/actions';
+import { withRouter } from "react-router-dom";
+
+
 
 import Text from "./Text";
 
@@ -53,17 +58,33 @@ S.ConfirmButton = styled.button`
 `;
 
 function ResultBox(props) {
+
+
+  const saveListing = (e) => {
+    e.preventDefault()
+    props.simulateApiCall(props.searchResult[0])
+    setTimeout(props.history.push("/dashboard"), 3000);
+  }
+  
   return (
     <S.Container>
       <S.Result>
         <S.ImageDiv>
-          <S.Image src = {props.listings[0].picture_url}/>
+          <S.Image src = {props.searchResult[0].picture_url}/>
         </S.ImageDiv>
-        <Text listings = {props.listings} />
+        <Text searchResult = {props.searchResult} />
       </S.Result>
-      <S.ConfirmButton>This is my house</S.ConfirmButton>
+      <S.ConfirmButton onClick = {(e) => saveListing(e)}>This is my house</S.ConfirmButton>
     </S.Container>
   );
 }
 
-export default ResultBox;
+
+const mapStateToProps = (state) => {
+  return {
+      searchResult: state.searchResult,
+      listings: state.listings,
+  }
+}
+
+export default connect(mapStateToProps, {simulateApiCall})(withRouter(ResultBox));

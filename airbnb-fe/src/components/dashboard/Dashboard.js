@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { getListings } from '../../store/actions';
+import { getListing } from '../../store/actions';
 
 import Header from './Header';
 import Listings from './Listings';
 
 const Dashboard = (props) => {
-    const getListings = () => {
+    const getListing = () => {
         props.getListings();
     };
 
@@ -15,7 +15,7 @@ const Dashboard = (props) => {
         <DashboardContainer>
             <Header />
             <Listings 
-                getListings={getListings}
+                getListing={getListing}
                 isFetching={props.isFetching}
                 listings={props.listings}
                 error={props.error}
@@ -40,4 +40,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getListings })(Dashboard);
+export default connect(mapStateToProps, { getListing })(Dashboard);
