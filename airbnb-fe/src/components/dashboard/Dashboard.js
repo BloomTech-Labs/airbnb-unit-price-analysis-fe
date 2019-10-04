@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+
 import { getListing } from '../../store/actions';
+import {Link} from 'react-router-dom';
 
 import Header from './Header';
 import Listings from './Listings';

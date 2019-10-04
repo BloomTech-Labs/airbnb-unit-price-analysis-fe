@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
 
 import device from "../../devices";
+import {setDemo} from "../../store/actions";
 
 const Container = styled.div`
   width: 50%;
@@ -64,7 +67,13 @@ const Button2 = styled(Button)`
   border: solid #ff5a5f 2px;
 `;
 
-function Header() {
+function Header(props) {
+
+  const initDemo = () => {
+    props.setDemo(true)
+    props.history.push('/demo-search')
+  }
+
   return (
     <Container>
       <H1>We value what you value</H1>
@@ -72,11 +81,18 @@ function Header() {
         Stop undervaluing your rentals and start making the profit you deserve
       </Text>
       <ButtonDiv>
-        <Button>Demo</Button>
+        <Button onClick = {initDemo}>Demo</Button>
         <Button2>Join now</Button2>
       </ButtonDiv>
     </Container>
   );
 }
 
-export default Header;
+
+const mapStateToProps = (state) => {
+  return {
+      
+  }
+}
+
+export default connect(mapStateToProps, { setDemo })(withRouter(Header));

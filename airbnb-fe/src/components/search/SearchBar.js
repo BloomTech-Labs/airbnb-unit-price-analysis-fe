@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import { connect } from 'react-redux';
-import { getListing } from '../../store/actions/index';
+import { getListing, getListings } from '../../store/actions/index';
 import { withRouter } from "react-router-dom";
+import { useAuth0 } from "../../react-auth0-wrapper";
+
 
 
 const S = {};
@@ -52,17 +54,46 @@ S.Button = styled.button`
 function SearchBar(props){
 
     const [url, setUrl] = useState("")
+    const { user } = useAuth0();
+
 
     useEffect(() => {
-        if(props.searchResult.length > 0){
-            props.history.push('/confirmation');
+        let demo = "";
+        if (props.isDemo){
+            demo = "demo-"
         }
-    }, [props.searchResult.length])
+        if(user){
+            console.log("API CALL TRIGGER")
+            props.getListings(user.email)
+        }
+        console.log("Listings length", props.listings.length)
+
+        if(props.searchResult.length > 0){
+            props.history.push(`/${demo}confirmation`);
+        }
+        if(props.isSearchMode){
+            return
+        } else {
+            if(props.listings.length > 0){
+                console.log("REDIRECT")
+                props.history.push(`/${demo}dashboard`)
+            }
+        }
+    }, [props.searchResult.length, props.listings.length, user, props.isSearchMode, props.isDemo])
 
     const parseIdFromUrl = (url) => {
-        // Will not work if not in "https://www.airbnb.com/rooms/20685563......" format
-        const id = url.substring(29, 37)
-        return id
+        // https://www.airbnb.com/rooms/plus/14071876?source_impression_id=p3_1570169163_0UseAOfbkQEhOoG3
+        let urlSplit = url.split('?')
+        let firstHalfArr = urlSplit[0].split("");
+        let idArr = []
+        // need to get last 8 characters of urlSplit[0]
+        for(let i = 0; i < 8; i++){
+          idArr.push(firstHalfArr.pop())
+        }
+        let idArrReverse = idArr.reverse()
+        let idString = idArrReverse.join("")
+
+        return idString
     }
 
     const handleSubmit = (e) => {
@@ -75,6 +106,9 @@ function SearchBar(props){
         e.preventDefault()
         setUrl("https://www.airbnb.com/rooms/20685563?source_impression_id=p3_1569467509_yL2ofzzD2Oz5DDIi");
     }
+
+    console.log("listings length outside", props.listings.length)
+
 
     return(
         <S.Container>
@@ -104,8 +138,11 @@ function SearchBar(props){
 
 const mapStateToProps = (state) => {
     return {
-        searchResult: state.searchResult
+        searchResult: state.searchResult,
+        listings: state.listings,
+        isSearchMode: state.isSearchMode,
+        isDemo: state.isDemo
     }
 }
 
-export default connect(mapStateToProps, { getListing })(withRouter(SearchBar));
+export default connect(mapStateToProps, { getListing, getListings })(withRouter(SearchBar));
