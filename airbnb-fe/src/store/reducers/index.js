@@ -2,7 +2,10 @@ import {
     FETCH_LISTING_START,
     FETCH_LISTING_SUCCESS,
     FETCH_LISTING_FAILURE,
-    SIMULATION_API_CALL
+    SIMULATION_API_CALL,
+    GET_LISTINGS,
+    SET_SEARCH_MODE,
+    SET_DEMO_MODE
 } from '../actions';
 
 const initialState = {
@@ -39,8 +42,32 @@ export const reducer = (state = initialState, action) => {
             console.log(action.payload)
             return {
                 ...state,
+                listings: action.payload,
+                searchResult: []
+            }
+        case GET_LISTINGS:
+            console.log("GET_LISTINGS");
+            console.log(action.payload)
+            return {
+                ...state,
                 listings: action.payload
             }
+        case SET_SEARCH_MODE:
+            console.log("SET_SEARCH_MODE_ON");
+            console.log(action.payload)
+            return {
+                ...state,
+                isSearchMode: action.payload
+            }
+        case SET_DEMO_MODE:
+            console.log("SET_DEMO_MODE_ON");
+            console.log(action.payload)
+            return {
+                ...state,
+                isDemo: action.payload
+            }
+        
+        
         default:
             return state;
     }
