@@ -9,15 +9,25 @@ import Header from "./Header";
 const Q1div = styled.div`
   // height: 45vw;        //<- Dynamic height
   // min-height: 600px;   //<- Dynamic height
-  height: 96vh; //<- Static height
+  height: 110vh; //<- Static height
   width: 100%;
   background-image: url(${Banner});
   display: flex;
   align-items: center;
 
   @media ${device.desktop} {
-    height: 85vh;
+    height: 90vh;
     background-size: 100%;
+  }
+
+  @media ${device.mobile} {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-size: 300%;
+    margin: 10% 0 0 0;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 `;
 
