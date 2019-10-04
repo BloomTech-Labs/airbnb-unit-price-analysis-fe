@@ -32,16 +32,16 @@ const Detail = styled.div`
     font-size: 18px;
 `
 
-function Text(){
+function Text({listing}){
     return(
         <Container>
             {/* <WidthLimiter> */}
 
-                <H1>Miami Beach 8 guests 3 Bedroom Apartment (20)</H1>
-                <Location>Miami Beach</Location>
+                <H1>{listing.name}</H1>
+                <Location>{listing.city}</Location>
 
-                <Feature>Entired serviced apartment</Feature>
-                <Detail>8 guests  3 bedrooms  4beds  2baths</Detail>
+                <Feature>{listing.room_type}</Feature>
+                <Detail>{listing.guests_included} guests | {listing.bedrooms} bedrooms | {listing.beds} beds | {listing.bathrooms} baths</Detail>
             {/* </WidthLimiter>      */}
         </Container>
     );
