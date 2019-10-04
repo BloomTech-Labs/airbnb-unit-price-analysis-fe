@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from 'react-redux';
-import { simulateApiCall } from '../../store/actions';
+import { saveListing } from '../../store/actions';
 import { withRouter } from "react-router-dom";
+import { useAuth0 } from "../../react-auth0-wrapper";
 
 
 
@@ -58,11 +59,12 @@ S.ConfirmButton = styled.button`
 `;
 
 function ResultBox(props) {
+  const { user } = useAuth0();
 
 
   const saveListing = (e) => {
     e.preventDefault()
-    props.simulateApiCall(props.searchResult[0])
+    props.saveListing(props.searchResult[0], user.email)
     setTimeout(props.history.push("/dashboard"), 3000);
   }
   
@@ -87,4 +89,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {simulateApiCall})(withRouter(ResultBox));
+export default connect(mapStateToProps, {saveListing})(withRouter(ResultBox));
