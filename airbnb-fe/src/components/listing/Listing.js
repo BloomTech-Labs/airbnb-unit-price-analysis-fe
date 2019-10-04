@@ -1,5 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
 
 import ResultBox from './ResultBox';
 import MessageBox from "./MessageBox";
@@ -68,17 +70,25 @@ S.Button = styled.button`
 `
 
 
-function Listing() {
+function Listing(props) {
+    let listing;
+
+    if(props.isDemo) {
+        listing = props.searchResult[0];
+    } else {
+        listing = props.location.state.listing;
+    }
+
   return (
     <S.Container>
         <S.Top>
-            <ResultBox />
-            <MessageBox />
+            <ResultBox listing={listing}/>
+            <MessageBox listing={listing}/>
         </S.Top>
         <S.Bottom>
             <S.CalendarContainer>
                 <S.MonthAndButtons>
-                    <S.H1>September 2019</S.H1>
+                    <S.H1>{props.isDemo ? 'September 2019' : 'October 2019'}</S.H1>
                     <S.Buttons>
                         <S.Button>&lt;</S.Button>
                         <S.Button>&gt;</S.Button>
@@ -92,4 +102,13 @@ function Listing() {
   );
 }
 
-export default Listing;
+
+const mapStateToProps = (state) => {
+    return {
+        searchResult: state.searchResult,
+        isDemo: state.isDemo
+    }
+  }
+  
+  export default connect(mapStateToProps, null)(withRouter(Listing));
+  

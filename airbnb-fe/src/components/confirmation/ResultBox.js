@@ -67,6 +67,14 @@ function ResultBox(props) {
     props.saveListing(props.searchResult[0], user.email)
     setTimeout(props.history.push("/dashboard"), 3000);
   }
+
+  const redirectToCalendar = (e) => {
+    e.preventDefault();
+    props.history.push({
+      pathname: '/demo-listing',
+      // state: { detail: value }
+    }) 
+  }
   
   return (
     <S.Container>
@@ -76,7 +84,9 @@ function ResultBox(props) {
         </S.ImageDiv>
         <Text searchResult = {props.searchResult} />
       </S.Result>
-      <S.ConfirmButton onClick = {(e) => saveListing(e)}>This is my house</S.ConfirmButton>
+      <S.ConfirmButton onClick = {props.isDemo 
+        ? (e) => redirectToCalendar(e) 
+        : (e) => saveListing(e)}>This is my house</S.ConfirmButton>
     </S.Container>
   );
 }
@@ -86,6 +96,7 @@ const mapStateToProps = (state) => {
   return {
       searchResult: state.searchResult,
       listings: state.listings,
+      isDemo: state.isDemo
   }
 }
 
