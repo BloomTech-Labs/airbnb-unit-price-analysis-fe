@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Week from "./Week";
 import styled from "styled-components";
+import { connect } from 'react-redux';
 
 const Month = styled.div`
   display: flex;
@@ -222,8 +223,12 @@ class Calendar extends Component {
   };
 
   render() {
-    // let calendarArray = this.monthToWeeks(this.state.October);
-    let calendarArray = this.monthToWeeks(this.state.September)
+    let month = "October";
+    if(this.props.isDemo) {
+      month = "September";
+    }
+    
+    let calendarArray = this.monthToWeeks(this.state[`${month}`])
 
     return (
       <Month>
@@ -235,4 +240,13 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+const mapStateToProps = (state) => {
+  return {
+      isFetching: state.isFetching,
+      listings: state.listings,
+      error: state.error,
+      isDemo: state.isDemo
+  }
+}
+
+export default connect(mapStateToProps, null)(Calendar);

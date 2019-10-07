@@ -1,9 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { withRouter } from 'react-router-dom';
 
-const Listing = ({ listing }) => {
+const Listing = ({ listing, history }) => {
+    const redirectToCalendar = (e) => {
+        e.preventDefault();
+        history.push({
+            pathname: '/listing',
+            state: { listing: listing }
+        }) 
+    };
+
     return (
-        <ListingCard>
+        <ListingCard onClick={(e) => redirectToCalendar(e)} >
             <Picture src={listing.picture_url} alt="#" />
             <ListingDetails>
                 <h2>{listing.name}</h2>
@@ -22,6 +31,7 @@ const ListingCard = styled.div`
     padding: 6px 18px 6px 6px;
     display: flex;
     margin-bottom: 25px;
+    cursor: pointer;
 `;
 
 const Picture = styled.img`
@@ -53,4 +63,4 @@ const ViewMore = styled.h4`
     cursor: pointer;
 `;
 
-export default Listing;
+export default withRouter(Listing);

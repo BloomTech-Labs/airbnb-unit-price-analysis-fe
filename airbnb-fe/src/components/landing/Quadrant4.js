@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import device from "../../devices";
 
-import Caroucell from "./Caroucell";
+import Caroucell from './Caroucell';
 
 const Q4div = styled.div`
   height: 100vh;
@@ -10,14 +11,10 @@ const Q4div = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
 
-const Container = styled.div`
-  height: 55%;
-  width: 80%;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
+  @media ${device.mobile} {
+    height: 70vh;
+  }
 `;
 
 function Quadrant4() {

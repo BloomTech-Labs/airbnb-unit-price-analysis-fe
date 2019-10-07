@@ -1,42 +1,51 @@
 import React from "react";
 import styled from "styled-components";
+import ScrollableAnchor from "react-scrollable-anchor";
 
 import device from "../../devices";
 import Quad2 from "../../img/quad2.png";
 
 function Quadrant2() {
   return (
-    <Q2div>
-      <SmallerDiv>
-        <img src={Quad2} width="80%" margin="auto" />
-      </SmallerDiv>
-      <BiggerDiv>
-        <Half />
-        <Half2>
-          <H1>
-            Pricing is tough.
-            <br></br>Trust the experts.
-          </H1>
-          <Text>
-            Our solution is the most advanced in the industry. We account for
-            changes in demand nightly and ensure you’re never leaving money on
-            the table. <br /> <br />
-            We evaluate the competition, price your rentals effectively, and
-            analyze local top properties in your market.
-          </Text>
-        </Half2>
-      </BiggerDiv>
-    </Q2div>
+    <ScrollableAnchor id={"mission"}>
+      <Q2div>
+        <SmallerDiv>
+          <TwoImg src={Quad2} />
+        </SmallerDiv>
+        <BiggerDiv>
+          <Half />
+          <Half2>
+            <H1>
+              Pricing is tough.
+              <br></br>Trust the experts.
+            </H1>
+            <Text>
+              Our solution is the most advanced in the industry. We account for
+              changes in demand nightly and ensure you’re never leaving money on
+              the table. <br /> <br />
+              We evaluate the competition, price your rentals effectively, and
+              analyze local top properties in your market.
+            </Text>
+          </Half2>
+        </BiggerDiv>
+      </Q2div>
+    </ScrollableAnchor>
   );
 }
 
 const Q2div = styled.div`
-  height: 95vh;
+  height: 100vh;
   width: 100%;
   background-color: #ecf9f8;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+    background-color: #056159;
+    height: auto;
+  }
 `;
 
 const QuadrantLimiter = styled.div`
@@ -55,6 +64,22 @@ const SmallerDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media ${device.mobile} {
+    width: 100%;
+    left: 0;
+    height: 100%;
+  }
+`;
+
+const TwoImg = styled.img`
+  width: 80%;
+  margin: auto;
+
+  @media ${device.mobile} {
+    width: 70%;
+    margin: 5% 0;
+  }
 `;
 
 const BiggerDiv = styled.div`
@@ -66,12 +91,21 @@ const BiggerDiv = styled.div`
   right: 10%;
   display: flex;
   box-sizing: border-box;
+
+  @media ${device.mobile} {
+    width: 100%;
+    right: 0;
+  }
 `;
 
 const Half = styled.div`
   width: 45%;
   height: 100%;
   box-sizing: border-box;
+
+  @media ${device.mobile} {
+    display: none;
+  }
 `;
 
 const Half2 = styled(Half)`
@@ -80,6 +114,14 @@ const Half2 = styled(Half)`
   flex-direction: column;
   justify-content: center;
   align-items: left;
+
+  @media ${device.mobile} {
+    display: flex;
+    width: 100%;
+    margin: 5% 2%;
+    padding: 0 5%;
+    align-items: center;
+  }
 `;
 
 const H1 = styled.h1`
@@ -93,6 +135,13 @@ const H1 = styled.h1`
   @media ${device.desktop} {
     font-size: 32px;
     margin-top: 20%;
+  }
+
+  @media ${device.mobile} {
+    font-size: 24px;
+    margin: 5%;
+    text-align: center;
+    font-weight: 300;
   }
 `;
 
@@ -109,6 +158,14 @@ const Text = styled.div`
   @media ${device.desktop} {
     font-size: 26px;
     margin-bottom: 200px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 16px;
+    width: 100%;
+    padding: 0;
+    margin: 5% 0;
+    text-align: justify;
   }
 `;
 

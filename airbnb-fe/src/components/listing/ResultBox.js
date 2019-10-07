@@ -26,7 +26,7 @@ S.ImageDiv = styled.div`
     justify-content: center;
 `
 
-S.Image = styled.div`
+S.Image = styled.img`
     width: 100%;
     height: 90%;
     background-color: #cfcfcf;
@@ -35,13 +35,13 @@ S.Image = styled.div`
 
 
 
-function ResultBox(){
+function ResultBox(props){
     return(
         <S.Container>
             <S.ImageDiv>
-                <S.Image />
+                <S.Image src={props.listing.picture_url}/>
             </S.ImageDiv>
-            <Text />
+            <Text listing={props.listing} />
         </S.Container>
     );
 }

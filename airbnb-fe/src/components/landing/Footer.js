@@ -6,7 +6,8 @@ import styled from "styled-components";
 function Footer() {
   return (
     <Container>
-      <TopFooter>
+      {/* Footer may change for release canvas 2 */}
+      {/* <TopFooter>
         <TopLeft>
           <FooterP>Price My Airbnb</FooterP>
           <FooterP>
@@ -26,7 +27,7 @@ function Footer() {
           <FooterP>Privacy</FooterP>
           <FooterP>Site Map</FooterP>
         </TopRight>
-      </TopFooter>
+      </TopFooter> */}
       <BottomFooter>
         © 2019 Price My Airbnb, Inc. All rights reserved.
       </BottomFooter>
@@ -36,7 +37,7 @@ function Footer() {
 
 const Container = styled.div`
   width: 100%;
-  height: 25vh;
+  height: 10vh;
   background-color: #fff;
 `;
 
@@ -88,6 +89,10 @@ const BottomFooter = styled.div`
   font-weight: 600;
   color: #767676;
   border-top: 1px solid #ededed;
+
+  @media ${device.mobile} {
+    font-size: 14px;
+  }
 `;
 
 export default Footer;
