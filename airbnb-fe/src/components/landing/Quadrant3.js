@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ScrollableAnchor from "react-scrollable-anchor";
 
 import device from "../../devices";
 import Url from "../../img/url.png";
@@ -19,10 +20,18 @@ const Q3div = styled.div`
     justify-content: space-between;
     height: 220vh;
   }
+
+  @media ${device.mobile} {
+    height: 100%;
+  }
 `;
 
 const Spacer = styled.div`
   height: 80px;
+
+  @media ${device.mobile} {
+    display: none;
+  }
 `;
 
 const H1 = styled.h1`
@@ -32,6 +41,13 @@ const H1 = styled.h1`
 
   @media ${device.desktop} {
     font-size: 38px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 24px;
+    width: 80%;
+    text-align: center;
+    margin: 5% 0;
   }
 `;
 
@@ -47,6 +63,13 @@ const TextImageDiv = styled.div`
     align-items: flex-start;
     height: auto;
   }
+
+  @media ${device.mobile} {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 2% 0;
+  }
 `;
 
 const TextImageDivR = styled(TextImageDiv)`
@@ -58,6 +81,11 @@ const ImageSect = styled.div`
 
   @media ${device.desktop} {
     width: 70%;
+  }
+
+  @media ${device.mobile} {
+    width: 90%;
+    margin: 0 auto 5% auto;
   }
 `;
 
@@ -76,6 +104,15 @@ const TextSect = styled.div`
     font-size: 26px;
     justify-content: start;
     width: 50%;
+    margin: 0 2%;
+  }
+
+  @media ${device.mobile} {
+    width: 90%;
+    margin: 0 auto 5% auto;
+    font-size: 18px;
+    line-height: 1.5rem;
+    text-align: justify;
   }
 `;
 
@@ -86,49 +123,63 @@ const TextTitle = styled.h3`
     font-size: 32px;
     margin: 0 0 5% 0;
   }
+
+  @media ${device.mobile} {
+    font-size: 24px;
+    line-height: 2rem;
+    text-align: center;
+    width: 65%;
+    margin: 5% auto;
+  }
+`;
+
+const ThreeImg = styled.img`
+  width: 100%;
 `;
 
 function Quadrant3() {
   return (
-    <Q3div>
-      <Spacer />
-      <H1>Never second-guess your prices again</H1>
-      <TextImageDiv>
-        <ImageSect>
-          <img src={Url} width="90%" />
-        </ImageSect>
-        <TextSect>
-          <TextTitle>Connect your listing</TextTitle>Securely connect your
-          listings from any major channel. Our system will link your listing to
-          your Wheelhouse account in minutes. You can then add more listings or
-          start setting up your pricing.
-        </TextSect>
-      </TextImageDiv>
-      <TextImageDivR>
-        <ImageSect>
-          <img src={Listing} width="100%" />
-        </ImageSect>
-        <TextSect>
-          <TextTitle>Have multiple listings</TextTitle>
-          Access all of your AirBnB accounts with one click. You’ll be able to
-          manage all the accounts, calendars, and pricing recommendations from
-          the price my airbnb dashboard. You can choose one favorite that will
-          always be on the dashboard.
-        </TextSect>
-      </TextImageDivR>
-      <TextImageDiv>
-        <ImageSect>
-          <img src={Price} width="90%" />
-        </ImageSect>
-        <TextSect>
-          <TextTitle>Track performance and adjust over time</TextTitle>
-          Have total visibility into the health of your listings with insights
-          into occupancy and earnings. Then, make confident, data-informed
-          decisions on your pricing strategy.
-        </TextSect>
-      </TextImageDiv>
-      <Spacer />
-    </Q3div>
+    <ScrollableAnchor id={"howitworks"}>
+      <Q3div>
+        <Spacer />
+        <H1>Never second-guess your prices again</H1>
+        <TextImageDiv>
+          <ImageSect>
+            <ThreeImg src={Url} width="90%" />
+          </ImageSect>
+          <TextSect>
+            <TextTitle>Connect your listing</TextTitle>Securely connect your
+            listings from any major channel. Our system will link your listing
+            to your Wheelhouse account in minutes. You can then add more
+            listings or start setting up your pricing.
+          </TextSect>
+        </TextImageDiv>
+        <TextImageDivR>
+          <ImageSect>
+            <ThreeImg src={Listing} width="100%" />
+          </ImageSect>
+          <TextSect>
+            <TextTitle>Have multiple listings</TextTitle>
+            Access all of your AirBnB accounts with one click. You’ll be able to
+            manage all the accounts, calendars, and pricing recommendations from
+            the price my airbnb dashboard. You can choose one favorite that will
+            always be on the dashboard.
+          </TextSect>
+        </TextImageDivR>
+        <TextImageDiv>
+          <ImageSect>
+            <ThreeImg src={Price} width="90%" />
+          </ImageSect>
+          <TextSect>
+            <TextTitle>Track performance and adjust over time</TextTitle>
+            Have total visibility into the health of your listings with insights
+            into occupancy and earnings. Then, make confident, data-informed
+            decisions on your pricing strategy.
+          </TextSect>
+        </TextImageDiv>
+        <Spacer />
+      </Q3div>
+    </ScrollableAnchor>
   );
 }
 

@@ -9,7 +9,8 @@ export const GET_LISTINGS = "GET_LISTINGS";
 export const SET_SEARCH_MODE = "SET_SEARCH_MODE";
 export const SET_DEMO_MODE = "SET_DEMO_MODE";
 
-
+const url = "https://pricemyairbnb.herokuapp.com/";
+// const url = "http://localhost:8000/";
 
 export const getListing = (id) => (dispatch) => {
     // const id = 10280848;
@@ -28,7 +29,7 @@ export const getListing = (id) => (dispatch) => {
 }
 
 export const saveListing = (listing, email) => (dispatch) => {
-    axios.post('http://localhost:8000/api/listings/save', {...listing, user_email: email})
+    axios.post(`${url}api/listings/save`, {...listing, user_email: email})
         .then((resp) => {
             console.log(resp)
             dispatch({ type: SIMULATION_API_CALL, payload: resp.data})
@@ -41,7 +42,7 @@ export const saveListing = (listing, email) => (dispatch) => {
 export const getListings = (email) => (dispatch) => {
     console.log("IN ACTION TRIGGER")
 
-    axios.post('http://localhost:8000/api/listings/retrieve', {user_email: email})
+    axios.post(`${url}api/listings/retrieve`, {user_email: email})
         .then((resp) => {
             console.log(resp)
             dispatch({ type: GET_LISTINGS, payload: resp.data})
