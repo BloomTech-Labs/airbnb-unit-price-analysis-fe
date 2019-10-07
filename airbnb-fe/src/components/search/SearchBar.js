@@ -88,19 +88,40 @@ function SearchBar(props){
         }
     }, [props.searchResult.length, props.listings.length, user, props.isSearchMode, props.isDemo])
 
-    const parseIdFromUrl = (url) => {
-        // https://www.airbnb.com/rooms/plus/14071876?source_impression_id=p3_1570169163_0UseAOfbkQEhOoG3
-        let urlSplit = url.split('?')
-        let firstHalfArr = urlSplit[0].split("");
-        let idArr = []
-        // need to get last 8 characters of urlSplit[0]
-        for(let i = 0; i < 8; i++){
-          idArr.push(firstHalfArr.pop())
-        }
-        let idArrReverse = idArr.reverse()
-        let idString = idArrReverse.join("")
+    // const parseIdFromUrl = (url) => {
+    //     // https://www.airbnb.com/rooms/plus/14071876?source_impression_id=p3_1570169163_0UseAOfbkQEhOoG3
+    //     let urlSplit = url.split('?')
+    //     let firstHalfArr = urlSplit[0].split("");
+    //     let idArr = []
+    //     // need to get last 8 characters of urlSplit[0]
+    //     for(let i = 0; i < 8; i++){
+    //       idArr.push(firstHalfArr.pop())
+    //     }
+    //     let idArrReverse = idArr.reverse()
+    //     let idString = idArrReverse.join("")
 
-        return idString
+    //     return idString
+    // }
+
+    const parseIdFromUrl = (url) => {
+        let urlSplit = url.split('?')
+        let firstHalfArr = urlSplit[0];
+        let idArr = []
+        let k =  firstHalfArr.length
+        
+        // need to get last 8 characters of urlSplit[0]
+        for(let i = firstHalfArr.length; i <= firstHalfArr.length; i--){
+            k--
+            if(firstHalfArr[i] == "/"){
+                break
+          }
+        }
+        do {
+            idArr.push(firstHalfArr.slice([k+2]))
+            k = k+1
+        }while (k <= firstHalfArr.length)
+    
+        return idArr[0]
     }
 
     const handleSubmit = (e) => {
