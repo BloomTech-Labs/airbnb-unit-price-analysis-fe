@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
 
 import device from "../../devices";
+import {setDemo} from "../../store/actions";
 
 const Container = styled.div`
   width: 50%;
@@ -97,7 +100,13 @@ const Button2Text = styled.a`
   color: white;
 `;
 
-function Header() {
+function Header(props) {
+
+  const initDemo = () => {
+    props.setDemo(true)
+    props.history.push('/demo-search')
+  }
+
   return (
     <Container>
       <H1>We value what you value.</H1>
@@ -105,16 +114,25 @@ function Header() {
         Stop undervaluing your rentals and start making the profit you deserve.
       </Text>
       <ButtonDiv>
-        <Button>Demo</Button>
+
+        <Button onClick={initDemo}>Demo</Button>
 
         <Button2>
           <Button2Text href="https://dev-cz8-jv29.auth0.com/login?state=g6Fo2SBFSzVDam12dWtiZlZXa3VwZkQzZWZnYi1yVDNKZVRjdKN0aWTZIEoxa1hVNS03d3VlWHRKSjNjaHpGYVBMOFhlUjl1TjIwo2NpZNkgZmtBQmFFcjI4ZVo3bXJhNkRETnMzYUZCYldkcXJNUlc&client=fkABaEr28eZ7mra6DDNs3aFBbWdqrMRW&protocol=oauth2&redirect_uri=http%3A%2F%2Flocalhost%3A3000&audience=https%3A%2F%2Fairbnbupa&scope=openid%20profile%20email&response_type=code&response_mode=query&nonce=JNa86aT0xlDErdNmkH_A.onQC5pQvwEPR5YdERyjt1I&code_challenge=&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjEuMi4zIn0%3D">
             Join now
           </Button2Text>
         </Button2>
+
       </ButtonDiv>
     </Container>
   );
 }
 
-export default Header;
+
+const mapStateToProps = (state) => {
+  return {
+      
+  }
+}
+
+export default connect(mapStateToProps, { setDemo })(withRouter(Header));

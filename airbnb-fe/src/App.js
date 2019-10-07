@@ -53,6 +53,17 @@ function App() {
           <PrivateRoute path="/search" exact component={Search} />
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/external-api" component={ExternalApi} />
+          <PrivateRoute path="/listing" exact component={Listing} />
+
+        {/* **** D E M O  R O U T E S **** */}
+
+          <Route path="/demo-dashboard" exact component={Dashboard} />
+          <Route path="/demo-confirmation" exact component={Confirmation} />
+          <Route path="/demo-search" exact component={Search} />
+          <Route path="/demo-profile" component={Profile} />
+          <Route path="/demo-external-api" component={ExternalApi} />
+          <Route path="/demo-listing" exact component={Listing} />
+
         </Switch>
       </Router>
     </MainContainerDiv>

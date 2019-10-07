@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from 'react-redux';
-import { simulateApiCall } from '../../store/actions';
+import { saveListing } from '../../store/actions';
 import { withRouter } from "react-router-dom";
+import { useAuth0 } from "../../react-auth0-wrapper";
 
 
 
@@ -58,12 +59,21 @@ S.ConfirmButton = styled.button`
 `;
 
 function ResultBox(props) {
+  const { user } = useAuth0();
 
 
   const saveListing = (e) => {
     e.preventDefault()
-    props.simulateApiCall(props.searchResult[0])
+    props.saveListing(props.searchResult[0], user.email)
     setTimeout(props.history.push("/dashboard"), 3000);
+  }
+
+  const redirectToCalendar = (e) => {
+    e.preventDefault();
+    props.history.push({
+      pathname: '/demo-listing',
+      // state: { detail: value }
+    }) 
   }
   
   return (
@@ -74,7 +84,9 @@ function ResultBox(props) {
         </S.ImageDiv>
         <Text searchResult = {props.searchResult} />
       </S.Result>
-      <S.ConfirmButton onClick = {(e) => saveListing(e)}>This is my house</S.ConfirmButton>
+      <S.ConfirmButton onClick = {props.isDemo 
+        ? (e) => redirectToCalendar(e) 
+        : (e) => saveListing(e)}>This is my house</S.ConfirmButton>
     </S.Container>
   );
 }
@@ -84,7 +96,8 @@ const mapStateToProps = (state) => {
   return {
       searchResult: state.searchResult,
       listings: state.listings,
+      isDemo: state.isDemo
   }
 }
 
-export default connect(mapStateToProps, {simulateApiCall})(withRouter(ResultBox));
+export default connect(mapStateToProps, {saveListing})(withRouter(ResultBox));

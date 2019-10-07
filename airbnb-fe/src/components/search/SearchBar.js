@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
-import { getListing } from "../../store/actions/index";
+
+import { connect } from 'react-redux';
+import { getListing, getListings } from '../../store/actions/index';
+
 import { withRouter } from "react-router-dom";
+import { useAuth0 } from "../../react-auth0-wrapper";
+
 
 const S = {};
 
@@ -43,75 +47,109 @@ S.Input = styled.input`
   align-items: center;
 `;
 S.Button = styled.button`
-  border: solid grey 1px;
-  box-sizing: border-box;
-  height: 100%;
-  width: 11.1%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
 
-  &:hover {
-    cursor: pointer;
-  }
-`;
+    border: solid grey 1px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 11.1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+`
 
-function SearchBar(props) {
-  const [url, setUrl] = useState("");
+function SearchBar(props){
 
-  useEffect(() => {
-    if (props.searchResult.length > 0) {
-      props.history.push("/confirmation");
+    const [url, setUrl] = useState("")
+    const { user } = useAuth0();
+
+
+    useEffect(() => {
+        let demo = "";
+        if (props.isDemo){
+            demo = "demo-"
+        }
+        if(user){
+            console.log("API CALL TRIGGER")
+            props.getListings(user.email)
+        }
+        console.log("Listings length", props.listings.length)
+
+        if(props.searchResult.length > 0){
+            props.history.push(`/${demo}confirmation`);
+        }
+        if(props.isSearchMode){
+            return
+        } else {
+            if(props.listings.length > 0){
+                console.log("REDIRECT")
+                props.history.push(`/${demo}dashboard`)
+            }
+        }
+    }, [props.searchResult.length, props.listings.length, user, props.isSearchMode, props.isDemo])
+
+    const parseIdFromUrl = (url) => {
+        // https://www.airbnb.com/rooms/plus/14071876?source_impression_id=p3_1570169163_0UseAOfbkQEhOoG3
+        let urlSplit = url.split('?')
+        let firstHalfArr = urlSplit[0].split("");
+        let idArr = []
+        // need to get last 8 characters of urlSplit[0]
+        for(let i = 0; i < 8; i++){
+          idArr.push(firstHalfArr.pop())
+        }
+        let idArrReverse = idArr.reverse()
+        let idString = idArrReverse.join("")
+
+        return idString
     }
-  }, [props.searchResult.length]);
 
-  const parseIdFromUrl = url => {
-    // Will not work if not in "https://www.airbnb.com/rooms/20685563......" format
-    const id = url.substring(29, 37);
-    return id;
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        let id = parseIdFromUrl(url);
+        props.getListing(id)
+    }
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    let id = parseIdFromUrl(url);
-    props.getListing(id);
-  };
+    const fillTestUrl = (e) => {
+        e.preventDefault()
+        setUrl("https://www.airbnb.com/rooms/20685563?source_impression_id=p3_1569467509_yL2ofzzD2Oz5DDIi");
+    }
 
-  const fillTestUrl = e => {
-    e.preventDefault();
-    setUrl(
-      "https://www.airbnb.com/rooms/20685563?source_impression_id=p3_1569467509_yL2ofzzD2Oz5DDIi"
-    );
-  };
+    console.log("listings length outside", props.listings.length)
 
-  return (
-    <S.Container>
-      <S.Icon onClick={e => fillTestUrl(e)}>click to put test url</S.Icon>
-      <S.Form onSubmit={e => handleSubmit(e)}>
-        <S.Input
-          placeholder="Enter Airbnb URL."
-          name="url"
-          value={url}
-          onChange={e => {
-            setUrl(e.target.value);
-          }}
-        />
-        <S.Button>
-          <div>+</div>
-        </S.Button>
-      </S.Form>
-    </S.Container>
-  );
+
+    return(
+        <S.Container>
+            <S.Icon
+                onClick = {(e) => fillTestUrl(e)}
+            >click to put test url</S.Icon>
+            <S.Form
+                onSubmit = {(e) => handleSubmit(e)}
+            >
+                <S.Input
+                    placeholder = "Enter Airbnb URL."
+                    name = "url"
+                    value = {url}
+                    onChange = {(e) => {setUrl(e.target.value)}}
+                />
+                <S.Button>
+                    <div>+</div>
+                </S.Button>
+            </S.Form>
+            
+
+
+        </S.Container>
+    )
+
 }
 
-const mapStateToProps = state => {
-  return {
-    searchResult: state.searchResult
-  };
-};
+const mapStateToProps = (state) => {
+    return {
+        searchResult: state.searchResult,
+        listings: state.listings,
+        isSearchMode: state.isSearchMode,
+        isDemo: state.isDemo
+    }
+}
 
-export default connect(
-  mapStateToProps,
-  { getListing }
-)(withRouter(SearchBar));
+export default connect(mapStateToProps, { getListing, getListings })(withRouter(SearchBar));
