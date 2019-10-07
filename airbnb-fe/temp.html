@@ -102,7 +102,7 @@
 
     .mainLeft {
       width: 50%;
-      height: 85vh;
+      height: 90vh;
       padding: 8% 0 0 0;
       display: flex;
       flex-direction: column;
@@ -112,7 +112,7 @@
     .leftTop {
       display: flex;
       width: 60%;
-      height: 25%;
+      height: 35%;
       margin: auto;
       flex-direction: column;
       align-items: center;
@@ -121,14 +121,14 @@
 
     .topTop {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       width: 40%;
       justify-content: space-between;
       align-items: center;
     }
 
     h1 {
-      margin: 1% 0;
+      margin: 6% 0;
     }
 
     .leftP {
@@ -280,6 +280,21 @@
       width: 35px;
       opacity: 0.2;
     }
+
+    @media (max-width: 500px) {
+      .mobileNavA {
+        display: none;
+      }
+
+      .mainRight {
+        display: none;
+      }
+
+      .mainLeft {
+        width: 100%;
+        margin: 10% 0 0 0;
+      }
+    }
   </style>
   <body>
     <nav>
@@ -290,11 +305,11 @@
         />
       </div>
       <div class="navRight">
-        <a href="">Mission</a>
-        <a href="">How It Works</a>
-        <a href="">Sign In</a>
+        <a href="" class="mobileNavA">Mission</a>
+        <a href="" class="mobileNavA">How It Works</a>
+        <a href="" class="mobileNavA">Sign In</a>
         <button class="signUpButton">Sign Up</button>
-        <button class="demoButton">Try Our Demo</button>
+        <button class="demoButton mobileNavA">Try Our Demo</button>
       </div>
     </nav>
     <div class="mainDiv">
