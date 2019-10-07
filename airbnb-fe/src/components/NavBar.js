@@ -7,7 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import ScrollableAnchor, { goToAnchor } from "react-scrollable-anchor";
 import device from "../devices";
 
-import PrivateRoute from './PrivateRoute';
+// import PrivateRoute from './PrivateRoute';
 import { connect } from 'react-redux';
 import { setSearchMode } from '../store/actions';
 
