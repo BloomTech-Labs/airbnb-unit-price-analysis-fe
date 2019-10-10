@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import { getListing } from '../../store/actions';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 import Header from './Header';
 import Listings from './Listings';
 
-const Dashboard = (props) => {
+export const Dashboard = (props) => {
     const getListing = () => {
         props.getListings();
     };
