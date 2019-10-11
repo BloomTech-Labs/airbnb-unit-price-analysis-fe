@@ -5,9 +5,11 @@ import Listing from './Listing';
 const Listings = (props) => {
     
 //   C A L L   B A C K E N D   A P I   H E R E
-    // useEffect(() => {
-    //     props.getListings();
-    // }, []);
+    useEffect(() => {
+        if(props.user) {
+            props.getListings();
+        }
+    }, [props.user]);
 
     return (
         <div>
@@ -16,7 +18,7 @@ const Listings = (props) => {
             {props.listings.length !== 0 && 
             props.listings.map(listing => {
                 return(
-                    <Listing listing={listing} />
+                    <Listing key={listing.id} listing={listing} />
                 )
             })}
 

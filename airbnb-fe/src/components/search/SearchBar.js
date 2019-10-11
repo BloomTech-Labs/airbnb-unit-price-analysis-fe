@@ -58,7 +58,7 @@ S.Button = styled.button`
     font-size: 40px;
 `
 
-function SearchBar(props){
+export function SearchBar(props){
 
     const [url, setUrl] = useState("")
     const { user } = useAuth0();
@@ -141,6 +141,7 @@ function SearchBar(props){
     return(
         <S.Container>
             <S.Icon
+                data-testid="plus-icon"
                 onClick = {(e) => fillTestUrl(e)}
             >click to put test url</S.Icon>
             <S.Form
