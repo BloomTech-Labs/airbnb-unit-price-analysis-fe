@@ -1,6 +1,5 @@
 import React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
-import { connect } from 'react-redux';
+import { render, cleanup } from '@testing-library/react';
 
 import { Dashboard } from '../Dashboard';
 

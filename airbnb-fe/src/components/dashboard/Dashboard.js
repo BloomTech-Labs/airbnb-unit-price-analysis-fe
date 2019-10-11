@@ -2,22 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-import { getListing } from '../../store/actions';
+import { getListing, getListings } from '../../store/actions';
+import { useAuth0 } from "../../react-auth0-wrapper";
 // import {Link} from 'react-router-dom';
 
 import Header from './Header';
 import Listings from './Listings';
 
 export const Dashboard = (props) => {
+    const { user } = useAuth0();
+
     const getListing = () => {
         props.getListings();
     };
+
+    const getListings = (email) => {
+        props.getListings(user.email);
+    }
+
+    console.log(user)
 
     return (
         <DashboardContainer>
             <Header />
             <Listings 
                 getListing={getListing}
+                user={user}
+                getListings={getListings}
                 isFetching={props.isFetching}
                 listings={props.listings}
                 error={props.error}
@@ -42,4 +53,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getListing })(Dashboard);
+export default connect(mapStateToProps, { getListing, getListings })(Dashboard);

@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from '@testing-library/react';
-import { withRouter } from 'react-router-dom';
 
 import { Listing } from '../Listing';
+
+afterEach(cleanup);
 
 describe('<Listing />', () => {
     it('renders without any errors', () => {
