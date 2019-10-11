@@ -10,7 +10,11 @@ import Calendar from "./components/calendar/Calendar";
 import Landing from "./components/landing/Landing";
 import Confirmation from "./components/confirmation/Confirmation";
 import Listing from "./components/listing/Listing";
+import Listing2 from "./components/listing2/Listing2";
 import Search from "./components/search/Search";
+import Chart from "./components/charts/Chart";
+import Chart2 from "./components/charts/Chart2";
+import Chart3 from "./components/charts/Chart3";
 
 import Dashboard from "./components/dashboard/Dashboard";
 
@@ -43,8 +47,12 @@ function App() {
           {/* <Route path="/" exact component={Confirmation} /> */}
           {/* <Route path="/" exact component={Calendar} /> */}
           {/* <Route path="/" exact component={Listing} /> */}
+          {/* <Route path="/" exact component={Listing2} /> */}
           {/* <Route path="/" exact component={Dashboard} /> */}
           {/* <Route path="/" exact component={Search} /> */}
+          {/* <Route path="/" exact component={Chart} /> */}
+          {/* <Route path="/" exact component={Chart2} /> */}
+          {/* <Route path="/" exact component={Chart3} /> */}
 
           <Route path="/" exact component={Landing} />
 
