@@ -7,14 +7,17 @@ You can find the project at [Price My Airbnb](http://pricemyairbnb.com/).
 
 🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-<center>
+
+
 <h2>Team Lead</h2>
+<center>
 
 |[Zach Christy](https://github.com/zchristy)|
 |:---:|
 |[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Zach.png" width = "200" />](https://github.com/zchristy)|
 |[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/zchristy)|
 |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/zach-christy/)|
+</center>
 
 <br>
 
