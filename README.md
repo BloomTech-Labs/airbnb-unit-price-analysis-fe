@@ -1,13 +1,10 @@
 
-# 1️⃣ Title of project goes here
+# Project
 
 You can find the project at [Price My Airbnb](http://pricemyairbnb.com/).
+Stop undervaluing your rentals and start making the profit you deserve.
 
-## 5️⃣ Contributors
-
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
-
-
+# Contributors
 
 <h2>Team Lead</h2>
 <center>
@@ -56,13 +53,7 @@ You can find the project at [Price My Airbnb](http://pricemyairbnb.com/).
 
 1️⃣ [Product Canvas](🚫add link to product canvas here)
 
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-🚫  delete if front end is not applicable to your project
+Stop undervaluing your rentals and start making the profit you deserve. Our solution is the most advanced in the industry. We account for changes in demand nightly and ensure you’re never leaving money on the table. We evaluate the competition, price your rentals effectively, and analyze local top properties in your market.
 
 1️⃣ [Deployed Front End](🚫add link to deployed app here)
 
