@@ -42,18 +42,20 @@ Stop undervaluing your rentals and start making the profit you deserve.
 |:---:|:---:|
 |[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Ana.png" width = "200" />](https://github.com/Anarosals)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Cesar.png" width = "200" />](https://github.com/CSRSR)  |
 |[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Anarosals)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/CSRSR) |
-|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/)|
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/cesar-d-rodriguez/)|
 
 </center>
 
 ## Project Overview
 
-[Trello Board](https://trello.com/b/iddyIFST/airbnb-unit-price-analysis)
-[Product Canvas](https://www.notion.so/AirBnB-Unit-Price-Analysis-ba9c5506a64a4587a2d55c346c7f99c7)
+Our [Trello Board](https://trello.com/b/iddyIFST/airbnb-unit-price-analysis)
+<br>
+
+Our [Product Canvas](https://www.notion.so/AirBnB-Unit-Price-Analysis-ba9c5506a64a4587a2d55c346c7f99c7)
 
 Stop undervaluing your rentals and start making the profit you deserve. Our solution is the most advanced in the industry. We account for changes in demand nightly and ensure you’re never leaving money on the table. We evaluate the competition, price your rentals effectively, and analyze local top properties in your market.
 
-1️⃣ [Deployed Front End](🚫add link to deployed app here)
+Check out the frontend - [Deployed Front End](http://pricemyairbnb.com/)
 
 ### Tech Stack
 ![Node](https://img.shields.io/packagist/l/doctrine/orm.svg)
@@ -64,7 +66,7 @@ Stop undervaluing your rentals and start making the profit you deserve. Our solu
 
 ### Predictions
 
-🚫 Describe your models here
+We didn't use any models for this project.
 
 ### 2️⃣ Explanatory Variables
 
@@ -78,11 +80,9 @@ Stop undervaluing your rentals and start making the profit you deserve. Our solu
 🚫  Add to or delete source links as needed for your project
 
 
--   [Source 1] (🚫add link to python notebook here)
--   [Source 2] (🚫add link to python notebook here)
--   [Source 3] (🚫add link to python notebook here)
--   [Source 4] (🚫add link to python notebook here)
--   [Source 5] (🚫add link to python notebook here)
+-   [InsideAirbnb] (http://insideairbnb.com/get-the-data.html)
+-   [Airbnb] (🚫add link to python notebook here)
+
 
 ### Python Notebooks
 
@@ -96,11 +96,11 @@ Stop undervaluing your rentals and start making the profit you deserve. Our solu
 
 ### 3️⃣ How to connect to the web API
 
-🚫 List directions on how to connect to the API here
+https://pricemyairbnb.herokuapp.com/
 
 ### 3️⃣ How to connect to the data API
 
-🚫 List directions on how to connect to the API here
+Connect via DB endpoints. See API docs for more information.
 
 ## Contributing
 
