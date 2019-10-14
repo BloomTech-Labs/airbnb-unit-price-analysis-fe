@@ -61,7 +61,7 @@ Check out the frontend - [Deployed Front End](http://pricemyairbnb.com/)
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
 ![Netlify](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)]
-![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
 ![Python](https://img.shields.io/badge/python-3.7-blue)
 ![Node.js](https://img.shields.io/badge/node.js-green)
 
