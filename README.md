@@ -139,12 +139,3 @@ Remember that this project is licensed under the MIT license, and by submitting 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
 
 ## Documentation
-
-# API Guide
-
-This is a guide for Airbnb's web team to access the database. Please follow the routes below.
-
-## Routes
-|  Route |  Recieves | Returns  |
-|---|---|---|
-|  /data | listing_id  |  list[json] |
