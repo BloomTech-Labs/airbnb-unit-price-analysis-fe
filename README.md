@@ -1,8 +1,7 @@
 
 # Project
 
-You can find the project at [Price My Airbnb](http://pricemyairbnb.com/).
-Stop undervaluing your rentals and start making the profit you deserve.
+Stop undervaluing your rentals and start making the profit you deserve. You can find the project at [Price My Airbnb](http://pricemyairbnb.com/).
 
 # Contributors
 
@@ -60,10 +59,12 @@ Check out the frontend - [Deployed Front End](http://pricemyairbnb.com/)
 ### Tech Stack
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-![Netlify](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)]
+![Netlify](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)
 ![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
 ![Python](https://img.shields.io/badge/python-3.7-blue)
 ![Node.js](https://img.shields.io/badge/node.js-green)
+![React.js](https://img.shields.io/badge/React-red)
+![flask](https://img.shields.io/badge/flask-blue)
 
 
 ### Predictions
@@ -136,4 +137,3 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
 
-## Documentation
