@@ -7,23 +7,31 @@ You can find the project at [Price My Airbnb](http://pricemyairbnb.com/).
 
 🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-|[Chris](https://github.com/onetrckchris)|[Cesar](https://github.com/CSRSR)|[Vlad](https://github.com/vladmog)| [Ridley](https://github.com/RidleyLeisy) | [Alvin](https://github.com/alvinwalker314) | [Lionel](https://github.com/Granero0011) | [Ana](https://github.com/Anarosals) | [Cassandra](https://github.com/springercass) | [Zach](https://github.com/zchristy)|
+|[Chris](https://github.com/onetrckchris)|[Cesar](https://github.com/CSRSR)|[Vlad](https://github.com/vladmog)| 
 
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Chris.png" width = "200" />](https://github.com/onetrckchris)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Cesar.png" width = "200" />](https://github.com/CSRSR) |[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Vlad.png" width = "200" />](https://github.com/vladmog)|
 
-|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Chris.png" width = "200" />](https://github.com/onetrckchris)
-|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Cesar.png" width = "200" />](https://github.com/CSRSR) 
-|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Vlad.png" width = "200" />](https://github.com/vladmog) 
-|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Ridley.png" width = "200" />](https://github.com/RidleyLeisy)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Vector.png" width = "200" />](https://github.com/alvinwalker314) |[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Lionel.png" width = "200" />](https://github.com/Granero0011)
-|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Ana.png" width = "200" />](https://github.com/Anarosals)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Cassandra.png" width = "200" />](https://github.com/springercass) |[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Zach.png" width = "200" />](https://github.com/zchristy) |
-
-|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/onetrckchris)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/CSRSR)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/RidleyLeisy)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/alvinwalker314)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Granero0011)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Anarosals) |[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/springercass) |[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/zchristy) |
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/onetrckchris)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/CSRSR)|[<img src="https://github.com/favicon.ico" width="15"> ]|(https://github.com/vladmog)|[<img src="https://github.com/favicon.ico" width="15"> ]|
 
 |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
 |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
-|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+
+|[Ridley](https://github.com/RidleyLeisy) | [Alvin](https://github.com/alvinwalker314) | [Lionel](https://github.com/Granero0011) | 
+
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Ridley.png" width = "200" />](https://github.com/RidleyLeisy)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Vector.png" width = "200" />](https://github.com/alvinwalker314)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Lionel.png" width = "200" />](https://github.com/Granero0011)|
+
+|(https://github.com/RidleyLeisy)[<img src="https://github.com/favicon.ico" width="15"> ]|(https://github.com/alvinwalker314)|[<img src="https://github.com/favicon.ico" width="15"> ]|(https://github.com/Granero0011)|
+
 |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/RidleyLeisy) 
 |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/alvinwalker314)
-|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+
+|[Ana](https://github.com/Anarosals) | [Cassandra](https://github.com/springercass) | [Zach](https://github.com/zchristy)|
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Ana.png" width = "200" />](https://github.com/Anarosals)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Cassandra.png" width = "200" />](https://github.com/springercass) |[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Zach.png" width = "200" />](https://github.com/zchristy)|
+
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Anarosals)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/springercass) |[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/zchristy)|
+
 |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
 |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
 |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/zach-christy/) |
