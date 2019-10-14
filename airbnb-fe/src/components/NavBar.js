@@ -2,9 +2,15 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../img/Vector.png";
-import PrivateRoute from './PrivateRoute';
+
+import PrivateRoute from "./PrivateRoute";
+import ScrollableAnchor, { goToAnchor } from "react-scrollable-anchor";
+import device from "../devices";
+
+// import PrivateRoute from './PrivateRoute';
 import { connect } from 'react-redux';
 import { setSearchMode } from '../store/actions';
+
 
 
 
@@ -52,20 +58,58 @@ const Button = styled.button`
   font-family: "Varela Round", sans-serif;
   font-size: 18px;
   line-height: 1.4;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
+const AnchorLink = styled.div`
+  text-decoration: none;
+  color: black;
+  line-height: 2.4rem;
 
-const NavBar = (props) => {
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media ${device.mobile} {
+    display: none;
+  }
+`;
+
+const SignUpButton = styled.button`
+  background: #ffffff;
+  border: 2px solid #00a699;
+  border-radius: 4px;
+  height: 35px;
+  margin: 0;
+  width: 90px;
+  font-size: 16px;
+  color: #00a699;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const NavBar = props => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+
 
   const redirectToSearch = () => {
     props.history.push("/search")
   }
+
 
   const goToSearch = (e) => {
     e.preventDefault();
@@ -77,24 +121,26 @@ const NavBar = (props) => {
   return (
     <NavDiv>
       <ProfileImgDiv>
-        <img src={Logo} size="45px" />
+        <Link to="/">
+          <img src={Logo} size="45px" />
+        </Link>
       </ProfileImgDiv>
       <Links>
-        <div>Mission</div>
-        <div>How It Works</div>
+        <AnchorLink onClick={() => goToAnchor("mission")}>Mission</AnchorLink>
 
+        <AnchorLink onClick={() => goToAnchor("howitworks")}>
+          How It Works
+        </AnchorLink>
 
-      
-{/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
-        {window.location.pathname !== props.location.pathname 
-          && props.history.push(`${window.location.pathname}`)
-        }
+        {/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
+        {window.location.pathname !== props.location.pathname &&
+          props.history.push(`${window.location.pathname}`)}
 
         {!isAuthenticated && (
           // <Button onClick={() => loginWithRedirect({})}>Sign In</Button> //<- Original Auth0 Login Button
-          <Button onClick={() => redirectToSearch()}>Sign In</Button>
-        )}
+          <SignUpButton onClick={() => redirectToSearch()}>Sign In</SignUpButton>
 
+        )}
 
         {isAuthenticated && (
           <div>
@@ -109,7 +155,6 @@ const NavBar = (props) => {
           <StyledLink to="/">Home</StyledLink>&nbsp;
           <StyledLink to="/profile">Profile</StyledLink>
           <StyledLink to="/external-api">External API</StyledLink>
-
         </span>
       )}
     </NavDiv>

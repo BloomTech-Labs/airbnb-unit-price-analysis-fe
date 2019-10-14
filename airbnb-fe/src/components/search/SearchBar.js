@@ -1,46 +1,54 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Loader from 'react-loader-spinner';
+
 import { connect } from 'react-redux';
 import { getListing, getListings } from '../../store/actions/index';
+
 import { withRouter } from "react-router-dom";
 import { useAuth0 } from "../../react-auth0-wrapper";
-
 
 
 const S = {};
 
 S.Container = styled.div`
-    margin-top: 12.5%;
-    box-sizing: border-box;
-    border: solid black 1px;
-    width: 30%;
-    height: 6%;
-    display: flex;
-`
+  margin-top: 12.5%;
+  box-sizing: border-box;
+  border: solid black 1px;
+  width: 30%;
+  height: 6%;
+  display: flex;
+`;
 S.Icon = styled.div`
-    // border: solid grey 1px;
-    box-sizing: border-box;
-    height: 100%;
-    width: 10%;
-    font-size: 10px;
-`
+  // border: solid grey 1px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 15%;
+  font-size: 10px;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 S.Form = styled.form`
-    display: flex;
-    width: 90%;
-    background-color: yellow;
-`
+  display: flex;
+  width: 90%;
+  background-color: yellow;
+`;
 S.Input = styled.input`
-    // border: solid green 1px;
-    box-sizing: border-box;
-    height: 100%;
-    width: 88.9%;
-    font-family: "Montserrat", sans-serif;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-`
+  // border: solid green 1px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 88.9%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+`;
 S.Button = styled.button`
+
     border: solid grey 1px;
     box-sizing: border-box;
     height: 100%;
@@ -50,6 +58,10 @@ S.Button = styled.button`
     justify-content: center;
     font-size: 40px;
 `
+
+S.StyledLoader = styled(Loader)`
+  margin-top: 200px;
+`;
 
 export function SearchBar(props){
 
@@ -81,19 +93,40 @@ export function SearchBar(props){
         }
     }, [props.searchResult.length, props.listings.length, user, props.isSearchMode, props.isDemo])
 
-    const parseIdFromUrl = (url) => {
-        // https://www.airbnb.com/rooms/plus/14071876?source_impression_id=p3_1570169163_0UseAOfbkQEhOoG3
-        let urlSplit = url.split('?')
-        let firstHalfArr = urlSplit[0].split("");
-        let idArr = []
-        // need to get last 8 characters of urlSplit[0]
-        for(let i = 0; i < 8; i++){
-          idArr.push(firstHalfArr.pop())
-        }
-        let idArrReverse = idArr.reverse()
-        let idString = idArrReverse.join("")
+    // const parseIdFromUrl = (url) => {
+    //     // https://www.airbnb.com/rooms/plus/14071876?source_impression_id=p3_1570169163_0UseAOfbkQEhOoG3
+    //     let urlSplit = url.split('?')
+    //     let firstHalfArr = urlSplit[0].split("");
+    //     let idArr = []
+    //     // need to get last 8 characters of urlSplit[0]
+    //     for(let i = 0; i < 8; i++){
+    //       idArr.push(firstHalfArr.pop())
+    //     }
+    //     let idArrReverse = idArr.reverse()
+    //     let idString = idArrReverse.join("")
 
-        return idString
+    //     return idString
+    // }
+
+    const parseIdFromUrl = (url) => {
+        let urlSplit = url.split('?')
+        let firstHalfArr = urlSplit[0];
+        let idArr = []
+        let k =  firstHalfArr.length
+        
+        // need to get last 8 characters of urlSplit[0]
+        for(let i = firstHalfArr.length; i <= firstHalfArr.length; i--){
+            k--
+            if(firstHalfArr[i] == "/"){
+                break
+          }
+        }
+        do {
+            idArr.push(firstHalfArr.slice([k+2]))
+            k = k+1
+        }while (k <= firstHalfArr.length)
+    
+        return idArr[0]
     }
 
     const handleSubmit = (e) => {
@@ -111,34 +144,37 @@ export function SearchBar(props){
 
 
     return(
-        <S.Container>
-            <S.Icon
-                data-testid="plus-icon"
-                onClick = {(e) => fillTestUrl(e)}
-            >click to put test url</S.Icon>
-            <S.Form
-                onSubmit = {(e) => handleSubmit(e)}
-            >
-                <S.Input
-                    placeholder = "Enter Airbnb URL."
-                    name = "url"
-                    value = {url}
-                    onChange = {(e) => {setUrl(e.target.value)}}
-                />
-                <S.Button>
-                    <div>+</div>
-                </S.Button>
-            </S.Form>
-            
-
-
-        </S.Container>
+        <>
+        { !props.isFetching
+            ? <S.Container>
+                <S.Icon
+                    data-testid="plus-icon"
+                    onClick = {(e) => fillTestUrl(e)}
+                >click to put test url</S.Icon>
+                <S.Form
+                    onSubmit = {(e) => handleSubmit(e)}
+                >
+                    <S.Input
+                        placeholder = "Enter Airbnb URL."
+                        name = "url"
+                        value = {url}
+                        onChange = {(e) => {setUrl(e.target.value)}}
+                    />
+                    <S.Button>
+                        <div>+</div>
+                    </S.Button>
+                </S.Form>
+            </S.Container>
+            : <S.StyledLoader type="TailSpin" color="grey" height={80} width={80} />
+        }
+        </>
     )
 
 }
 
 const mapStateToProps = (state) => {
     return {
+        isFetching: state.isFetching,
         searchResult: state.searchResult,
         listings: state.listings,
         isSearchMode: state.isSearchMode,

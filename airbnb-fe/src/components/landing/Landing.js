@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ScrollableAnchor from "react-scrollable-anchor";
 
 import device from "../../devices";
 import Quadrant1 from "./Quadrant1";
@@ -27,8 +28,11 @@ function Landing() {
   return (
     <LandingContainerDiv>
       <Quadrant1 />
+
       <Quadrant2 />
+
       <Quadrant3 />
+
       <Quadrant4 />
       <Footer />
     </LandingContainerDiv>
