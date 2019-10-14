@@ -1,31 +1,52 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
 # 1️⃣ Title of project goes here
 
-You can find the project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+You can find the project at [Price My Airbnb](http://pricemyairbnb.com/).
 
 ## 5️⃣ Contributors
 
 🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+| [Chris](https://github.com/onetrckchris)|                                       
+| [Cesar](https://github.com/CSRSR)|
+| [Vlad](https://github.com/vladmog)|
+| [Ridley](https://github.com/RidleyLeisy)|
+| [Alvin](https://github.com/alvinwalker314)|
+| [Lionel](https://github.com/Granero0011)|
+| [Ana](https://github.com/Anarosals)|                             
+| [Cassandra](https://github.com/springercass)|                                   
+| [Zach](https://github.com/zchristy)|
+|:-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+:-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Ana.png" width = "200" />](https://github.com/onetrckchris)
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Cassandra.png" width = "200" />](https://github.com/CSRSR)
+|[<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/vladmog)
+|[<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/RidleyLeisy)
+|[<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/alvinwalker314)
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Cassandra.png" width = "200" />](https://github.com/Granero0011)
+|[<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/Anarosals)
+|[<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/springercass)
+|[<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/zchristy)
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/onetrckchris)                 
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/CSRSR)             
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)            
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/RidleyLeisy)
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/alvinwalker314)
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Granero0011)
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Anarosals)            
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/springercass)           
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/zchristy) |
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/RidleyLeisy) 
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/alvinwalker314)
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) 
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/zach-christy/) |
 
 
-
-🚫 5️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
@@ -47,6 +68,10 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 1️⃣ [Deployed Front End](🚫add link to deployed app here)
 
 ### Tech Stack
+![Node](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![JS](https://img.shields.io/npm/types/typescript.svg?style=flat)
+[![React](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
+[![Chart.js](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 🚫 List all of the languages, frameworks, services, etc used here.
 
@@ -63,7 +88,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 -   Explanatory Variable 5
 
 ### Data Sources
-🚫  Add to or delete souce links as needed for your project
+🚫  Add to or delete source links as needed for your project
 
 
 -   [Source 1] (🚫add link to python notebook here)
@@ -128,6 +153,11 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](_link to your backend readme here_) for details on the backend of our project.
+# API Guide
 
-See [Front End Documentation](_link to your front end readme here_) for details on the front end of our project.
+This is a guide for Airbnb's web team to access the database. Please follow the routes below.
+
+## Routes
+|  Route |  Recieves | Returns  |
+|---|---|---|
+|  /data | listing_id  |  list[json] |
