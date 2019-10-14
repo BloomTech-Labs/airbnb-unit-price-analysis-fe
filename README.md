@@ -48,10 +48,8 @@ Stop undervaluing your rentals and start making the profit you deserve.
 
 ## Project Overview
 
-
-1️⃣ [Trello Board](🚫add link to trello board here)
-
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+[Trello Board](https://trello.com/b/iddyIFST/airbnb-unit-price-analysis)
+[Product Canvas](https://www.notion.so/AirBnB-Unit-Price-Analysis-ba9c5506a64a4587a2d55c346c7f99c7)
 
 Stop undervaluing your rentals and start making the profit you deserve. Our solution is the most advanced in the industry. We account for changes in demand nightly and ensure you’re never leaving money on the table. We evaluate the competition, price your rentals effectively, and analyze local top properties in your market.
 
@@ -63,9 +61,8 @@ Stop undervaluing your rentals and start making the profit you deserve. Our solu
 [![React](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
 [![Chart.js](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-🚫 List all of the languages, frameworks, services, etc used here.
 
-### 2️⃣ Predictions
+### Predictions
 
 🚫 Describe your models here
 
