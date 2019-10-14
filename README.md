@@ -58,10 +58,12 @@ Stop undervaluing your rentals and start making the profit you deserve. Our solu
 Check out the frontend - [Deployed Front End](http://pricemyairbnb.com/)
 
 ### Tech Stack
-![Node](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![JS](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![React](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![Chart.js](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
+![Netlify](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)]
+![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+![Python](https://img.shields.io/badge/python-3.7-blue)
+![Node.js](https://img.shields.io/badge/node.js-green)
 
 
 ### Predictions
@@ -77,16 +79,12 @@ We didn't use any models for this project.
 -   Explanatory Variable 5
 
 ### Data Sources
-🚫  Add to or delete source links as needed for your project
 
-
--   [InsideAirbnb] (http://insideairbnb.com/get-the-data.html)
--   [Airbnb] (🚫add link to python notebook here)
+-   [InsideAirbnb](http://insideairbnb.com/get-the-data.html)
+-   [Airbnb](airbnb.com)
 
 
 ### Python Notebooks
-
-🚫  Add to or delete python notebook links as needed for your project
 
 [Python Notebook 1](🚫add link to python notebook here)
 
