@@ -16,6 +16,7 @@ import Search from "./components/search/Search";
 import Chart from "./components/charts/Chart";
 import Chart2 from "./components/charts/Chart2";
 import Chart3 from "./components/charts/Chart3";
+import Mediator from './components/Mediator';
 
 import Dashboard from "./components/dashboard/Dashboard";
 
@@ -63,6 +64,9 @@ function App() {
           {/* <Route path="/" exact component={Chart3} /> */}
 
           {!loading ? <Route path="/" exact component={Landing} /> : <StyledLoader type="TailSpin" color="grey" height={80} width={80} />}
+
+          {/* Created a component who's sole purpose is to redirect to either searchbar or dashboard. */}
+          <PrivateRoute path="/mediator" exact component={Mediator} />
 
           <PrivateRoute path="/dashboard" exact component={Dashboard} />
           <PrivateRoute path="/confirmation" exact component={Confirmation} />
