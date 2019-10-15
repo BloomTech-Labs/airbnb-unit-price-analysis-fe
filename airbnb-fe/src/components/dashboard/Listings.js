@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
-import Listing from './Listing';
+import Listing from "./Listing";
+
 
 const Listings = (props) => {
     
@@ -11,9 +12,11 @@ const Listings = (props) => {
         }
     }, [props.user]);
 
-    return (
-        <div>
-            {props.isFetching && <h2>Loading...</h2>}
+
+  return (
+    <div>
+      {props.isFetching && <h2>Loading...</h2>}
+
 
             {props.listings.length !== 0 && 
             props.listings.map(listing => {
@@ -22,14 +25,15 @@ const Listings = (props) => {
                 )
             })}
 
-            {/* The code below is for when we're able to get multiple listings
+
+      {/* The code below is for when we're able to get multiple listings
             instead of time intervals of the same listing. */}
-            
-            {/* {props.listings.length !== 0 && props.listings.map(listing => (
+
+      {/* {props.listings.length !== 0 && props.listings.map(listing => (
                 <Listing key={listing.id} listing={listing} />
             ))} */}
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Listings;
