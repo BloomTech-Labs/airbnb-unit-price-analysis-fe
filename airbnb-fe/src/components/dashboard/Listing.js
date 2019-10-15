@@ -2,30 +2,26 @@ import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 
-const Listing = ({ listing, history }) => {
-  const redirectToCalendar = e => {
-    e.preventDefault();
-    history.push({
-      pathname: "/listing",
-      state: { listing: listing }
-    });
-  };
+export const Listing = ({ listing, history }) => {
+    const redirectToCalendar = (e) => {
+        e.preventDefault();
+        history.push({
+            pathname: '/listing',
+            state: { listing: listing }
+        }) 
+    };
 
-  return (
-    <ListingCard>
-      <Picture src={listing.picture_url} alt="#" />
-      <ListingDetails>
-        <h2>{listing.name}</h2>
-        <Location>{listing.street}</Location>
-        <p>
-          {listing.guests_included} Guests • {listing.bedrooms} Bedrooms •{" "}
-          {listing.beds} Beds • {listing.bathrooms} Baths{" "}
-        </p>
-        <div>Delete</div>
-        <ViewMore onClick={e => redirectToCalendar(e)}>View More</ViewMore>
-      </ListingDetails>
-    </ListingCard>
-  );
+    return (
+        <ListingCard data-testid="listing-card" onClick={(e) => redirectToCalendar(e)} >
+            <Picture src={listing.picture_url} alt="#" />
+            <ListingDetails>
+                <h2>{listing.name}</h2>
+                <Location>{listing.street}</Location>
+                <p>{listing.accommodates} Guests • {listing.bedrooms} Bedrooms • {listing.beds} Beds • {listing.bathrooms} Baths </p>
+                <ViewMore>View More</ViewMore>
+            </ListingDetails>
+        </ListingCard>
+    );
 };
 
 const ListingCard = styled.div`

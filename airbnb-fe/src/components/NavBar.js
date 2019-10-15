@@ -106,8 +106,8 @@ const NavBar = props => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
 
-  const redirectToSearch = () => {
-    props.history.push("/search")
+  const redirectToMediator = () => {
+    props.history.push("/mediator")
   }
 
 
@@ -138,7 +138,7 @@ const NavBar = props => {
 
         {!isAuthenticated && (
           // <Button onClick={() => loginWithRedirect({})}>Sign In</Button> //<- Original Auth0 Login Button
-          <SignUpButton onClick={() => redirectToSearch()}>Sign In</SignUpButton>
+          <SignUpButton onClick={() => redirectToMediator()}>Sign In</SignUpButton>
 
         )}
 

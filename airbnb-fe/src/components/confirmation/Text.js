@@ -41,7 +41,7 @@ const DetailP = styled.p`
   margin: 0;
 `;
 
-function Text(props) {
+function Text({ searchResult }) {
   return (
     // <Container>
     //   <H1>Miami Beach 8 guests 3 Bedroom Apartment (20)</H1>
@@ -61,13 +61,13 @@ function Text(props) {
     // </Container>
 
     <Container>
-    <H1>{props.searchResult[0].name}</H1>
-    <Location>{props.searchResult[0].street}</Location>
+    <H1>{searchResult[0].name}</H1>
+    <Location>{searchResult[0].street}</Location>
 
-    <Feature>Entired serviced apartment</Feature>
+    <Feature>{searchResult[0].room_type}</Feature>
     <PDetails>
-      <DetailP>8 guests</DetailP> <DetailP>3 bedrooms</DetailP>{" "}
-      <DetailP>4beds</DetailP> <DetailP>2baths</DetailP>
+      <DetailP>{searchResult[0].accommodates} guests</DetailP> <DetailP>{searchResult[0].bedrooms} bedrooms</DetailP>{" "}
+      <DetailP>{searchResult[0].beds} beds</DetailP> <DetailP>{searchResult[0].bathrooms} baths</DetailP>
     </PDetails>
 
     <Feature>Sparkling clean</Feature>
