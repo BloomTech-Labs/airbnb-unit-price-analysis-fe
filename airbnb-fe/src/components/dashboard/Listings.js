@@ -7,7 +7,7 @@ const Listings = (props) => {
 //   C A L L   B A C K E N D   A P I   H E R E
     useEffect(() => {
         if(props.user) {
-            props.getListings();
+            props.getListings(props.user.email);
         }
     }, [props.user]);
 

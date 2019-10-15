@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
+import Loader from 'react-loader-spinner';
 
 import Profile from "./components/Profile";
 import PrivateRoute from "./components/PrivateRoute";
@@ -15,6 +16,7 @@ import Search from "./components/search/Search";
 import Chart from "./components/charts/Chart";
 import Chart2 from "./components/charts/Chart2";
 import Chart3 from "./components/charts/Chart3";
+import Mediator from './components/Mediator';
 
 import Dashboard from "./components/dashboard/Dashboard";
 
@@ -26,10 +28,17 @@ import styled from "styled-components";
 const MainContainerDiv = styled.div`
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledLoader = styled(Loader)`
+  align-self: center;
+  margin-top: 50vh;
 `;
 
 function App() {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, loading } = useAuth0();
   return (
     <MainContainerDiv className="App">
       <Router>
@@ -54,7 +63,10 @@ function App() {
           {/* <Route path="/" exact component={Chart2} /> */}
           {/* <Route path="/" exact component={Chart3} /> */}
 
-          <Route path="/" exact component={Landing} />
+          {!loading ? <Route path="/" exact component={Landing} /> : <StyledLoader type="TailSpin" color="grey" height={80} width={80} />}
+
+          {/* Created a component who's sole purpose is to redirect to either searchbar or dashboard. */}
+          <PrivateRoute path="/mediator" exact component={Mediator} />
 
           <PrivateRoute path="/dashboard" exact component={Dashboard} />
           <PrivateRoute path="/confirmation" exact component={Confirmation} />

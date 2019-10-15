@@ -3,7 +3,9 @@ import {
     FETCH_LISTING_SUCCESS,
     FETCH_LISTING_FAILURE,
     SIMULATION_API_CALL,
-    GET_LISTINGS,
+    GET_LISTINGS_START,
+    GET_LISTINGS_FAILURE,
+    GET_LISTINGS_SUCCESS,
     SET_SEARCH_MODE,
     SET_DEMO_MODE
 } from '../actions';
@@ -11,8 +13,11 @@ import {
 const initialState = {
     isFetching: false,
     error: null,
+    getListingsError: null,
     listings: [],
     searchResult: [],
+    listingsRetrieved: false,
+    retrievingListings: false
 };
 
 export const reducer = (state = initialState, action) => {
@@ -45,12 +50,32 @@ export const reducer = (state = initialState, action) => {
                 listings: action.payload,
                 searchResult: []
             }
-        case GET_LISTINGS:
-            console.log("GET_LISTINGS");
-            console.log(action.payload)
+        case GET_LISTINGS_START: 
             return {
                 ...state,
-                listings: action.payload
+                retrievingListings: true
+            }
+        case GET_LISTINGS_FAILURE: 
+            return {
+                ...state,
+                retrievingListings: false,
+                getListingsError: action.payload
+            }
+        case GET_LISTINGS_SUCCESS:
+            console.log("GET_LISTINGS");
+            console.log(action.payload)
+            if(action.payload.length === 0) {
+                return {
+                    ...state,
+                    isSearchMode: true,
+                    listingsRetrieved: true
+                }
+            }
+
+            return {
+                ...state,
+                listings: action.payload,
+                listingsRetrieved: true
             }
         case SET_SEARCH_MODE:
             console.log("SET_SEARCH_MODE_ON");

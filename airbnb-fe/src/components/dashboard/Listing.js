@@ -17,7 +17,7 @@ export const Listing = ({ listing, history }) => {
             <ListingDetails>
                 <h2>{listing.name}</h2>
                 <Location>{listing.street}</Location>
-                <p>{listing.guests_included} Guests • {listing.bedrooms} Bedrooms • {listing.beds} Beds • {listing.bathrooms} Baths </p>
+                <p>{listing.accommodates} Guests • {listing.bedrooms} Bedrooms • {listing.beds} Beds • {listing.bathrooms} Baths </p>
                 <ViewMore>View More</ViewMore>
             </ListingDetails>
         </ListingCard>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Loader from 'react-loader-spinner';
 
 import { connect } from 'react-redux';
 import { getListing, getListings } from '../../store/actions/index';
@@ -57,6 +58,10 @@ S.Button = styled.button`
     justify-content: center;
     font-size: 40px;
 `
+
+S.StyledLoader = styled(Loader)`
+  margin-top: 200px;
+`;
 
 export function SearchBar(props){
 
@@ -139,34 +144,37 @@ export function SearchBar(props){
 
 
     return(
-        <S.Container>
-            <S.Icon
-                data-testid="plus-icon"
-                onClick = {(e) => fillTestUrl(e)}
-            >click to put test url</S.Icon>
-            <S.Form
-                onSubmit = {(e) => handleSubmit(e)}
-            >
-                <S.Input
-                    placeholder = "Enter Airbnb URL."
-                    name = "url"
-                    value = {url}
-                    onChange = {(e) => {setUrl(e.target.value)}}
-                />
-                <S.Button>
-                    <div>+</div>
-                </S.Button>
-            </S.Form>
-            
-
-
-        </S.Container>
+        <>
+        { !props.isFetching
+            ? <S.Container>
+                <S.Icon
+                    data-testid="plus-icon"
+                    onClick = {(e) => fillTestUrl(e)}
+                >click to put test url</S.Icon>
+                <S.Form
+                    onSubmit = {(e) => handleSubmit(e)}
+                >
+                    <S.Input
+                        placeholder = "Enter Airbnb URL."
+                        name = "url"
+                        value = {url}
+                        onChange = {(e) => {setUrl(e.target.value)}}
+                    />
+                    <S.Button>
+                        <div>+</div>
+                    </S.Button>
+                </S.Form>
+            </S.Container>
+            : <S.StyledLoader type="TailSpin" color="grey" height={80} width={80} />
+        }
+        </>
     )
 
 }
 
 const mapStateToProps = (state) => {
     return {
+        isFetching: state.isFetching,
         searchResult: state.searchResult,
         listings: state.listings,
         isSearchMode: state.isSearchMode,
