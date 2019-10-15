@@ -12,7 +12,7 @@ const Listing = ({ listing, history }) => {
   };
 
   return (
-    <ListingCard onClick={e => redirectToCalendar(e)}>
+    <ListingCard>
       <Picture src={listing.picture_url} alt="#" />
       <ListingDetails>
         <h2>{listing.name}</h2>
@@ -21,7 +21,8 @@ const Listing = ({ listing, history }) => {
           {listing.guests_included} Guests • {listing.bedrooms} Bedrooms •{" "}
           {listing.beds} Beds • {listing.bathrooms} Baths{" "}
         </p>
-        <ViewMore>View More</ViewMore>
+        <div>Delete</div>
+        <ViewMore onClick={e => redirectToCalendar(e)}>View More</ViewMore>
       </ListingDetails>
     </ListingCard>
   );
@@ -34,7 +35,6 @@ const ListingCard = styled.div`
   padding: 6px 18px 6px 6px;
   display: flex;
   margin-bottom: 25px;
-  cursor: pointer;
 `;
 
 const Picture = styled.img`

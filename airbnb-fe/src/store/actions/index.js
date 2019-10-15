@@ -19,7 +19,7 @@ export const getListing = id => dispatch => {
   dispatch({ type: FETCH_LISTING_START });
   axios
     .get(
-      `https://cors-anywhere.herokuapp.com/http://labsairbnb-env.nrn8awhuyg.us-west-1.elasticbeanstalk.com/data?id=${id}`
+      `https://cors-anywhere.herokuapp.com/http://LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com/data?id=${id}`
     )
     .then(response => {
       console.log(response);

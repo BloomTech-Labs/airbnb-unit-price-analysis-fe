@@ -25,6 +25,7 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+    //FETCH LISTINGS
     case FETCH_LISTING_START:
       console.log("FETCHING_START!");
       return {
@@ -75,6 +76,7 @@ export const reducer = (state = initialState, action) => {
         isDemo: action.payload
       };
 
+    //DELETE LISTING
     case DELETE_LISTING_START:
       return {
         ...state,
@@ -93,6 +95,8 @@ export const reducer = (state = initialState, action) => {
         deletingListing: false,
         error: action.payload
       };
+
+    //UPDATE LISTING
     case UPDATE_LISTING_START:
       return {
         ...state,
