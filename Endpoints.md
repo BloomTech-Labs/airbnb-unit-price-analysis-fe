@@ -2,6 +2,8 @@
 # API Guide
 This is a guide for Airbnb's web team to access the database. 
 
+URL: LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com
+
 ## Routes
 
 |  Route |  Receives | Returns  | Format |
