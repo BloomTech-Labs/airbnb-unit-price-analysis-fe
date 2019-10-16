@@ -9,8 +9,8 @@ export const GET_LISTINGS = "GET_LISTINGS";
 export const SET_SEARCH_MODE = "SET_SEARCH_MODE";
 export const SET_DEMO_MODE = "SET_DEMO_MODE";
 
-const url = "https://pricemyairbnb.herokuapp.com/";
-// const url = "http://localhost:8000/";
+// const url = "https://pricemyairbnb.herokuapp.com/";
+const url = "http://localhost:8000/";
 
 export const getListing = id => dispatch => {
   // const id = 10280848;
@@ -71,18 +71,20 @@ export const DELETE_LISTING_START = "DELETE_LISTING_START";
 export const DELETE_LISTING_SUCCESS = "DELETE_LISTING_SUCCESS";
 export const DELETE_LISTING_FAILURE = "DELETE_LISTING_FAILURE";
 
-export const deleteLISTING = config => dispatch => {
+export const deleteLISTING = id => dispatch => {
   axios
-    .delete((`${url}/api/listings/:id`, config))
+    .delete(`${url}api/listings/${id}`, id)
 
     .then(res => {
       dispatch({ type: DELETE_LISTING_SUCCESS, payload: res.data });
+      console.log(res.data);
     })
 
     .catch(err => {
       console.log(err.response);
       dispatch({ type: DELETE_LISTING_FAILURE });
     });
+  console.log(id);
 };
 
 export const UPDATE_LISTING_START = "UPDATE_LISTING_START";

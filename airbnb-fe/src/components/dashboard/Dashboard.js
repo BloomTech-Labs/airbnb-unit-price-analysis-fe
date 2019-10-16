@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
-import { getListing } from "../../store/actions";
+import { getListing, deleteLISTING } from "../../store/actions";
 import { Link } from "react-router-dom";
 
 import Header from "./Header";
@@ -18,6 +18,7 @@ const Dashboard = props => {
       <Header />
       <Listings
         getListing={getListing}
+        deleteLISTING={props.deleteLISTING}
         isFetching={props.isFetching}
         listings={props.listings}
         error={props.error}
@@ -35,6 +36,7 @@ const DashboardContainer = styled.div`
 `;
 
 const mapStateToProps = state => {
+  console.log(state.listings);
   return {
     isFetching: state.isFetching,
     listings: state.listings,
@@ -44,5 +46,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getListing }
+  { getListing, deleteLISTING }
 )(Dashboard);

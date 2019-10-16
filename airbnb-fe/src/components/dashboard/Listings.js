@@ -4,9 +4,6 @@ import Listing from "./Listing";
 
 const Listings = props => {
   //   C A L L   B A C K E N D   A P I   H E R E
-  // useEffect(() => {
-  //     props.getListings();
-  // }, []);
 
   return (
     <div>
@@ -14,7 +11,9 @@ const Listings = props => {
 
       {props.listings.length !== 0 &&
         props.listings.map(listing => {
-          return <Listing listing={listing} />;
+          return (
+            <Listing listing={listing} deleteLISTING={props.deleteLISTING} />
+          );
         })}
 
       {/* The code below is for when we're able to get multiple listings

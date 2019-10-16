@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
+// import { deleteLISTING } from "../../store/actions";
 
-const Listing = ({ listing, history }) => {
+const Listing = ({ listing, history, deleteLISTING }) => {
   const redirectToCalendar = e => {
     e.preventDefault();
     history.push({
@@ -21,7 +22,14 @@ const Listing = ({ listing, history }) => {
           {listing.guests_included} Guests • {listing.bedrooms} Bedrooms •{" "}
           {listing.beds} Beds • {listing.bathrooms} Baths{" "}
         </p>
-        <div>Delete</div>
+        <button
+          onClick={id => {
+            console.log(listing.id);
+            deleteLISTING(listing.id);
+          }}
+        >
+          Delete
+        </button>
         <ViewMore onClick={e => redirectToCalendar(e)}>View More</ViewMore>
       </ListingDetails>
     </ListingCard>

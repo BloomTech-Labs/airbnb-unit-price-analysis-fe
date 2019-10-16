@@ -87,7 +87,8 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         error: null,
-        deletingListing: false
+        deletingListing: false,
+        listings: action.payload
       };
     case DELETE_LISTING_FAILURE:
       return {
