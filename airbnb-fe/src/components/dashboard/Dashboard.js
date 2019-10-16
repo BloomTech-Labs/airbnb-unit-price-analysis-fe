@@ -12,9 +12,9 @@ import Listings from './Listings';
 export const Dashboard = (props) => {
     const { user } = useAuth0();
 
-    const getListing = () => {
-        props.getListings();
-    };
+    // const getListing = () => {
+    //     props.getListings();
+    // };
 
     const getListings = (email) => {
         props.getListings(user.email);
@@ -26,7 +26,7 @@ export const Dashboard = (props) => {
         <DashboardContainer>
             <Header />
             <Listings 
-                getListing={getListing}
+                // getListing={getListing}
                 user={user}
                 getListings={getListings}
                 isFetching={props.isFetching}

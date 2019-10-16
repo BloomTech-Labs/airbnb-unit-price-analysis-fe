@@ -12,15 +12,15 @@ export const GET_LISTINGS_START = "GET_LISTINGS_START";
 export const GET_LISTINGS_FAILURE = "GET_LISTINGS_FAILURE";
 export const GET_LISTINGS_SUCCESS = "GET_LISTINGS_SUCCESS";
 
-const url = "https://pricemyairbnb.herokuapp.com/";
-const localUrl = "http://localhost:8000/";
+// const url = "https://pricemyairbnb.herokuapp.com/";
+const url = "http://localhost:8000/";
 
 export const getListing = (id) => (dispatch) => {
     // const id = 10280848;
     // const id = 20685563;
 
     dispatch({ type: FETCH_LISTING_START });
-    axios.get(`https://cors-anywhere.herokuapp.com/http://labsairbnb-env.nrn8awhuyg.us-west-1.elasticbeanstalk.com/data?id=${id}`)
+    axios.get(`https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/data?id=${id}`)
         .then(response => {
             console.log(response)
             dispatch({ type: FETCH_LISTING_SUCCESS, payload: response.data })
@@ -47,7 +47,7 @@ export const getListings = (email) => (dispatch) => {
 
     dispatch({ type: GET_LISTINGS_START });
 
-    axios.post(`${localUrl}api/listings/retrieve`, {user_email: email})
+    axios.post(`${url}api/listings/retrieve`, {user_email: email})
         .then((resp) => {
             console.log(resp)
             dispatch({ type: GET_LISTINGS_SUCCESS, payload: resp.data})
