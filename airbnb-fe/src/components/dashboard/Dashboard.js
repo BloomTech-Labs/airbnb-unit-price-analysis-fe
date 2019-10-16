@@ -1,9 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
+import React from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
 
-import { getListing, getListings } from '../../store/actions';
+import { getListing, getListings, deleteLISTING } from "../../store/actions";
+import { Link } from "react-router-dom";
 import { useAuth0 } from "../../react-auth0-wrapper";
+<<<<<<< HEAD
 // import {Link} from 'react-router-dom';
 
 import Header from './Header';
@@ -35,22 +37,58 @@ export const Dashboard = (props) => {
             />
         </DashboardContainer>
     );
+=======
+
+import Header from "./Header";
+import Listings from "./Listings";
+
+export const Dashboard = props => {
+  const { user } = useAuth0();
+
+  const getListing = () => {
+    props.getListings();
+  };
+
+  const getListings = email => {
+    props.getListings(user.email);
+  };
+
+  console.log(user);
+
+  return (
+    <DashboardContainer>
+      <Header />
+      <Listings
+        getListing={getListing}
+        deleteLISTING={props.deleteLISTING}
+        isFetching={props.isFetching}
+        listings={props.listings}
+        error={props.error}
+        user={user}
+      />
+    </DashboardContainer>
+  );
+>>>>>>> 9b5a59a1a7ea39bd0d4395d464b6763d8a915f51
 };
 
 const DashboardContainer = styled.div`
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    padding: 0 11%;
-    margin-top: 10%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 11%;
+  margin-top: 10%;
 `;
 
-const mapStateToProps = (state) => {
-    return {
-        isFetching: state.isFetching,
-        listings: state.listings,
-        error: state.error
-    }
-}
+const mapStateToProps = state => {
+  console.log(state.listings);
+  return {
+    isFetching: state.isFetching,
+    listings: state.listings,
+    error: state.error
+  };
+};
 
-export default connect(mapStateToProps, { getListing, getListings })(Dashboard);
+export default connect(
+  mapStateToProps,
+  { getListing, getListings, deleteLISTING }
+)(Dashboard);
