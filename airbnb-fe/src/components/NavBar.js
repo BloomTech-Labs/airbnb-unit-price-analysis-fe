@@ -151,7 +151,7 @@ if(!isAuthenticated){
         </AnchorLink>
 
           <>
-            <SignUpButton onClick={() => redirectToMediator()}>Sign In</SignUpButton>
+            <SignUpButton onClick={() => redirectToMediator()}>Sign Up</SignUpButton>
             <SignUpButton onClick={() => initDemo()}>Try Our Demo</SignUpButton>
           </>
 
