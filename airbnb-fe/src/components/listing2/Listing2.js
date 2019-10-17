@@ -81,7 +81,7 @@ function Listing2(props) {
 const mapStateToProps = (state) => {
     return {
         searchResult: state.searchResult,
-        isDemo: state.isDemo
+        isDemo: state.isDemo,
     }
   }
   
