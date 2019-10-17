@@ -20,7 +20,6 @@ export const Dashboard = props => {
     props.getListings(user.email);
   };
 
-  console.log(user);
 
   return (
     <DashboardContainer>
@@ -47,7 +46,6 @@ const DashboardContainer = styled.div`
 `;
 
 const mapStateToProps = state => {
-  console.log(state.listings);
   return {
     isFetching: state.isFetching,
     listings: state.listings,

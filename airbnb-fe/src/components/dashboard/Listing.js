@@ -19,7 +19,6 @@ const Listing = ({ listing, history, deleteLISTING }) => {
 
         <DeleteButton
           onClick={id => {
-            console.log(listing.id);
             deleteLISTING(listing.id);
           }}
         >

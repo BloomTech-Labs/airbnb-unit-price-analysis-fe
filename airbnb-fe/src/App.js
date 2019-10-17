@@ -73,7 +73,7 @@ function App() {
           <PrivateRoute path="/search" exact component={Search} />
           <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/external-api" component={ExternalApi} />
-          <PrivateRoute path="/listing" exact component={Listing} />
+          <PrivateRoute path="/listing" exact component={Listing2} />
 
         {/* **** D E M O  R O U T E S **** */}
 
