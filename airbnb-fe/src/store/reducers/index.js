@@ -3,6 +3,12 @@ import {
   FETCH_LISTING_START,
   FETCH_LISTING_SUCCESS,
   FETCH_LISTING_FAILURE,
+  FETCH_PRICING_START,
+  FETCH_PRICING_SUCCESS,
+  FETCH_PRICING_FAILURE,
+  FETCH_PRICING_COUNTS_START,
+  FETCH_PRICING_COUNTS_SUCCESS,
+  FETCH_PRICING_COUNTS_FAILURE,
   SIMULATION_API_CALL,
   GET_LISTINGS_START,
   GET_LISTINGS_FAILURE,
@@ -14,7 +20,7 @@ import {
   DELETE_LISTING_FAILURE,
   UPDATE_LISTING_START,
   UPDATE_LISTING_SUCCESS,
-  UPDATE_LISTING_FAILURE
+  UPDATE_LISTING_FAILURE,
 } from "../actions";
 
 const initialState = {
@@ -26,11 +32,24 @@ const initialState = {
   updatingListing: false,
     getListingsError: null,
     listingsRetrieved: false,
-    retrievingListings: false
+    retrievingListings: false,
+  pricingPercentile: {
+    percentiles: [],
+    listing_percentile: null,
+  },
+  listingsPerPercentile:[],
+  fetchingPricing: false,
+  pricingFetched: false,
+  fetchingPricingCounts: false,
+  pricingCountsFetched: false,
+
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+
+    // =========================================
+
     //FETCH LISTINGS
     case FETCH_LISTING_START:
       console.log("FETCHING_START!");
@@ -52,6 +71,61 @@ export const reducer = (state = initialState, action) => {
         isFetching: false,
         error: action.payload
       };
+
+    // =========================================
+    
+    //FETCH PRICING
+    case FETCH_PRICING_START:
+      console.log("FETCHING_PRICING_START!");
+      return {
+        ...state,
+        fetchingPricing: true,
+        pricingFetched: false
+      };
+    case FETCH_PRICING_SUCCESS:
+      console.log("FETCHING_PRICING_SUCCESS!");
+      return {
+        ...state,
+        fetchingPricing: false,
+        pricingFetched: true,
+        pricingPercentile: action.payload
+      };
+    case FETCH_PRICING_FAILURE:
+      console.log("FETCHING_PRICING_FAILURE!");
+      return {
+        ...state,
+        fetchingPricing: false,
+        pricingFetched: false
+      };
+      
+    // =========================================
+
+    //FETCH PRICING
+    case FETCH_PRICING_COUNTS_START:
+      console.log("FETCHING_PRICING_COUNTS_START!");
+      return {
+        ...state,
+        fetchingPricingCounts: true,
+        pricingCountsFetched: false
+      };
+    case FETCH_PRICING_COUNTS_SUCCESS:
+      console.log("FETCHING_PRICING_COUNTS_SUCCESS!");
+      return {
+        ...state,
+        fetchingPricingCounts: false,
+        pricingCountsFetched: true,
+        listingsPerPercentile: action.payload
+      };
+    case FETCH_PRICING_COUNTS_FAILURE:
+      console.log("FETCHING_PRICING_COUNTS_FAILURE!");
+      return {
+        ...state,
+        fetchingPricingCounts: false,
+        pricingFetchedCounts: false
+      };
+      
+    // =========================================
+    
     case SIMULATION_API_CALL:
       console.log("SIMULATION_API_CALL");
       console.log(action.payload);
@@ -60,6 +134,17 @@ export const reducer = (state = initialState, action) => {
         listings: action.payload,
         searchResult: []
       };
+      
+    case SIMULATION_API_CALL:
+        console.log("SIMULATION_API_CALL");
+        console.log(action.payload)
+        return {
+            ...state,
+            listings: action.payload,
+            searchResult: []
+        }
+    // =========================================
+    
     case GET_LISTINGS_START: 
             return {
                 ...state,
@@ -70,14 +155,6 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 retrievingListings: false,
                 getListingsError: action.payload
-            }
-        case SIMULATION_API_CALL:
-            console.log("SIMULATION_API_CALL");
-            console.log(action.payload)
-            return {
-                ...state,
-                listings: action.payload,
-                searchResult: []
             }
         case GET_LISTINGS_SUCCESS:
             console.log("GET_LISTINGS");
@@ -95,6 +172,9 @@ export const reducer = (state = initialState, action) => {
                 listings: action.payload,
                 listingsRetrieved: true
             }
+            
+    // =========================================
+    
     case SET_SEARCH_MODE:
       console.log("SET_SEARCH_MODE_ON");
       console.log(action.payload);
@@ -110,6 +190,8 @@ export const reducer = (state = initialState, action) => {
         isDemo: action.payload
       };
 
+    // =========================================
+    
     //DELETE LISTING
     case DELETE_LISTING_START:
       return {
@@ -131,6 +213,8 @@ export const reducer = (state = initialState, action) => {
         error: action.payload
       };
 
+    // =========================================
+    
     //UPDATE LISTING
     case UPDATE_LISTING_START:
       return {

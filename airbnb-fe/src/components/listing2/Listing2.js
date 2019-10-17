@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
+
+import {getPricing, getPricingCounts} from '../../store/actions';
 
 
 
@@ -27,37 +29,42 @@ S.Container = styled.div`
 
 
 function Listing2(props) {
+
+    const parseIdFromUrl = (url) => {
+        let urlSplit = url.split('?')
+        let firstHalfArr = urlSplit[0];
+        let idArr = []
+        let k =  firstHalfArr.length
+        for(let i = firstHalfArr.length; i <= firstHalfArr.length; i--){
+            k--
+            if(firstHalfArr[i] == "/"){
+                break
+          }
+        }
+        do {
+            idArr.push(firstHalfArr.slice([k+2]))
+            k = k+1
+        }while (k <= firstHalfArr.length)
+    
+        return idArr[0]
+    }
+
     let listing;
 
-    //*********************
-    // For integrated use: 
-    
     if(props.isDemo) {
         listing = props.searchResult[0];
     } else {
         listing = props.location.state.listing;
     }
 
-    //*********************
-
-
-
-
-    //*********************
-    // For development use: 
-
-    // listing = {
-    //     picture_url: "https://i.pinimg.com/originals/58/d4/60/58d46000c24f232f1bf4da352332c46a.jpg",
-    //     name: "Lofty House in Lytle Creek",
-    //     city: "Fontana",
-    //     room_type: "Apartment",
-    //     guests_included: 5,
-    //     bedrooms: 3,
-    //     beds: 8,
-    //     bathrooms: 3
-    // }
-
-    //*********************
+    useEffect(() => {
+        console.log("listing", listing)
+        if(listing){
+            let id = parseIdFromUrl(listing.url)
+            props.getPricing(id)
+            props.getPricingCounts(id)
+        }
+    }, [listing])
 
 
   return (
@@ -78,5 +85,5 @@ const mapStateToProps = (state) => {
     }
   }
   
-  export default connect(mapStateToProps, null)(withRouter(Listing2));
+  export default connect(mapStateToProps, {getPricing, getPricingCounts})(withRouter(Listing2));
   
