@@ -12,11 +12,10 @@ import { useAuth0 } from "../../react-auth0-wrapper";
 const S = {};
 
 S.Container = styled.div`
-  margin-top: 12.5%;
   box-sizing: border-box;
   border: solid black 1px;
   width: 30%;
-  height: 6%;
+  height: 60%;
   display: flex;
 `;
 
@@ -42,7 +41,7 @@ S.Input = styled.input`
   // border: solid green 1px;
   box-sizing: border-box;
   height: 100%;
-  width: 88.9%;
+  width: 100%;
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   display: flex;
@@ -64,7 +63,7 @@ S.StyledLoader = styled(Loader)`
   margin-top: 200px;
 `;
 
-export function SearchBar(props){
+export function SearchBarNav(props){
 
     const [url, setUrl] = useState("")
     const { user } = useAuth0();
@@ -156,9 +155,6 @@ export function SearchBar(props){
                         value = {url}
                         onChange = {(e) => {setUrl(e.target.value)}}
                     />
-                    <S.Button>
-                        <div>+</div>
-                    </S.Button>
                 </S.Form>
             </S.Container>
             : <S.StyledLoader type="TailSpin" color="grey" height={80} width={80} />
@@ -178,4 +174,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getListing, getListings })(withRouter(SearchBar));
+export default connect(mapStateToProps, { getListing, getListings })(withRouter(SearchBarNav));
