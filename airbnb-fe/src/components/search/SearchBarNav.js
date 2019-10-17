@@ -47,17 +47,7 @@ S.Input = styled.input`
   display: flex;
   align-items: center;
 `;
-S.Button = styled.button`
 
-    border: solid grey 1px;
-    box-sizing: border-box;
-    height: 100%;
-    width: 11.1%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-`
 
 S.StyledLoader = styled(Loader)`
   margin-top: 200px;
@@ -70,6 +60,9 @@ export function SearchBarNav(props){
 
 
     useEffect(() => {
+        console.log("useEffect trigger")
+        console.log("searchResult length", props.searchResult.length)
+
         let demo = "";
         if (props.isDemo){
             demo = "demo-"
@@ -78,14 +71,8 @@ export function SearchBarNav(props){
             props.getListings(user.email)
         }
         if(props.searchResult.length > 0){
+            console.log("conditional trigger")
             props.history.push(`/${demo}confirmation`);
-        }
-        if(props.isSearchMode){
-            return
-        } else {
-            if(props.listings.length > 0){
-                props.history.push(`/${demo}dashboard`)
-            }
         }
     }, [props.searchResult.length, props.listings.length, user, props.isSearchMode, props.isDemo])
 
