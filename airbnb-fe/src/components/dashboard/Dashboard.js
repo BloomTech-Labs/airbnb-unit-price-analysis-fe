@@ -27,6 +27,7 @@ export const Dashboard = props => {
       <Header />
       <Listings
         getListing={getListing}
+        getListings={getListings}
         deleteLISTING={props.deleteLISTING}
         isFetching={props.isFetching}
         listings={props.listings}

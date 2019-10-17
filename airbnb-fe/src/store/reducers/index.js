@@ -71,6 +71,14 @@ export const reducer = (state = initialState, action) => {
                 retrievingListings: false,
                 getListingsError: action.payload
             }
+        case SIMULATION_API_CALL:
+            console.log("SIMULATION_API_CALL");
+            console.log(action.payload)
+            return {
+                ...state,
+                listings: action.payload,
+                searchResult: []
+            }
         case GET_LISTINGS_SUCCESS:
             console.log("GET_LISTINGS");
             console.log(action.payload)
