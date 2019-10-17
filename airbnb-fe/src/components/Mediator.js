@@ -14,9 +14,6 @@ const Mediator = (props) => {
     }, [props.listingsRetrieved, props.listings])
 
     const redirect = () => {
-        console.log("REDIRECT TRIGGER!");
-        console.log(props.listingsRetrieved);
-
         if(props.listingsRetrieved) {
             if(props.listings.length === 0) {
                 props.history.push('/search');
