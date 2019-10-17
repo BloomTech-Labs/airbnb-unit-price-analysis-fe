@@ -116,6 +116,9 @@ const NavBar = props => {
     props.history.push("/mediator")
   }
 
+  const goToDash = () => {
+    props.history.push('/dashboard')
+  }
 
   const goToSearch = (e) => {
     e.preventDefault();
@@ -171,10 +174,10 @@ if(!isAuthenticated){
     </ProfileImgDiv>
     <SearchBarNav />
     <Links>
-    <AnchorLink onClick={() => goToAnchor("howitworks")}>
+    <AnchorLink onClick={() => goToDash()}>
        Dashboard
     </AnchorLink>
-    <AnchorLink onClick={() => goToAnchor("howitworks")}>
+    <AnchorLink onClick={() => goToDash()}>
        My Listings
     </AnchorLink>
       {/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
