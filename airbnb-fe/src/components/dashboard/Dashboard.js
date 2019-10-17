@@ -5,39 +5,6 @@ import { connect } from "react-redux";
 import { getListing, getListings, deleteLISTING } from "../../store/actions";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "../../react-auth0-wrapper";
-<<<<<<< HEAD
-// import {Link} from 'react-router-dom';
-
-import Header from './Header';
-import Listings from './Listings';
-
-export const Dashboard = (props) => {
-    const { user } = useAuth0();
-
-    // const getListing = () => {
-    //     props.getListings();
-    // };
-
-    const getListings = (email) => {
-        props.getListings(user.email);
-    }
-
-    console.log(user)
-
-    return (
-        <DashboardContainer>
-            <Header />
-            <Listings 
-                // getListing={getListing}
-                user={user}
-                getListings={getListings}
-                isFetching={props.isFetching}
-                listings={props.listings}
-                error={props.error}
-            />
-        </DashboardContainer>
-    );
-=======
 
 import Header from "./Header";
 import Listings from "./Listings";
@@ -60,6 +27,7 @@ export const Dashboard = props => {
       <Header />
       <Listings
         getListing={getListing}
+        getListings={getListings}
         deleteLISTING={props.deleteLISTING}
         isFetching={props.isFetching}
         listings={props.listings}
@@ -68,7 +36,6 @@ export const Dashboard = props => {
       />
     </DashboardContainer>
   );
->>>>>>> 9b5a59a1a7ea39bd0d4395d464b6763d8a915f51
 };
 
 const DashboardContainer = styled.div`

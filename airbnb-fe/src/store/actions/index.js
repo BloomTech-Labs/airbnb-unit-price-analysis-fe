@@ -13,12 +13,15 @@ export const GET_LISTINGS_FAILURE = "GET_LISTINGS_FAILURE";
 export const GET_LISTINGS_SUCCESS = "GET_LISTINGS_SUCCESS";
 
 let local = false;
+
 //+++++++++++++++++++++++++++++++
 // F O R   D E V E L O P M E N T
 //*******************************
-// local = true; //<- uncomment for local BE
+local = true; //<- uncomment for local BE
 //+++++++++++++++++++++++++++++++
+
 let url;
+
 if (local) {
   url = "http://localhost:8000/";
 } else {
