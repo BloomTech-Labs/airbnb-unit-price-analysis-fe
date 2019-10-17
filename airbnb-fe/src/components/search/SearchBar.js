@@ -75,11 +75,8 @@ export function SearchBar(props){
             demo = "demo-"
         }
         if(user){
-            console.log("API CALL TRIGGER")
             props.getListings(user.email)
         }
-        console.log("Listings length", props.listings.length)
-
         if(props.searchResult.length > 0){
             props.history.push(`/${demo}confirmation`);
         }
@@ -87,7 +84,6 @@ export function SearchBar(props){
             return
         } else {
             if(props.listings.length > 0){
-                console.log("REDIRECT")
                 props.history.push(`/${demo}dashboard`)
             }
         }
@@ -140,7 +136,6 @@ export function SearchBar(props){
         setUrl("https://www.airbnb.com/rooms/20685563?source_impression_id=p3_1569467509_yL2ofzzD2Oz5DDIi");
     }
 
-    console.log("listings length outside", props.listings.length)
 
 
     return(
