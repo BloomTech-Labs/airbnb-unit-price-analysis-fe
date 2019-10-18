@@ -6,9 +6,9 @@ import {
   FETCH_PRICING_START,
   FETCH_PRICING_SUCCESS,
   FETCH_PRICING_FAILURE,
-  // FETCH_PRICING_COUNTS_START,
-  // FETCH_PRICING_COUNTS_SUCCESS,
-  // FETCH_PRICING_COUNTS_FAILURE,
+  FETCH_AMENITIES_START,
+  FETCH_AMENITIES_SUCCESS,
+  FETCH_AMENITIES_FAILURE,
   SIMULATION_API_CALL,
   GET_LISTINGS_START,
   GET_LISTINGS_FAILURE,
@@ -103,29 +103,22 @@ export const reducer = (state = initialState, action) => {
       
     // =========================================
 
-    // //FETCH PRICING
-    // case FETCH_PRICING_COUNTS_START:
-    //   console.log("FETCHING_PRICING_COUNTS_START!");
-    //   return {
-    //     ...state,
-    //     fetchingPricingCounts: true,
-    //     pricingCountsFetched: false
-    //   };
-    // case FETCH_PRICING_COUNTS_SUCCESS:
-    //   console.log("FETCHING_PRICING_COUNTS_SUCCESS!");
-    //   return {
-    //     ...state,
-    //     fetchingPricingCounts: false,
-    //     pricingCountsFetched: true,
-    //     listingsPerPercentile: action.payload
-    //   };
-    // case FETCH_PRICING_COUNTS_FAILURE:
-    //   console.log("FETCHING_PRICING_COUNTS_FAILURE!");
-    //   return {
-    //     ...state,
-    //     fetchingPricingCounts: false,
-    //     pricingFetchedCounts: false
-    //   };
+    // //FETCH AMENITIES
+    case FETCH_AMENITIES_START:
+      console.log("FETCHING_AMENITIES_START!");
+      return {
+        ...state,
+      };
+    case FETCH_AMENITIES_SUCCESS:
+      console.log("FETCHING_AMENITIES_SUCCESS!");
+      return {
+        ...state,
+      };
+    case FETCH_AMENITIES_FAILURE:
+      console.log("FETCHING_AMENITIES_FAILURE!");
+      return {
+        ...state,
+      };
       
     // =========================================
     
