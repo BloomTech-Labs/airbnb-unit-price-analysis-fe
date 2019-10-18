@@ -46,6 +46,8 @@ S.HalfR = styled(S.HalfL)`
 function Quadrant3(props) {
 
 
+
+
   return (
     <S.Container>
         <div style = {{display: "flex", flexDirection: "column", alignItems: "center"}}>
@@ -80,7 +82,9 @@ function Quadrant3(props) {
 
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+
+    }
   }
   
   export default connect(mapStateToProps, null)(withRouter(Quadrant3));

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 
-import {getPricing} from '../../store/actions';
+import {getPricing, getAmenities} from '../../store/actions';
 
 
 
@@ -29,6 +29,15 @@ S.Container = styled.div`
 
 
 function Listing2(props) {
+
+    const stringToArr = (string) => {
+        let noCurlies = string.replace('{','').replace('}','')
+        let noCurliesArr = noCurlies.split('')
+        let noQuotesOrCurliesString = noCurliesArr.filter((char) => {
+            return (char !== '"')
+        }).join('')
+        return noQuotesOrCurliesString.split(",")
+    }
 
     const parseIdFromUrl = (url) => {
         let urlSplit = url.split('?')
@@ -57,11 +66,18 @@ function Listing2(props) {
         listing = props.location.state.listing;
     }
 
+    listing = {
+        ...listing,
+        amenities: stringToArr(listing.amenities)
+    }
+    console.log("##############", listing)
+
     useEffect(() => {
-        console.log("listing", listing)
+        console.log("listing amenities", listing.amenities)
         if(listing){
             let id = parseIdFromUrl(listing.url)
             props.getPricing(id)
+            props.getAmenities(id)
         }
     }, [listing])
 
@@ -84,5 +100,5 @@ const mapStateToProps = (state) => {
     }
   }
   
-  export default connect(mapStateToProps, {getPricing})(withRouter(Listing2));
+  export default connect(mapStateToProps, {getPricing, getAmenities})(withRouter(Listing2));
   
