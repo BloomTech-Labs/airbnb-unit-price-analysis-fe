@@ -12,12 +12,18 @@ export const GET_LISTINGS_START = "GET_LISTINGS_START";
 export const GET_LISTINGS_FAILURE = "GET_LISTINGS_FAILURE";
 export const GET_LISTINGS_SUCCESS = "GET_LISTINGS_SUCCESS";
 
+export const FETCH_PRICING_START = "FETCH_PRICING_START";
+export const FETCH_PRICING_FAILURE = "FETCH_PRICING_FAILURE";
+export const FETCH_PRICING_SUCCESS = "FETCH_PRICING_SUCCESS";
+
+
+
 let local = false;
 
 //+++++++++++++++++++++++++++++++
 // F O R   D E V E L O P M E N T
 //*******************************
-// local = true; //<- uncomment for local BE
+local = true; //<- uncomment for local BE
 //+++++++++++++++++++++++++++++++
 
 let url;
@@ -44,6 +50,23 @@ export const getListing = id => dispatch => {
     .catch(error => {
       console.log(error);
       dispatch({ type: FETCH_LISTING_FAILURE, payload: error });
+    });
+};
+
+
+export const getPricing = id => dispatch => {
+  dispatch({ type: FETCH_PRICING_START });
+  axios
+    .get(
+      `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
+    )
+    .then(response => {
+      console.log(response.data);
+      dispatch({ type: FETCH_PRICING_SUCCESS, payload: response.data });
+    })
+    .catch(error => {
+      console.log(error);
+      dispatch({ type: FETCH_PRICING_FAILURE, payload: error });
     });
 };
 

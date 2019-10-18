@@ -68,7 +68,7 @@ function ResultBox(props) {
     setTimeout(props.history.push("/dashboard"), 3000);
   }
 
-  const redirectToCalendar = (e) => {
+  const redirectToListing = (e) => {
     e.preventDefault();
     props.history.push({
       pathname: '/demo-listing',
@@ -85,7 +85,7 @@ function ResultBox(props) {
         <Text searchResult = {props.searchResult} />
       </S.Result>
       <S.ConfirmButton onClick = {props.isDemo 
-        ? (e) => redirectToCalendar(e) 
+        ? (e) => redirectToListing(e) 
         : (e) => saveListing(e)}>This is my house</S.ConfirmButton>
     </S.Container>
   );

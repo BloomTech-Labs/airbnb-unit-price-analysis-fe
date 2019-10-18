@@ -31,7 +31,10 @@ function Quadrant2(props) {
   return (
     <S.Container>
         <h1>September 2019</h1>
-        <Chart2/>
+        <Chart2 
+          pricingPercentile = {props.pricingPercentile}
+          listingsPerPercentile = {props.listingsPerPercentile}
+        />
         {/* <Chart3/> */}
         <h2>Your listing is listed below-average compared to others in your area</h2>
         <div>With your amenities and size of listing you could raise the Current Rate to increase your Profit Margin by % per year</div>
@@ -41,7 +44,10 @@ function Quadrant2(props) {
 
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+      pricingPercentile: state.pricingPercentile,
+      listingsPerPercentile: state.listingsPerPercentile
+    }
   }
   
   export default connect(mapStateToProps, null)(withRouter(Quadrant2));
