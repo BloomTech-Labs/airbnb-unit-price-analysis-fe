@@ -58,12 +58,12 @@ function Quadrant3(props) {
                 <S.HalfL>
                     <h2 style= {{width: "100%", textAlign: "center"}}>Your Lisiting</h2>
                     <div>Rating: ⭐⭐⭐⭐⭐</div>
-                    <div>Current rate: $40</div>
-                    <div>Guests allowed: 8</div>
-                    <div>Beds: 4 🛏</div>
-                    <div>Bathrooms: 2</div>
-                    <div>Extra amenities: 3</div>
-                    <div>Successful bookings (past month): 10</div>
+                    <div>Current rate: ${props.listing.price}</div>
+                    <div>Guests allowed: {props.listing.guests_included}</div>
+                    <div>Beds: {props.listing.beds} 🛏</div>
+                    <div>Bathrooms: {props.listing.bathrooms}</div>
+                    <div>Extra amenities: {props.listing.amenities.length}</div>
+                    {/* <div>Successful bookings (past month): 10</div> CANT GET THIS */}
                 </S.HalfL>
                 <S.HalfR>
                     <h2 style= {{width: "100%", textAlign: "center"}}>Most Popular Listing</h2>
@@ -73,7 +73,7 @@ function Quadrant3(props) {
                     <div>Beds: 4 🛏</div>
                     <div>Bathrooms: 2</div>
                     <div>Extra amenities: 3</div>
-                    <div>Successful bookings (past month): 10</div>
+                    {/* <div>Successful bookings (past month): 10</div> CANT GET THIS */}
                 </S.HalfR>
             </S.HalvesLR>
     </S.Container>
