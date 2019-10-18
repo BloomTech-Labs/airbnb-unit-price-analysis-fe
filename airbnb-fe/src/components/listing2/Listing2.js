@@ -24,9 +24,39 @@ S.Container = styled.div`
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
 `
-    
 
+S.Cta = styled.div`
+  position: absolute;
+  top: 50vh;
+  right: 20%;
+  left: 20%;
+  color: #2A2A2A;
+  z-index: 10;
+  text-align: center;
 
+  @media (max-width: 960px) {
+    right: 10%;
+    left: 10%;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    background-color: white;
+    border-radius: 3px;
+    padding: 50px 20px;
+    box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.7);
+    -moz-box-shadow: 4px 4px 8px -2px rgba(0,0,0,0.7);
+
+    @media (max-width: 960px) {
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 1rem;
+    }
+  }
+`
 
 function Listing2(props) {
 
@@ -53,7 +83,7 @@ function Listing2(props) {
             idArr.push(firstHalfArr.slice([k+2]))
             k = k+1
         }while (k <= firstHalfArr.length)
-    
+
         return idArr[0]
     }
 
@@ -90,6 +120,12 @@ function Listing2(props) {
         <Quadrant2 listing = {listing}/>
         <Quadrant3 listing = {listing}/>
         <Quadrant4 listing = {listing}/>
+        {props.isDemo ? (
+            <S.Cta>
+              <h1>Create an Account to see more details</h1>
+            </S.Cta>
+          ) : null
+        }
     </S.Container>
   );
 }
@@ -101,6 +137,6 @@ const mapStateToProps = (state) => {
         isDemo: state.isDemo,
     }
   }
-  
+
   export default connect(mapStateToProps, {getPricing, getAmenities, getComparison})(withRouter(Listing2));
   
