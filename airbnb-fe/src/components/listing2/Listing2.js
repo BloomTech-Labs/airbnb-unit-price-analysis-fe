@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 
-import {getPricing, getPricingCounts} from '../../store/actions';
+import {getPricing} from '../../store/actions';
 
 
 
@@ -62,7 +62,6 @@ function Listing2(props) {
         if(listing){
             let id = parseIdFromUrl(listing.url)
             props.getPricing(id)
-            props.getPricingCounts(id)
         }
     }, [listing])
 
@@ -85,5 +84,5 @@ const mapStateToProps = (state) => {
     }
   }
   
-  export default connect(mapStateToProps, {getPricing, getPricingCounts})(withRouter(Listing2));
+  export default connect(mapStateToProps, {getPricing})(withRouter(Listing2));
   

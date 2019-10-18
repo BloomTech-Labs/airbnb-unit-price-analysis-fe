@@ -25,15 +25,15 @@ function Chart2(props){
     
 
     useEffect(() => {
-        if(props.pricingPercentile.precentiles && props.listingsPerPercentile){
+        if(props.pricingPercentile.percentiles && props.listingsPerPercentile){
             setData({
                 ...data,
-                labels: [...props.pricingPercentile.precentiles],
+                labels: props.pricingPercentile.percentiles,
                 datasets: [
                     {
                         label: "Count per price",
                         backgroundColor: "#3be3ae",
-                        data: props.listingsPerPercentile.total_listings
+                        data: props.listingsPerPercentile
                     }
                 ]
             })

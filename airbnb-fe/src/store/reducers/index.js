@@ -6,9 +6,9 @@ import {
   FETCH_PRICING_START,
   FETCH_PRICING_SUCCESS,
   FETCH_PRICING_FAILURE,
-  FETCH_PRICING_COUNTS_START,
-  FETCH_PRICING_COUNTS_SUCCESS,
-  FETCH_PRICING_COUNTS_FAILURE,
+  // FETCH_PRICING_COUNTS_START,
+  // FETCH_PRICING_COUNTS_SUCCESS,
+  // FETCH_PRICING_COUNTS_FAILURE,
   SIMULATION_API_CALL,
   GET_LISTINGS_START,
   GET_LISTINGS_FAILURE,
@@ -39,9 +39,7 @@ const initialState = {
   },
   listingsPerPercentile:[],
   fetchingPricing: false,
-  pricingFetched: false,
-  fetchingPricingCounts: false,
-  pricingCountsFetched: false,
+  pricingFetched: false
 
 };
 
@@ -88,7 +86,12 @@ export const reducer = (state = initialState, action) => {
         ...state,
         fetchingPricing: false,
         pricingFetched: true,
-        pricingPercentile: action.payload
+        pricingPercentile: {
+          ...state.pricingPercentile,
+          percentiles: action.payload.pricing_percentiles.precentiles,
+          listing_percentile: action.payload.pricing_percentiles.listing_percentile
+        },
+        listingsPerPercentile: action.payload.total_listings
       };
     case FETCH_PRICING_FAILURE:
       console.log("FETCHING_PRICING_FAILURE!");
@@ -100,29 +103,29 @@ export const reducer = (state = initialState, action) => {
       
     // =========================================
 
-    //FETCH PRICING
-    case FETCH_PRICING_COUNTS_START:
-      console.log("FETCHING_PRICING_COUNTS_START!");
-      return {
-        ...state,
-        fetchingPricingCounts: true,
-        pricingCountsFetched: false
-      };
-    case FETCH_PRICING_COUNTS_SUCCESS:
-      console.log("FETCHING_PRICING_COUNTS_SUCCESS!");
-      return {
-        ...state,
-        fetchingPricingCounts: false,
-        pricingCountsFetched: true,
-        listingsPerPercentile: action.payload
-      };
-    case FETCH_PRICING_COUNTS_FAILURE:
-      console.log("FETCHING_PRICING_COUNTS_FAILURE!");
-      return {
-        ...state,
-        fetchingPricingCounts: false,
-        pricingFetchedCounts: false
-      };
+    // //FETCH PRICING
+    // case FETCH_PRICING_COUNTS_START:
+    //   console.log("FETCHING_PRICING_COUNTS_START!");
+    //   return {
+    //     ...state,
+    //     fetchingPricingCounts: true,
+    //     pricingCountsFetched: false
+    //   };
+    // case FETCH_PRICING_COUNTS_SUCCESS:
+    //   console.log("FETCHING_PRICING_COUNTS_SUCCESS!");
+    //   return {
+    //     ...state,
+    //     fetchingPricingCounts: false,
+    //     pricingCountsFetched: true,
+    //     listingsPerPercentile: action.payload
+    //   };
+    // case FETCH_PRICING_COUNTS_FAILURE:
+    //   console.log("FETCHING_PRICING_COUNTS_FAILURE!");
+    //   return {
+    //     ...state,
+    //     fetchingPricingCounts: false,
+    //     pricingFetchedCounts: false
+    //   };
       
     // =========================================
     

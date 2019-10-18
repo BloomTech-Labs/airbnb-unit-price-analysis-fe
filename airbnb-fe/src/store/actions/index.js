@@ -16,10 +16,6 @@ export const FETCH_PRICING_START = "FETCH_PRICING_START";
 export const FETCH_PRICING_FAILURE = "FETCH_PRICING_FAILURE";
 export const FETCH_PRICING_SUCCESS = "FETCH_PRICING_SUCCESS";
 
-export const FETCH_PRICING_COUNTS_START = "FETCH_PRICING_COUNTS_START";
-export const FETCH_PRICING_COUNTS_FAILURE = "FETCH_PRICING_COUNTS_FAILURE";
-export const FETCH_PRICING_COUNTS_SUCCESS = "FETCH_PRICING_COUNTS_SUCCESS";
-
 
 
 let local = false;
@@ -62,7 +58,7 @@ export const getPricing = id => dispatch => {
   dispatch({ type: FETCH_PRICING_START });
   axios
     .get(
-      `https://cors-anywhere.herokuapp.com/http://LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com/pricing?id=${id}`
+      `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
     )
     .then(response => {
       console.log(response.data);
@@ -71,23 +67,6 @@ export const getPricing = id => dispatch => {
     .catch(error => {
       console.log(error);
       dispatch({ type: FETCH_PRICING_FAILURE, payload: error });
-    });
-};
-
-
-export const getPricingCounts = id => dispatch => {
-  dispatch({ type: FETCH_PRICING_COUNTS_START });
-  axios
-    .get(
-      `https://cors-anywhere.herokuapp.com/http://LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
-    )
-    .then(response => {
-      console.log(response.data);
-      dispatch({ type: FETCH_PRICING_COUNTS_SUCCESS, payload: response.data });
-    })
-    .catch(error => {
-      console.log(error);
-      dispatch({ type: FETCH_PRICING_COUNTS_FAILURE, payload: error });
     });
 };
 
