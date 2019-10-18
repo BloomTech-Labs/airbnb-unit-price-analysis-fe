@@ -10,7 +10,7 @@ const S = {}
 
 
 S.Container = styled.div`
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     // border: solid black 1px;
@@ -18,6 +18,9 @@ S.Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 5vh;
+    filter: blur(${props => props.demo ? '10px' : '0px'});
+    -webkit-filter: blur(${props => props.demo ? '10px' : '0px'});
+    -moz-filter: blur(${props => props.demo ? '10px' : '0px'});
 `
 
 S.HalvesLR = styled.div`
@@ -41,13 +44,13 @@ S.HalfL = styled.div`
 S.HalfR = styled(S.HalfL)`
     border-left: dotted green 8px;
 `
-    
+
 
 function Quadrant3(props) {
 
 
   return (
-    <S.Container>
+    <S.Container demo={props.isDemo}>
         <div style = {{display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <h2>Comparison</h2>
                 <div>By Area and By Property Type</div>
@@ -80,8 +83,9 @@ function Quadrant3(props) {
 
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+      isDemo: state.isDemo
+    }
   }
-  
+
   export default connect(mapStateToProps, null)(withRouter(Quadrant3));
-  
