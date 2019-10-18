@@ -10,15 +10,18 @@ import Chart3 from '../charts/Chart3';
 const S = {}
 
 S.Container = styled.div`
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     box-sizing: border-box;
     // border: solid black 1px;
     flex-direction: column;
     align-items: center;
-    height: 40vh
+    height: 40vh;
+    filter: blur(${props => props.demo ? '10px' : '0px'});
+    -webkit-filter: blur(${props => props.demo ? '10px' : '0px'});
+    -moz-filter: blur(${props => props.demo ? '10px' : '0px'});
 `
-    
+
 
 
 
@@ -26,7 +29,7 @@ S.Container = styled.div`
 
 function Quadrant4(props) {
   return (
-    <S.Container>
+    <S.Container demo={props.isDemo}>
         <h1>Ratings</h1>
         {/* <Chart2/> */}
         <Chart3/>
@@ -36,8 +39,9 @@ function Quadrant4(props) {
 
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+      isDemo: state.isDemo
+    }
   }
-  
+
   export default connect(mapStateToProps, null)(withRouter(Quadrant4));
-  
