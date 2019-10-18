@@ -48,8 +48,24 @@ S.HalfR = styled(S.HalfL)`
 
 function Quadrant3(props) {
 
-
-
+    const numberRatingToStars = (rating) => {
+        if(!rating){
+            return
+        }
+        let listingRating
+        if (rating < 20){
+            listingRating = "⭐"
+        } else if (rating < 40){
+            listingRating = "⭐⭐"
+        } else if (rating < 60){
+            listingRating = "⭐⭐⭐"
+        } else if (rating < 80){
+            listingRating = "⭐⭐⭐⭐"
+        } else {
+            listingRating = "⭐⭐⭐⭐⭐"
+        }
+        return listingRating
+    }
 
   return (
     <S.Container demo={props.isDemo}>
@@ -60,7 +76,8 @@ function Quadrant3(props) {
             <S.HalvesLR>
                 <S.HalfL>
                     <h2 style= {{width: "100%", textAlign: "center"}}>Your Lisiting</h2>
-                    <div>Rating: ⭐⭐⭐⭐⭐</div>
+                    {/* <div>Rating: ⭐⭐⭐⭐⭐</div> */}
+                    <div>Rating: {numberRatingToStars(props.listing.review_scores_rating)}</div>
                     <div>Current rate: ${props.listing.price}</div>
                     <div>Guests allowed: {props.listing.guests_included}</div>
                     <div>Beds: {props.listing.beds} 🛏</div>
@@ -69,13 +86,14 @@ function Quadrant3(props) {
                     {/* <div>Successful bookings (past month): 10</div> CANT GET THIS */}
                 </S.HalfL>
                 <S.HalfR>
-                    <h2 style= {{width: "100%", textAlign: "center"}}>Most Popular Listing</h2>
-                    <div>Rating: ⭐⭐⭐⭐⭐</div>
-                    <div>Current rate: $40</div>
-                    <div>Guests allowed: 8</div>
-                    <div>Beds: 4 🛏</div>
-                    <div>Bathrooms: 2</div>
-                    <div>Extra amenities: 3</div>
+                <h2 style= {{width: "100%", textAlign: "center"}}>Most Popular Listing</h2>
+                    {/* <div>Rating: ⭐⭐⭐⭐⭐</div> */}
+                    <div>Rating: {numberRatingToStars(props.comparison.review_scores_rating)}</div>
+                    <div>Current rate: ${props.comparison.price}</div>
+                    <div>Guests allowed: {props.comparison.guests_included}</div>
+                    <div>Beds: {props.comparison.beds} 🛏</div>
+                    <div>Bathrooms: {props.comparison.bathrooms}</div>
+                    <div>Extra amenities: {props.comparisonFetched ? (props.comparison.amenities.length) : null}</div>
                     {/* <div>Successful bookings (past month): 10</div> CANT GET THIS */}
                 </S.HalfR>
             </S.HalvesLR>
@@ -86,8 +104,9 @@ function Quadrant3(props) {
 
 const mapStateToProps = (state) => {
     return {
-
-      isDemo: state.isDemo
+      isDemo: state.isDemo,
+      comparison: state.comparison,
+      comparisonFetched: state.comparisonFetched
     }
   }
 
