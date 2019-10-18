@@ -16,6 +16,11 @@ export const FETCH_PRICING_START = "FETCH_PRICING_START";
 export const FETCH_PRICING_FAILURE = "FETCH_PRICING_FAILURE";
 export const FETCH_PRICING_SUCCESS = "FETCH_PRICING_SUCCESS";
 
+export const FETCH_AMENITIES_START = "FETCH_AMENITIES_START";
+export const FETCH_AMENITIES_FAILURE = "FETCH_AMENITIES_FAILURE";
+export const FETCH_AMENITIES_SUCCESS = "FETCH_AMENITIES_SUCCESS";
+
+
 
 
 let local = false;
@@ -23,7 +28,7 @@ let local = false;
 //+++++++++++++++++++++++++++++++
 // F O R   D E V E L O P M E N T
 //*******************************
-// local = true; //<- uncomment for local BE
+local = true; //<- uncomment for local BE
 //+++++++++++++++++++++++++++++++
 
 let url;
@@ -68,7 +73,26 @@ export const getPricing = id => dispatch => {
       console.log(error);
       dispatch({ type: FETCH_PRICING_FAILURE, payload: error });
     });
+}
+
+;
+export const getAmenities = id => dispatch => {
+  dispatch({ type: FETCH_AMENITIES_START });
+  axios
+    .get(
+      `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/amenities?id=${id}`
+    )
+    .then(response => {
+      console.log(response.data);
+      dispatch({ type: FETCH_AMENITIES_SUCCESS, payload: response.data });
+    })
+    .catch(error => {
+      console.log(error);
+      dispatch({ type: FETCH_AMENITIES_FAILURE, payload: error });
+    });
 };
+
+
 
 export const saveListing = (listing, email) => dispatch => {
   axios
