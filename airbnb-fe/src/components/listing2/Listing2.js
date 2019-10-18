@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 
-import {getPricing} from '../../store/actions';
+import {getPricing, getAmenities, getComparison} from '../../store/actions';
 
 
 
@@ -60,6 +60,14 @@ S.Cta = styled.div`
 
 function Listing2(props) {
 
+    const stringToArr = (string) => {
+        let noCurlies = string.replace('{','').replace('}','')
+        let noCurliesArr = noCurlies.split('')
+        let noQuotesOrCurliesString = noCurliesArr.filter((char) => {
+            return (char !== '"')
+        }).join('')
+        return noQuotesOrCurliesString.split(",")
+    }
     const parseIdFromUrl = (url) => {
         let urlSplit = url.split('?')
         let firstHalfArr = urlSplit[0];
@@ -80,18 +88,28 @@ function Listing2(props) {
     }
 
     let listing;
-
     if(props.isDemo) {
         listing = props.searchResult[0];
     } else {
         listing = props.location.state.listing;
     }
+    // Turn 
+    // "{"amenity", "amenity", "amenity"}" << object of amenities trapped in a string
+    // into 
+    // ["amenity", "amenity", "amenity"] << array of amenities
+    listing = {
+        ...listing,
+        amenities: stringToArr(listing.amenities)
+    }
+    console.log("##############", listing)
 
     useEffect(() => {
-        console.log("listing", listing)
+        console.log("listing amenities", listing.amenities)
         if(listing){
             let id = parseIdFromUrl(listing.url)
             props.getPricing(id)
+            props.getAmenities(id)
+            props.getComparison(id)
         }
     }, [listing])
 
@@ -99,9 +117,9 @@ function Listing2(props) {
   return (
     <S.Container>
         <Quadrant1 listing = {listing} />
-        <Quadrant2 />
-        <Quadrant3 />
-        <Quadrant4 />
+        <Quadrant2 listing = {listing}/>
+        <Quadrant3 listing = {listing}/>
+        <Quadrant4 listing = {listing}/>
         {props.isDemo ? (
             <S.Cta>
               <h1>Create an Account to see more details</h1>
@@ -120,4 +138,5 @@ const mapStateToProps = (state) => {
     }
   }
 
-  export default connect(mapStateToProps, {getPricing})(withRouter(Listing2));
+  export default connect(mapStateToProps, {getPricing, getAmenities, getComparison})(withRouter(Listing2));
+  

@@ -9,6 +9,9 @@ import {
   FETCH_AMENITIES_START,
   FETCH_AMENITIES_SUCCESS,
   FETCH_AMENITIES_FAILURE,
+  FETCH_COMPARISON_START,
+  FETCH_COMPARISON_SUCCESS,
+  FETCH_COMPARISON_FAILURE,
   SIMULATION_API_CALL,
   GET_LISTINGS_START,
   GET_LISTINGS_FAILURE,
@@ -39,7 +42,13 @@ const initialState = {
   },
   listingsPerPercentile:[],
   fetchingPricing: false,
-  pricingFetched: false
+  pricingFetched: false,
+  fetchingComparison: false,
+  comparisonFetched: false,
+  comparison: {},
+  fetchingMissingAmenities: false,
+  missingAmenitiesFetched: false,
+  missingAmenities: []
 
 };
 
@@ -108,14 +117,45 @@ export const reducer = (state = initialState, action) => {
       console.log("FETCHING_AMENITIES_START!");
       return {
         ...state,
+        fetchingMissingAmenities: true,
+        missingAmenitiesFetched: false
       };
     case FETCH_AMENITIES_SUCCESS:
       console.log("FETCHING_AMENITIES_SUCCESS!");
       return {
         ...state,
+        fetchingMissingAmenities: false,
+        missingAmenitiesFetched: true,
+        missingAmenities: action.payload.lacking_amenities
       };
     case FETCH_AMENITIES_FAILURE:
       console.log("FETCHING_AMENITIES_FAILURE!");
+      return {
+        ...state,
+        fetchingMissingAmenities: false,
+        missingAmenitiesFetched: false
+      };
+      
+    // =========================================
+
+    // //FETCH COMPARISON
+    case FETCH_COMPARISON_START:
+      console.log("FETCHING_COMPARISON_START!");
+      return {
+        ...state,
+        fetchingComparison: true,
+        comparisonFetched: false
+      };
+    case FETCH_COMPARISON_SUCCESS:
+      console.log("FETCHING_COMPARISON_SUCCESS!");
+      return {
+        ...state,
+        fetchingComparison: false,
+        comparisonFetched: true,
+        comparison: action.payload[0]
+      };
+    case FETCH_COMPARISON_FAILURE:
+      console.log("FETCHING_COMPARISON_FAILURE!");
       return {
         ...state,
       };

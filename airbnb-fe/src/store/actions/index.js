@@ -20,6 +20,10 @@ export const FETCH_AMENITIES_START = "FETCH_AMENITIES_START";
 export const FETCH_AMENITIES_FAILURE = "FETCH_AMENITIES_FAILURE";
 export const FETCH_AMENITIES_SUCCESS = "FETCH_AMENITIES_SUCCESS";
 
+export const FETCH_COMPARISON_START = "FETCH_COMPARISON_START";
+export const FETCH_COMPARISON_FAILURE = "FETCH_COMPARISON_FAILURE";
+export const FETCH_COMPARISON_SUCCESS = "FETCH_COMPARISON_SUCCESS";
+
 
 
 
@@ -89,6 +93,22 @@ export const getAmenities = id => dispatch => {
     .catch(error => {
       console.log(error);
       dispatch({ type: FETCH_AMENITIES_FAILURE, payload: error });
+    });
+};
+
+export const getComparison = id => dispatch => {
+  dispatch({ type: FETCH_COMPARISON_START });
+  axios
+    .get(
+      `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/comparison?id=${id}&feature=property_type`
+    )
+    .then(response => {
+      console.log(response.data);
+      dispatch({ type: FETCH_COMPARISON_SUCCESS, payload: response.data });
+    })
+    .catch(error => {
+      console.log(error);
+      dispatch({ type: FETCH_COMPARISON_FAILURE, payload: error });
     });
 };
 
