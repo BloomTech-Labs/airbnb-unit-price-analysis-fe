@@ -28,20 +28,23 @@ export const FETCH_COMPARISON_SUCCESS = "FETCH_COMPARISON_SUCCESS";
 
 
 let local = false;
+let cors = "https://cors-anywhere.herokuapp.com/";
 
-//+++++++++++++++++++++++++++++++
-// F O R   D E V E L O P M E N T
-//*******************************
-// local = true; //<- uncomment for local BE
-//+++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++++
+//  F O R   D E V E L O P M E N T  O N L Y
+//*******************************************
+// local = true; //<- comment out for deploy
+// cors = "";    //<- comment out for deploy
+//+++++++++++++++++++++++++++++++++++++++++++
 
 let url;
-
 if (local) {
   url = "http://localhost:8000/";
 } else {
   url = "https://pricemyairbnb.herokuapp.com/";
 }
+
+
 
 
 export const getListing = id => dispatch => {
@@ -51,7 +54,8 @@ export const getListing = id => dispatch => {
   dispatch({ type: FETCH_LISTING_START });
   axios
     .get(
-      `https://cors-anywhere.herokuapp.com/http://LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com/data?id=${id}`
+      // `https://cors-anywhere.herokuapp.com/http://LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com/data?id=${id}`
+      `${cors}http://LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com/data?id=${id}`
     )
     .then(response => {
       console.log(response);
@@ -69,7 +73,7 @@ export const getPricing = id => dispatch => {
   axios
     .get(
       // `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
-      `http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
+      `${cors}http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
     )
     .then(response => {
       console.log(response.data);
@@ -87,7 +91,7 @@ export const getAmenities = id => dispatch => {
   axios
     .get(
       // `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/amenities?id=${id}`
-      `http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/amenities?id=${id}`
+      `${cors}http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/amenities?id=${id}`
     )
     .then(response => {
       console.log(response.data);
@@ -104,7 +108,7 @@ export const getComparison = id => dispatch => {
   axios
     .get(
       // `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/comparison?id=${id}&feature=property_type`
-      `http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/comparison?id=${id}&feature=property_type`
+      `${cors}http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/comparison?id=${id}&feature=property_type`
     )
     .then(response => {
       console.log(response.data);
