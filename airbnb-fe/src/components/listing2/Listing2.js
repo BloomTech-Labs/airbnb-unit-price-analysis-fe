@@ -115,7 +115,7 @@ function Listing2(props) {
 
     useEffect(() => {
         console.log("listing amenities", listing.amenities)
-        if(listing){
+        if(listing && !props.isDemo){
             let id = parseIdFromUrl(listing.url)
             props.getPricing(id)
             props.getAmenities(id)

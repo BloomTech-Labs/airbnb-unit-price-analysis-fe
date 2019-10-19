@@ -2,10 +2,25 @@ import React, {useState, useEffect} from 'react';
 import { Bar } from 'react-chartjs-2';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
+import styled from 'styled-components';
+import Loader from 'react-loader-spinner';
+
+const LoaderContainer = styled.div`
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+const StyledLoader = styled(Loader)`
+`;
 
 
 
 function Chart3(props){
+
+    
 
     const [data, setData] = useState({
         labels: ["Overall", "Cleanliness", "Host", "Cleanliness", "Cleanliness"],
@@ -57,6 +72,16 @@ function Chart3(props){
             })}
       }, [props.comparisonFetched])
 
+      if (!props.comparisonFetched && !props.isDemo) {
+        return (
+            <div style = {{ position: "relative", width: "100%", height: "100%" }}>
+                <LoaderContainer>
+                    <StyledLoader type="TailSpin" color="grey" height={80} width={80} />
+                </LoaderContainer>
+            </div>
+        );
+      }
+
     return (
         <div style = {{ position: "relative", width: "100%", height: "100%" }}>
             <Bar
@@ -89,7 +114,8 @@ function Chart3(props){
 const mapStateToProps = (state) => {
   return {
       comparison: state.comparison,
-      comparisonFetched: state.comparisonFetched
+      comparisonFetched: state.comparisonFetched,
+      isDemo: state.isDemo
   }
 }
 
