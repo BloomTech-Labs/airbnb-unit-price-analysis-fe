@@ -32,7 +32,7 @@ let local = false;
 //+++++++++++++++++++++++++++++++
 // F O R   D E V E L O P M E N T
 //*******************************
-// local = true; //<- uncomment for local BE
+local = true; //<- uncomment for local BE
 //+++++++++++++++++++++++++++++++
 
 let url;
