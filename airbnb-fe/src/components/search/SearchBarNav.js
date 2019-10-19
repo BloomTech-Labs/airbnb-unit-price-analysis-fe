@@ -48,6 +48,18 @@ S.Input = styled.input`
   align-items: center;
 `;
 
+S.Button = styled.button`
+
+    border: solid grey 1px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 11.1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+`
+
 
 S.StyledLoader = styled(Loader)`
   margin-top: 200px;
@@ -132,7 +144,7 @@ export function SearchBarNav(props){
                 <S.Icon
                     data-testid="plus-icon"
                     onClick = {(e) => fillTestUrl(e)}
-                >click to put test url</S.Icon>
+                ></S.Icon>
                 <S.Form
                     onSubmit = {(e) => handleSubmit(e)}
                 >
@@ -142,6 +154,9 @@ export function SearchBarNav(props){
                         value = {url}
                         onChange = {(e) => {setUrl(e.target.value)}}
                     />
+                    <S.Button>
+                        <div>+</div>
+                    </S.Button>
                 </S.Form>
             </S.Container>
             : <S.StyledLoader type="TailSpin" color="grey" height={80} width={80} />

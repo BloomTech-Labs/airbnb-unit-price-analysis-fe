@@ -146,7 +146,7 @@ export function SearchBar(props){
                 <S.Icon
                     data-testid="plus-icon"
                     onClick = {(e) => fillTestUrl(e)}
-                >click to put test url</S.Icon>
+                ></S.Icon>
                 <S.Form
                     onSubmit = {(e) => handleSubmit(e)}
                 >
