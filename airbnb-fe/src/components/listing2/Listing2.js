@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+
 import { withRouter } from "react-router-dom";
 
 import {getPricing, getAmenities, getComparison} from '../../store/actions';
@@ -61,6 +62,12 @@ S.Cta = styled.div`
 function Listing2(props) {
 
     const stringToArr = (string) => {
+        // "{"amenity", "amenity", "amenity"}" << object of amenities trapped in a string
+          // into 
+        // ["amenity", "amenity", "amenity"] << array of amenities
+        if (!string){
+          return
+        }
         let noCurlies = string.replace('{','').replace('}','')
         let noCurliesArr = noCurlies.split('')
         let noQuotesOrCurliesString = noCurliesArr.filter((char) => {
@@ -88,20 +95,23 @@ function Listing2(props) {
     }
 
     let listing;
+
     if(props.isDemo) {
         listing = props.searchResult[0];
     } else {
         listing = props.location.state.listing;
     }
-    // Turn 
-    // "{"amenity", "amenity", "amenity"}" << object of amenities trapped in a string
-    // into 
-    // ["amenity", "amenity", "amenity"] << array of amenities
+
     listing = {
         ...listing,
         amenities: stringToArr(listing.amenities)
     }
-    console.log("##############", listing)
+
+    let comparison;
+    comparison = {
+      ...props.comparison,
+      amenities: stringToArr(props.comparison.amenities)
+    }
 
     useEffect(() => {
         console.log("listing amenities", listing.amenities)
@@ -111,14 +121,15 @@ function Listing2(props) {
             props.getAmenities(id)
             props.getComparison(id)
         }
-    }, [listing])
+    }, [props.searchResult[0] || props.location.state.listing])
+    // ^ was listing
 
 
   return (
     <S.Container>
         <Quadrant1 listing = {listing} />
         <Quadrant2 listing = {listing}/>
-        <Quadrant3 listing = {listing}/>
+        <Quadrant3 listing = {listing} comparison = {comparison}/>
         <Quadrant4 listing = {listing}/>
         {props.isDemo ? (
             <S.Cta>
@@ -135,6 +146,10 @@ const mapStateToProps = (state) => {
     return {
         searchResult: state.searchResult,
         isDemo: state.isDemo,
+        comparison: state.comparison,
+        // pricingFetched: state.pricingFetched,
+
+
     }
   }
 

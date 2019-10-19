@@ -31,8 +31,7 @@ function Quadrant4(props) {
   return (
     <S.Container demo={props.isDemo}>
         <h1>Ratings</h1>
-        {/* <Chart2/> */}
-        <Chart3/>
+        <Chart3 listing = {props.listing}/>
     </S.Container>
   );
 }
