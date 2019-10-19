@@ -36,7 +36,7 @@ let cors = "https://cors-anywhere.herokuapp.com/";
 // local = true; //<- comment out for deploy
 // cors = "";    //<- comment out for deploy
 //+++++++++++++++++++++++++++++++++++++++++++
-
+let url;
 if (local) {
   url = "http://localhost:8000/";
 } else {
