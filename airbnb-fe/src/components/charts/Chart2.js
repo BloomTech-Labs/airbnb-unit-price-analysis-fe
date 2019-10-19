@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Line } from 'react-chartjs-2';
+import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
+
 
 
 function Chart2(props){
@@ -25,7 +28,7 @@ function Chart2(props){
     
 
     useEffect(() => {
-        if(props.pricingPercentile.percentiles && props.listingsPerPercentile){
+        if(props.pricingFetched){
             setData({
                 ...data,
                 labels: props.pricingPercentile.percentiles,
@@ -38,11 +41,11 @@ function Chart2(props){
                 ]
             })
         }
-    }, [props.pricingPercentile, props.listingsPerPercentile])
+    }, [props.pricingFetched])
 
 
     return (
-        <div style = {{ position: "relative", width: "100%", height: "100%" }}>
+        <div style = {{ position: "relative", width: "100%", height: "100%", border: "solid black 1px" }}>
             <Line
                 options = {{
                     responsive: true,
@@ -66,4 +69,10 @@ function Chart2(props){
     )
 }
 
-export default Chart2;
+const mapStateToProps = (state) => {
+    return {
+        pricingFetched: state.pricingFetched
+    }
+  }
+  
+  export default connect(mapStateToProps, {})(withRouter(Chart2));

@@ -32,7 +32,7 @@ let local = false;
 //+++++++++++++++++++++++++++++++
 // F O R   D E V E L O P M E N T
 //*******************************
-// local = true; //<- uncomment for local BE
+local = true; //<- uncomment for local BE
 //+++++++++++++++++++++++++++++++
 
 let url;
@@ -42,6 +42,7 @@ if (local) {
 } else {
   url = "https://pricemyairbnb.herokuapp.com/";
 }
+
 
 export const getListing = id => dispatch => {
   // const id = 10280848;
@@ -67,7 +68,8 @@ export const getPricing = id => dispatch => {
   dispatch({ type: FETCH_PRICING_START });
   axios
     .get(
-      `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
+      // `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
+      `http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
     )
     .then(response => {
       console.log(response.data);
@@ -84,7 +86,8 @@ export const getAmenities = id => dispatch => {
   dispatch({ type: FETCH_AMENITIES_START });
   axios
     .get(
-      `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/amenities?id=${id}`
+      // `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/amenities?id=${id}`
+      `http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/amenities?id=${id}`
     )
     .then(response => {
       console.log(response.data);
@@ -100,7 +103,8 @@ export const getComparison = id => dispatch => {
   dispatch({ type: FETCH_COMPARISON_START });
   axios
     .get(
-      `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/comparison?id=${id}&feature=property_type`
+      // `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/comparison?id=${id}&feature=property_type`
+      `http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/comparison?id=${id}&feature=property_type`
     )
     .then(response => {
       console.log(response.data);

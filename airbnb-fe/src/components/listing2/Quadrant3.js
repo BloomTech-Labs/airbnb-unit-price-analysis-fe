@@ -48,6 +48,13 @@ S.HalfR = styled(S.HalfL)`
 
 function Quadrant3(props) {
 
+    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    console.log(props.comparisonFetched ? (props.comparison.amenities) : null)
+    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    
+
     const numberRatingToStars = (rating) => {
         if(!rating){
             return
@@ -105,7 +112,6 @@ function Quadrant3(props) {
 const mapStateToProps = (state) => {
     return {
       isDemo: state.isDemo,
-      comparison: state.comparison,
       comparisonFetched: state.comparisonFetched
     }
   }
