@@ -41,7 +41,7 @@ function Text({listing}){
                 <Location>{listing.city}</Location>
 
                 <Feature>{listing.room_type}</Feature>
-                <Detail>{listing.accommodates} guests | {listing.bedrooms} bedrooms | {listing.beds} beds | {listing.bathrooms} baths</Detail>
+                <Detail>{listing.guests_included} guests | {listing.bedrooms} bedrooms | {listing.beds} beds | {listing.bathrooms} baths</Detail>
             {/* </WidthLimiter>      */}
         </Container>
     );

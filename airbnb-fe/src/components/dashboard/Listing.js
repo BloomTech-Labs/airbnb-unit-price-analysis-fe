@@ -39,14 +39,12 @@ const Listing = ({ listing, history, deleteLISTING }) => {
 };
 
 const DeleteButton = styled.div`
-  border: 1px solid red;
-  background-color: red;
-  color: white;
+  color: black;
   cursor: pointer;
   align-self: flex-end;
   border-radius: 50%;
   font-size: 0.7rem;
-  padding: 3px 6px;
+  // padding: 3px 6px;
   display: flex;
   justify-content: center;
   align-items: center;

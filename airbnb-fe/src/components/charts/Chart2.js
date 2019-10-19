@@ -77,6 +77,9 @@ function Chart2(props){
                         xAxes: [{
                             gridLines: {
                                 color: "rgba(0, 0, 0, 0)" //<- hides gridlines
+                            },
+                            ticks: {
+                                beginAtZero: true,
                             }
                         }],
                         yAxes: [{

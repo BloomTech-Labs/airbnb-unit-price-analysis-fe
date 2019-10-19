@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import ScrollableAnchor, { goToAnchor } from "react-scrollable-anchor";
 import device from "../devices";
 import SearchBarNav from './search/SearchBarNav';
+import SearchBar from './search/SearchBar';
 
 // import PrivateRoute from './PrivateRoute';
 import { connect } from 'react-redux';
@@ -63,7 +64,12 @@ const Links = styled.div`
   font-size: 18px;
   line-height: 1.4;
   color: #484848;
+  margin-right: 10px;
 `;
+
+const LinksLoggedIn = styled(Links)`
+  width: 20vw;
+`
 
 const Button = styled.button`
   background: none;
@@ -89,8 +95,8 @@ const StyledLink = styled(Link)`
 const AnchorLink = styled.div`
   text-decoration: none;
   color: black;
-  line-height: 2.4rem;
-
+  display: flex;
+  align-items: center;
   &:hover {
     cursor: pointer;
   }
@@ -114,6 +120,12 @@ const SignUpButton = styled.button`
     cursor: pointer;
   }
 `;
+
+const DemoButton = styled(SignUpButton)`
+  width: 130px;
+  background-color: #00a699;
+  color: white;
+`
 
 const NavBar = props => {
   const { isAuthenticated, loginWithRedirect, logout, loading, user } = useAuth0();
@@ -168,7 +180,7 @@ if(!isAuthenticated){
 
           <>
             <SignUpButton onClick={() => redirectToMediator()}>Sign Up</SignUpButton>
-            <SignUpButton onClick={() => initDemo()}>Try Our Demo</SignUpButton>
+            <DemoButton onClick={() => initDemo()}>Try Our Demo</DemoButton>
           </>
 
         {/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
@@ -186,18 +198,15 @@ if(!isAuthenticated){
       </Link>
     </ProfileImgDiv>
     <SearchBarNav />
-    <Links>
+    <LinksLoggedIn>
     <AnchorLink onClick={() => goToDash()}>
        Dashboard
-    </AnchorLink>
-    <AnchorLink onClick={() => goToDash()}>
-       My Listings
     </AnchorLink>
       {/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
       {window.location.pathname !== props.location.pathname &&
         props.history.push(`${window.location.pathname}`)}
     <UserImg onClick = {() => logout()} src={user.picture} alt="Profile" />
-    </Links>
+    </LinksLoggedIn>
     </NavDiv>
   )
 }
