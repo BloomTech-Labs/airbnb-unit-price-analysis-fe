@@ -4,6 +4,21 @@ import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 
 
+import Loader from 'react-loader-spinner';
+
+const LoaderContainer = styled.div`
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+const StyledLoader = styled(Loader)`
+`;
+
+
+
 
 const S = {}
 
@@ -72,6 +87,16 @@ function Quadrant3(props) {
             listingRating = "⭐⭐⭐⭐⭐"
         }
         return listingRating
+    }
+
+    if (!props.comparisonFetched && !props.isDemo) {
+        return (
+            <S.Container>
+                <LoaderContainer>
+                    <StyledLoader type="TailSpin" color="grey" height={80} width={80} />
+                </LoaderContainer>
+            </S.Container>
+        );
     }
 
   return (

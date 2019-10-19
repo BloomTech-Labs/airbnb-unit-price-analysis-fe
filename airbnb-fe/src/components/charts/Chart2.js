@@ -2,6 +2,20 @@ import React, {useState, useEffect} from 'react';
 import { Line } from 'react-chartjs-2';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
+import styled from 'styled-components';
+import Loader from 'react-loader-spinner';
+
+const LoaderContainer = styled.div`
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+const StyledLoader = styled(Loader)`
+`;
+
 
 
 
@@ -43,9 +57,18 @@ function Chart2(props){
         }
     }, [props.pricingFetched])
 
+    if (!props.pricingFetched && !props.isDemo) {
+        return (
+            <div style = {{ position: "relative", width: "100%", height: "100%"}}>
+                <LoaderContainer>
+                    <StyledLoader type="TailSpin" color="grey" height={80} width={80} />
+                </LoaderContainer>
+            </div>
+        );
+      }
 
     return (
-        <div style = {{ position: "relative", width: "100%", height: "100%", border: "solid black 1px" }}>
+        <div style = {{ position: "relative", width: "100%", height: "100%"}}>
             <Line
                 options = {{
                     responsive: true,
@@ -71,7 +94,8 @@ function Chart2(props){
 
 const mapStateToProps = (state) => {
     return {
-        pricingFetched: state.pricingFetched
+        pricingFetched: state.pricingFetched,
+        isDemo: state.isDemo
     }
   }
   

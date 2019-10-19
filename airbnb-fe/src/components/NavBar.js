@@ -43,9 +43,16 @@ const ProfileImgDiv = styled.div`
   align-items: center;
 `;
 
-const UserImgDiv = styled(ProfileImgDiv)`
-  background-color: black;
+const UserImg = styled.img`
+  border-radius: 50px;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  position: relative;
   left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Links = styled.div`
@@ -109,7 +116,7 @@ const SignUpButton = styled.button`
 `;
 
 const NavBar = props => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, loading, user } = useAuth0();
 
 
   const redirectToMediator = () => {
@@ -133,6 +140,12 @@ const NavBar = props => {
 
 let toggle = true;
 // toggle = false;
+
+if (loading) {
+  return (
+    <NavDiv />
+  );
+}
 
 if(!isAuthenticated){
   return (
@@ -183,7 +196,7 @@ if(!isAuthenticated){
       {/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
       {window.location.pathname !== props.location.pathname &&
         props.history.push(`${window.location.pathname}`)}
-    <UserImgDiv onClick = {() => logout()}></UserImgDiv>
+    <UserImg onClick = {() => logout()} src={user.picture} alt="Profile" />
     </Links>
     </NavDiv>
   )
