@@ -88,7 +88,8 @@ Check it out - [Deployed Front End](http://pricemyairbnb.com/)
 #### Redux (https://www.npmjs.com/package/redux)
 #### Styled-Components (https://www.styled-components.com/)
 
-[Back end documentation here](https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-be/blob/master/README.md)
+#### [Back end documentation here](https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-be/blob/master/README.md)
+#### [Back end endpoints here](https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-be/blob/master/BE_Endpoints.md)
 
 
 ### Data Sources
