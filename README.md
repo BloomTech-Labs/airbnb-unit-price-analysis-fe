@@ -97,6 +97,10 @@ Check it out - [Deployed Front End](http://pricemyairbnb.com/)
 -   [InsideAirbnb](http://insideairbnb.com/get-the-data.html)
 -   [Airbnb](airbnb.com)
 
+### Analytics
+
+- Google Analytics used to monitor user interaction
+
 
 ### 3️⃣ How to connect to the web API
 
