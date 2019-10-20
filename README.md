@@ -51,10 +51,22 @@ Our [Trello Board](https://trello.com/b/iddyIFST/airbnb-unit-price-analysis)
 <br>
 
 Our [Product Canvas](https://www.notion.so/AirBnB-Unit-Price-Analysis-ba9c5506a64a4587a2d55c346c7f99c7)
+<br>
 
-Stop undervaluing your rentals and start making the profit you deserve. Our solution is the most advanced in the industry. We account for changes in demand nightly and ensure you’re never leaving money on the table. We evaluate the competition, price your rentals effectively, and analyze local top properties in your market.
+Our [UX Design Files] (https://www.figma.com/file/3ti6X1awmZcbEinViObfJT/Labs16_AirbnbUnitPrice?node-id=303%3A3531)
+<br>
 
-Check out the frontend - [Deployed Front End](http://pricemyairbnb.com/)
+### Project Description
+
+PriceMyAirbnb gives Airbnb hosts the knowledge necessary to make informed financial decisions when it comes to their Airbnb listings. 
+
+PriceMyAirbnb is a software solution to the problem of properly pricing Airbnb listings. We use our comprehensive database of United-States AirBnb listings and cutting-edge data science calculations to lay out the financial landscape of user's locations. This allows them to see where they stand and make informed choices on their properties.
+
+Registered users can search and save their listings via a valid AirBnb URL. Upon saving, users can maintain all their listings from a single dashboard. From there they can gain graphical insight into the pricing trends of their local area, and key comparisons between a user's listing and the most successful local listing of the same property-type.
+
+Check it out - [Deployed Front End](http://pricemyairbnb.com/)
+
+
 
 ### Tech Stack
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
@@ -66,18 +78,19 @@ Check out the frontend - [Deployed Front End](http://pricemyairbnb.com/)
 ![React.js](https://img.shields.io/badge/React-red)
 ![flask](https://img.shields.io/badge/flask-blue)
 
+#### Auth0 (https://auth0.com/)
+#### Axios (https://www.npmjs.com/package/axios)
+#### Chart.js (https://www.npmjs.com/package/react-chartjs-2)
+#### React (https://www.npmjs.com/package/react)
+#### React-Loader-Spinner (https://www.npmjs.com/package/react-loader-spinner)
+#### React-Redux (https://www.npmjs.com/package/react-redux)
+#### React-Router-Dom (https://www.npmjs.com/package/react-router-dom)
+#### Redux (https://www.npmjs.com/package/redux)
+#### Styled-Components (https://www.styled-components.com/)
 
-### Predictions
+#### [Back end documentation here](https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-be/blob/master/README.md)
+#### [Back end endpoints here](https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-be/blob/master/BE_Endpoints.md)
 
-We didn't use any models for this project.
-
-### 2️⃣ Explanatory Variables
-
--   Explanatory Variable 1
--   Explanatory Variable 2
--   Explanatory Variable 3
--   Explanatory Variable 4
--   Explanatory Variable 5
 
 ### Data Sources
 
@@ -85,21 +98,15 @@ We didn't use any models for this project.
 -   [Airbnb](airbnb.com)
 
 
-### Python Notebooks
-
-[Python Notebook 1](🚫add link to python notebook here)
-
-[Python Notebook 2](🚫add link to python notebook here)
-
-[Python Notebook 3](🚫add link to python notebook here)
-
 ### 3️⃣ How to connect to the web API
 
-https://pricemyairbnb.herokuapp.com/
+#### Staging (https://pricemyairbnb-staging.herokuapp.com/)
+
+#### Production (https://pricemyairbnb.herokuapp.com/)
 
 ### 3️⃣ How to connect to the data API
 
-Connect via DB endpoints. See API docs for more information.
+[Data science endpoints here](https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/Endpoints.md)
 
 ## Contributing
 
