@@ -12,12 +12,13 @@ const Q1div = styled.div`
   height: 110vh; //<- Static height
   width: 100%;
   background-image: url(${Banner});
+  background-size: 100% 100%;
   display: flex;
   align-items: center;
 
   @media ${device.desktop} {
     height: 90vh;
-    background-size: 100%;
+    // background-size: 100% 100%;
   }
 
   @media ${device.mobile} {
