@@ -9,15 +9,15 @@ import Header from "./Header";
 const Q1div = styled.div`
   // height: 45vw;        //<- Dynamic height
   // min-height: 600px;   //<- Dynamic height
-  height: 110vh; //<- Static height
+  height: 42vw; //<- Static height
   width: 100%;
   background-image: url(${Banner});
   background-size: 100% 100%;
   display: flex;
   align-items: center;
+  margin-top: 8vh;
 
   @media ${device.desktop} {
-    height: 90vh;
     // background-size: 100% 100%;
   }
 
