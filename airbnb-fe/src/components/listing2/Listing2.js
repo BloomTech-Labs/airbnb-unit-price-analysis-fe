@@ -28,7 +28,7 @@ S.Container = styled.div`
 
 S.Cta = styled.div`
   position: absolute;
-  top: 50vh;
+  top: 110vh;
   right: 20%;
   left: 20%;
   color: #2A2A2A;
