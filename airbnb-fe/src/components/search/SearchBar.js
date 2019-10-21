@@ -57,7 +57,6 @@ S.Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
 `
 
 S.StyledLoader = styled(Loader)`
@@ -156,9 +155,7 @@ export function SearchBar(props){
                         value = {url}
                         onChange = {(e) => {setUrl(e.target.value)}}
                     />
-                    <S.Button>
-                        <div>+</div>
-                    </S.Button>
+                    <S.Button>+</S.Button>
                 </S.Form>
             </S.Container>
             : <S.StyledLoader type="TailSpin" color="grey" height={80} width={80} />

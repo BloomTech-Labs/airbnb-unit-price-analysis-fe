@@ -68,7 +68,7 @@ function Chart2(props){
         }
     }, [props.pricingFetched])
 
-    if (!props.pricingFetched && !props.isDemo) {
+    if (!props.pricingFetched) {
         return (
             <div style = {{ position: "relative", width: "100%", height: "100%"}}>
                 <LoaderContainer>

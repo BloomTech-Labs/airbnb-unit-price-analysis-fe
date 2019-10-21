@@ -14,6 +14,7 @@ S.Container = styled.div`
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    margin-bottom: 5%;
     // border: solid black 1px;
 `
     

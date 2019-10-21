@@ -4,6 +4,9 @@ import device from "../../devices";
 import styled from "styled-components";
 
 function Footer() {
+  const date = new Date();
+  const currentYear = date.getFullYear()
+
   return (
     <Container>
       {/* Footer may change for release canvas 2 */}
@@ -29,7 +32,7 @@ function Footer() {
         </TopRight>
       </TopFooter> */}
       <BottomFooter>
-        © 2019 Price My Airbnb, Inc. All rights reserved.
+        © {currentYear} Price My Airbnb, Inc. All rights reserved.
       </BottomFooter>
     </Container>
   );
