@@ -114,12 +114,14 @@ function Listing2(props) {
     }
 
     useEffect(() => {
-        console.log("listing amenities", listing.amenities)
+      console.log("listing amenities", listing.amenities)
+      let id = parseIdFromUrl(listing.url)
         if(listing && !props.isDemo){
-            let id = parseIdFromUrl(listing.url)
             props.getPricing(id)
             props.getAmenities(id)
             props.getComparison(id)
+        } else if (listing && props.isDemo) {
+            props.getPricing(id);
         }
     }, [props.searchResult[0] || props.location.state.listing])
     // ^ was listing
