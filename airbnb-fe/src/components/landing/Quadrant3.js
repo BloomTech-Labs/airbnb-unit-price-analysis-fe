@@ -10,7 +10,7 @@ import Price from "../../img/price.png";
 const Q3div = styled.div`
   height: 210vh;
   width: 100%;
-  background-color: #ffe6e6;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

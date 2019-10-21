@@ -7,7 +7,7 @@ import Caroucell from './Caroucell';
 const Q4div = styled.div`
   height: 100vh;
   width: 100%;
-  background-color: #fff;
+  background-color: #ECF9F8;
   display: flex;
   justify-content: center;
   align-items: center;

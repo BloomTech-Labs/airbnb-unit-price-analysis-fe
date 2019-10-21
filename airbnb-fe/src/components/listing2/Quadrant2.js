@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router-dom";
 
@@ -14,18 +14,35 @@ S.Container = styled.div`
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
+    margin-bottom: 4%;
     // border: solid black 1px;
     flex-direction: column;
     align-items: center;
     height: 50vh;
-    filter: blur(${props => props.demo ? '10px' : '0px'});
-    -webkit-filter: blur(${props => props.demo ? '10px' : '0px'});
-    -moz-filter: blur(${props => props.demo ? '10px' : '0px'});
+    // filter: blur(${props => props.demo ? '10px' : '0px'});
+    // -webkit-filter: blur(${props => props.demo ? '10px' : '0px'});
+    // -moz-filter: blur(${props => props.demo ? '10px' : '0px'});
+
+    h2 {
+      font-size: 1.3rem;
+    }
 `
 
+S.StyledH2 = styled.span`
+    color: #00FF9D;
 
+    ${props => 
+    props.belowAverage && css`
+        color: #FF5A5F;
+    `}
+`;
 
-
+S.Legend = styled.div`
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 
 function Quadrant2(props) {
@@ -45,6 +62,7 @@ function Quadrant2(props) {
     "November",
     "December"
   ]
+
   const currentMonthIndex = date.getMonth();
   const currentMonth = months[currentMonthIndex]
   const currentYear = date.getFullYear()
@@ -60,26 +78,34 @@ function Quadrant2(props) {
     );
   }
 
-
   let message;
   // If user listing proce is greater than the 50th percentile price
-  if(props.listing.price > props.pricingPercentile.percentiles[4]){
-    message = "Your listing is listed above-average compared to others in your area"
-  } else if(props.listing.price < props.pricingPercentile.percentiles[4]){
-    message = "Your listing is listed below-average compared to others in your area"
+  if(props.listing.price > props.pricingPercentile.percentiles[4]) {
+    message = <><h2>Your listing is listed <S.StyledH2>above-average</S.StyledH2> compared to others in your area.</h2></>
+  } else if(props.listing.price < props.pricingPercentile.percentiles[4]) {
+    message = <><h2>Your listing is listed <S.StyledH2 belowAverage>below-average</S.StyledH2> compared to others in your area.</h2></>
+  } else if(props.listing.price === props.pricingPercentile.percentiles[4]) {
+    message = "Your listing is listed average compared to others in your area."
   }
 
+  console.log("LISTING.PRICE: ", props.listing.price);
+  console.log("PERCENTILES: ", props.pricingPercentile.percentiles);
 
   return (
     <S.Container demo={props.isDemo}>
         <h1>{currentMonth} {currentYear}</h1>
-        <Chart2
-          pricingPercentile = {props.pricingPercentile}
-          listingsPerPercentile = {props.listingsPerPercentile}
-        />
+        {/* <div style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}> */}
+          <Chart2
+            pricingPercentile = {props.pricingPercentile}
+            listingsPerPercentile = {props.listingsPerPercentile}
+          />
+          {/* <S.Legend>
+            asdfsdfasdfds
+          </S.Legend> */}
+        {/* </div> */}
         {/* <Chart3/> */}
         <h2>{message}</h2>
-        <div>With your amenities and size of listing you could raise the Current Rate to increase your Profit Margin</div>
+        {props.pricingFetched && <div>With your amenities and size of listing you could raise the Current Rate to increase your Profit Margin</div>}
     </S.Container>
   );
 }

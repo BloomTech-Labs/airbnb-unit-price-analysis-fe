@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
-import Logo from "../img/Vector.png";
+import Logo from "../img/PMA_Logo.png";
 
 import PrivateRoute from "./PrivateRoute";
 import ScrollableAnchor, { goToAnchor } from "react-scrollable-anchor";
@@ -33,22 +33,20 @@ const NavDiv = styled.div`
 `;
 
 const ProfileImgDiv = styled.div`
-  border-radius: 50px;
-  background-color: white;
-  height: 50px;
-  width: 50px;
-  position: relative;
-  left: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  img {
+    background-color: white;
+    height: 4vh;
+    position: relative;
+    margin-top: 6px;
+    left: 40px;
+  }
 `;
 
 const UserImg = styled.img`
   border-radius: 50px;
   background-color: white;
-  height: 50px;
-  width: 50px;
+  height: 6vh;
+  width: 6vh;
   position: relative;
   left: 0px;
   display: flex;
@@ -96,6 +94,7 @@ const AnchorLink = styled.div`
   text-decoration: none;
   color: black;
   display: flex;
+  font-size: 70%;
   align-items: center;
   &:hover {
     cursor: pointer;
@@ -104,6 +103,10 @@ const AnchorLink = styled.div`
   @media ${device.mobile} {
     display: none;
   }
+`;
+
+const LogoutAnchor = styled(AnchorLink)`
+  color: #FF5A5F;
 `;
 
 const SignUpButton = styled.button`
@@ -164,7 +167,7 @@ if(!isAuthenticated){
     <NavDiv>
       <ProfileImgDiv>
         <Link to="/">
-          <img src={Logo} size="45px" />
+          <img src={Logo}/>
         </Link>
       </ProfileImgDiv>
       <Links>
@@ -205,7 +208,10 @@ if(!isAuthenticated){
       {/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
       {window.location.pathname !== props.location.pathname &&
         props.history.push(`${window.location.pathname}`)}
-    <UserImg onClick = {() => logout()} src={user.picture} alt="Profile" />
+    <AnchorLink onClick = {() => logout()}>
+       Logout
+    </AnchorLink>
+    <UserImg src={user.picture} alt="Profile" />
     </LinksLoggedIn>
     </NavDiv>
   )

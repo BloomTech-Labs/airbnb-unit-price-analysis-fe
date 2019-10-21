@@ -28,7 +28,7 @@ S.Container = styled.div`
 
 S.Cta = styled.div`
   position: absolute;
-  top: 50vh;
+  top: 110vh;
   right: 20%;
   left: 20%;
   color: #2A2A2A;
@@ -114,12 +114,14 @@ function Listing2(props) {
     }
 
     useEffect(() => {
-        console.log("listing amenities", listing.amenities)
+      console.log("listing amenities", listing.amenities)
+      let id = parseIdFromUrl(listing.url)
         if(listing && !props.isDemo){
-            let id = parseIdFromUrl(listing.url)
             props.getPricing(id)
             props.getAmenities(id)
             props.getComparison(id)
+        } else if (listing && props.isDemo) {
+            props.getPricing(id);
         }
     }, [props.searchResult[0] || props.location.state.listing])
     // ^ was listing

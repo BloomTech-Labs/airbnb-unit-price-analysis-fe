@@ -33,6 +33,7 @@ S.Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 5vh;
+    margin-bottom: 5%;
     filter: blur(${props => props.demo ? '10px' : '0px'});
     -webkit-filter: blur(${props => props.demo ? '10px' : '0px'});
     -moz-filter: blur(${props => props.demo ? '10px' : '0px'});
@@ -57,7 +58,7 @@ S.HalfL = styled.div`
     padding-left: 30px;
 `
 S.HalfR = styled(S.HalfL)`
-    border-left: dotted green 8px;
+    border-left: dotted #00A699 8px;
 `
 
 
