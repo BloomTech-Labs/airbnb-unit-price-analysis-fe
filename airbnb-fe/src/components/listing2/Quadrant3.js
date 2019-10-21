@@ -63,12 +63,6 @@ S.HalfR = styled(S.HalfL)`
 
 function Quadrant3(props) {
 
-    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    console.log(props.comparisonFetched ? (props.comparison.amenities) : null)
-    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-    
 
     const numberRatingToStars = (rating) => {
         if(!rating){
