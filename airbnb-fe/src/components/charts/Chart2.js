@@ -45,7 +45,18 @@ function Chart2(props){
         if(props.pricingFetched){
             setData({
                 ...data,
-                labels: props.pricingPercentile.percentiles,
+                labels: [
+                    `$${props.pricingPercentile.percentiles[0]}`,
+                    `$${props.pricingPercentile.percentiles[1]}`,
+                    `$${props.pricingPercentile.percentiles[2]}`,
+                    `$${props.pricingPercentile.percentiles[3]}`,
+                    `$${props.pricingPercentile.percentiles[4]}`,
+                    `$${props.pricingPercentile.percentiles[5]}`,
+                    `$${props.pricingPercentile.percentiles[6]}`,
+                    `$${props.pricingPercentile.percentiles[7]}`,
+                    `$${props.pricingPercentile.percentiles[8]}`,
+                    `$${props.pricingPercentile.percentiles[9]}`,
+                ],
                 datasets: [
                     {
                         label: "Count per price",
