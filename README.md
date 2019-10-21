@@ -1,58 +1,75 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
 
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
+# Project
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
+Stop undervaluing your rentals and start making the profit you deserve. You can find the project at [Price My Airbnb](http://pricemyairbnb.com/).
 
-# 1️⃣ Title of project goes here
+# Contributors
 
-You can find the project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+<h2>Team Lead</h2>
+<center>
 
-## 5️⃣ Contributors
+|[Zach Christy](https://github.com/zchristy)|
+|:---:|
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Zach.png" width = "200" />](https://github.com/zchristy)|
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/zchristy)|
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/zach-christy/)|
+</center>
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
+<br>
 
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+<h2>Web Team</h2>
 
+|[Chris Pelayo](https://github.com/onetrckchris)|[Vlad Mogilevskiy](https://github.com/vladmog)|[Cassandra Springer](https://github.com/springercass)|
+|:---:|:---:|:---:|
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Chris.png" width = "200" />](https://github.com/onetrckchris)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Vlad.png" width = "200" />](https://github.com/vladmog)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Cassandra.png" width = "200" />](https://github.com/springercass)|
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/onetrckchris)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/vladmog)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/springercass)|
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
+<br>
+<h2>Data Science Team</h2>
 
-🚫 5️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
+|[Ridley Leisy](https://github.com/RidleyLeisy)|[Alvin Walker](https://github.com/alvinwalker314)|[Lionel Kamga](https://github.com/Granero0011)|
+|:---:|:---:|:---:|
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Ridley.png" width = "200" />](https://github.com/RidleyLeisy)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Vector.png" width = "200" />](https://github.com/alvinwalker314)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Lionel.png" width = "200" />](https://github.com/Granero0011)|
+|[<img src="https://github.com/favicon.ico" width="15">](https://github.com/RidleyLeisy)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/alvinwalker314)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Granero0011)|
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/RidleyLeisy) |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/alvinwalker314)|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+<br>
+<h2>UX Team</h2>
 
-🚫 more info on using badges [here](https://github.com/badges/shields)
+|[Ana Rosa Lerma](https://github.com/Anarosals) | [Cesar Rodriguez](https://github.com/CSRSR)|
+|:---:|:---:|
+|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Ana.png" width = "200" />](https://github.com/Anarosals)|[<img src="https://github.com/Lambda-School-Labs/airbnb-unit-price-analysis-fe/blob/master/airbnb-fe/src/img/Cesar.png" width = "200" />](https://github.com/CSRSR)  |
+|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Anarosals)|[<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/CSRSR) |
+|[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |[<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/cesar-d-rodriguez/)|
+
+</center>
 
 ## Project Overview
 
+Our [Trello Board](https://trello.com/b/iddyIFST/airbnb-unit-price-analysis)
+<br>
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+Our [Product Canvas](https://www.notion.so/AirBnB-Unit-Price-Analysis-ba9c5506a64a4587a2d55c346c7f99c7)
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+Stop undervaluing your rentals and start making the profit you deserve. Our solution is the most advanced in the industry. We account for changes in demand nightly and ensure you’re never leaving money on the table. We evaluate the competition, price your rentals effectively, and analyze local top properties in your market.
 
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-🚫  delete if front end is not applicable to your project
-
-1️⃣ [Deployed Front End](🚫add link to deployed app here)
+Check out the frontend - [Deployed Front End](http://pricemyairbnb.com/)
 
 ### Tech Stack
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
+![Netlify](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)
+![Code Style](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)
+![Python](https://img.shields.io/badge/python-3.7-blue)
+![Node.js](https://img.shields.io/badge/node.js-green)
+![React.js](https://img.shields.io/badge/React-red)
+![flask](https://img.shields.io/badge/flask-blue)
 
-🚫 List all of the languages, frameworks, services, etc used here.
 
-### 2️⃣ Predictions
+### Predictions
 
-🚫 Describe your models here
+We didn't use any models for this project.
 
 ### 2️⃣ Explanatory Variables
 
@@ -63,18 +80,12 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 -   Explanatory Variable 5
 
 ### Data Sources
-🚫  Add to or delete souce links as needed for your project
 
+-   [InsideAirbnb](http://insideairbnb.com/get-the-data.html)
+-   [Airbnb](airbnb.com)
 
--   [Source 1] (🚫add link to python notebook here)
--   [Source 2] (🚫add link to python notebook here)
--   [Source 3] (🚫add link to python notebook here)
--   [Source 4] (🚫add link to python notebook here)
--   [Source 5] (🚫add link to python notebook here)
 
 ### Python Notebooks
-
-🚫  Add to or delete python notebook links as needed for your project
 
 [Python Notebook 1](🚫add link to python notebook here)
 
@@ -84,11 +95,11 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 ### 3️⃣ How to connect to the web API
 
-🚫 List directions on how to connect to the API here
+https://pricemyairbnb.herokuapp.com/
 
 ### 3️⃣ How to connect to the data API
 
-🚫 List directions on how to connect to the API here
+Connect via DB endpoints. See API docs for more information.
 
 ## Contributing
 
@@ -126,8 +137,3 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
 
-## Documentation
-
-See [Backend Documentation](_link to your backend readme here_) for details on the backend of our project.
-
-See [Front End Documentation](_link to your front end readme here_) for details on the front end of our project.

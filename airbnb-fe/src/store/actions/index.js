@@ -12,21 +12,40 @@ export const GET_LISTINGS_START = "GET_LISTINGS_START";
 export const GET_LISTINGS_FAILURE = "GET_LISTINGS_FAILURE";
 export const GET_LISTINGS_SUCCESS = "GET_LISTINGS_SUCCESS";
 
-let local = false;
+export const FETCH_PRICING_START = "FETCH_PRICING_START";
+export const FETCH_PRICING_FAILURE = "FETCH_PRICING_FAILURE";
+export const FETCH_PRICING_SUCCESS = "FETCH_PRICING_SUCCESS";
 
-//+++++++++++++++++++++++++++++++
-// F O R   D E V E L O P M E N T
-//*******************************
-// local = true; //<- uncomment for local BE
-//+++++++++++++++++++++++++++++++
+export const FETCH_AMENITIES_START = "FETCH_AMENITIES_START";
+export const FETCH_AMENITIES_FAILURE = "FETCH_AMENITIES_FAILURE";
+export const FETCH_AMENITIES_SUCCESS = "FETCH_AMENITIES_SUCCESS";
+
+export const FETCH_COMPARISON_START = "FETCH_COMPARISON_START";
+export const FETCH_COMPARISON_FAILURE = "FETCH_COMPARISON_FAILURE";
+export const FETCH_COMPARISON_SUCCESS = "FETCH_COMPARISON_SUCCESS";
+
+
+
+
+let local = false;
+let cors = "https://cors-anywhere.herokuapp.com/";
+
+//+++++++++++++++++++++++++++++++++++++++++++
+//  F O R   D E V E L O P M E N T  O N L Y
+//*******************************************
+// local = true; //<- comment out for deploy
+// cors = "";    //<- comment out for deploy
+//+++++++++++++++++++++++++++++++++++++++++++
 
 let url;
-
 if (local) {
   url = "http://localhost:8000/";
 } else {
   url = "https://pricemyairbnb.herokuapp.com/";
 }
+
+
+
 
 export const getListing = id => dispatch => {
   // const id = 10280848;
@@ -35,7 +54,8 @@ export const getListing = id => dispatch => {
   dispatch({ type: FETCH_LISTING_START });
   axios
     .get(
-      `https://cors-anywhere.herokuapp.com/http://LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com/data?id=${id}`
+      // `https://cors-anywhere.herokuapp.com/http://LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com/data?id=${id}`
+      `${cors}http://LabsAirbnb-env-dev.us-west-1.elasticbeanstalk.com/data?id=${id}`
     )
     .then(response => {
       console.log(response);
@@ -46,6 +66,61 @@ export const getListing = id => dispatch => {
       dispatch({ type: FETCH_LISTING_FAILURE, payload: error });
     });
 };
+
+
+export const getPricing = id => dispatch => {
+  dispatch({ type: FETCH_PRICING_START });
+  axios
+    .get(
+      // `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
+      `${cors}http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/percentiles?id=${id}&filter=z`
+    )
+    .then(response => {
+      console.log(response.data);
+      dispatch({ type: FETCH_PRICING_SUCCESS, payload: response.data });
+    })
+    .catch(error => {
+      console.log(error);
+      dispatch({ type: FETCH_PRICING_FAILURE, payload: error });
+    });
+}
+
+;
+export const getAmenities = id => dispatch => {
+  dispatch({ type: FETCH_AMENITIES_START });
+  axios
+    .get(
+      // `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/amenities?id=${id}`
+      `${cors}http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/amenities?id=${id}`
+    )
+    .then(response => {
+      console.log(response.data);
+      dispatch({ type: FETCH_AMENITIES_SUCCESS, payload: response.data });
+    })
+    .catch(error => {
+      console.log(error);
+      dispatch({ type: FETCH_AMENITIES_FAILURE, payload: error });
+    });
+};
+
+export const getComparison = id => dispatch => {
+  dispatch({ type: FETCH_COMPARISON_START });
+  axios
+    .get(
+      // `https://cors-anywhere.herokuapp.com/http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/comparison?id=${id}&feature=property_type`
+      `${cors}http://labsairbnb-env-dev.us-west-1.elasticbeanstalk.com/comparison?id=${id}&feature=property_type`
+    )
+    .then(response => {
+      console.log(response.data);
+      dispatch({ type: FETCH_COMPARISON_SUCCESS, payload: response.data });
+    })
+    .catch(error => {
+      console.log(error);
+      dispatch({ type: FETCH_COMPARISON_FAILURE, payload: error });
+    });
+};
+
+
 
 export const saveListing = (listing, email) => dispatch => {
   axios

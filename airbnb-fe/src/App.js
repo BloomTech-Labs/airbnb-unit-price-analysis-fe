@@ -82,7 +82,7 @@ function App() {
           <Route path="/demo-search" exact component={Search} />
           <Route path="/demo-profile" component={Profile} />
           <Route path="/demo-external-api" component={ExternalApi} />
-          <Route path="/demo-listing" exact component={Listing} />
+          <Route path="/demo-listing" exact component={Listing2} />
 
         </Switch>
       </Router>

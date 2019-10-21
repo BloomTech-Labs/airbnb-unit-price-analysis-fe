@@ -3,6 +3,15 @@ import {
   FETCH_LISTING_START,
   FETCH_LISTING_SUCCESS,
   FETCH_LISTING_FAILURE,
+  FETCH_PRICING_START,
+  FETCH_PRICING_SUCCESS,
+  FETCH_PRICING_FAILURE,
+  FETCH_AMENITIES_START,
+  FETCH_AMENITIES_SUCCESS,
+  FETCH_AMENITIES_FAILURE,
+  FETCH_COMPARISON_START,
+  FETCH_COMPARISON_SUCCESS,
+  FETCH_COMPARISON_FAILURE,
   SIMULATION_API_CALL,
   GET_LISTINGS_START,
   GET_LISTINGS_FAILURE,
@@ -14,7 +23,7 @@ import {
   DELETE_LISTING_FAILURE,
   UPDATE_LISTING_START,
   UPDATE_LISTING_SUCCESS,
-  UPDATE_LISTING_FAILURE
+  UPDATE_LISTING_FAILURE,
 } from "../actions";
 
 const initialState = {
@@ -26,11 +35,28 @@ const initialState = {
   updatingListing: false,
     getListingsError: null,
     listingsRetrieved: false,
-    retrievingListings: false
+    retrievingListings: false,
+  pricingPercentile: {
+    percentiles: [],
+    listing_percentile: null,
+  },
+  listingsPerPercentile:[],
+  fetchingPricing: false,
+  pricingFetched: false,
+  fetchingComparison: false,
+  comparisonFetched: false,
+  comparison: {},
+  fetchingMissingAmenities: false,
+  missingAmenitiesFetched: false,
+  missingAmenities: []
+
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+
+    // =========================================
+
     //FETCH LISTINGS
     case FETCH_LISTING_START:
       console.log("FETCHING_START!");
@@ -52,6 +78,90 @@ export const reducer = (state = initialState, action) => {
         isFetching: false,
         error: action.payload
       };
+
+    // =========================================
+    
+    //FETCH PRICING
+    case FETCH_PRICING_START:
+      console.log("FETCHING_PRICING_START!");
+      return {
+        ...state,
+        fetchingPricing: true,
+        pricingFetched: false
+      };
+    case FETCH_PRICING_SUCCESS:
+      console.log("FETCHING_PRICING_SUCCESS!");
+      return {
+        ...state,
+        fetchingPricing: false,
+        pricingFetched: true,
+        pricingPercentile: {
+          ...state.pricingPercentile,
+          percentiles: action.payload.pricing_percentiles.precentiles,
+          listing_percentile: action.payload.pricing_percentiles.listing_percentile
+        },
+        listingsPerPercentile: action.payload.total_listings
+      };
+    case FETCH_PRICING_FAILURE:
+      console.log("FETCHING_PRICING_FAILURE!");
+      return {
+        ...state,
+        fetchingPricing: false,
+        pricingFetched: false
+      };
+      
+    // =========================================
+
+    // //FETCH AMENITIES
+    case FETCH_AMENITIES_START:
+      console.log("FETCHING_AMENITIES_START!");
+      return {
+        ...state,
+        fetchingMissingAmenities: true,
+        missingAmenitiesFetched: false
+      };
+    case FETCH_AMENITIES_SUCCESS:
+      console.log("FETCHING_AMENITIES_SUCCESS!");
+      return {
+        ...state,
+        fetchingMissingAmenities: false,
+        missingAmenitiesFetched: true,
+        missingAmenities: action.payload.lacking_amenities
+      };
+    case FETCH_AMENITIES_FAILURE:
+      console.log("FETCHING_AMENITIES_FAILURE!");
+      return {
+        ...state,
+        fetchingMissingAmenities: false,
+        missingAmenitiesFetched: false
+      };
+      
+    // =========================================
+
+    // //FETCH COMPARISON
+    case FETCH_COMPARISON_START:
+      console.log("FETCHING_COMPARISON_START!");
+      return {
+        ...state,
+        fetchingComparison: true,
+        comparisonFetched: false
+      };
+    case FETCH_COMPARISON_SUCCESS:
+      console.log("FETCHING_COMPARISON_SUCCESS!");
+      return {
+        ...state,
+        fetchingComparison: false,
+        comparisonFetched: true,
+        comparison: action.payload[0]
+      };
+    case FETCH_COMPARISON_FAILURE:
+      console.log("FETCHING_COMPARISON_FAILURE!");
+      return {
+        ...state,
+      };
+      
+    // =========================================
+    
     case SIMULATION_API_CALL:
       console.log("SIMULATION_API_CALL");
       console.log(action.payload);
@@ -60,6 +170,17 @@ export const reducer = (state = initialState, action) => {
         listings: action.payload,
         searchResult: []
       };
+      
+    case SIMULATION_API_CALL:
+        console.log("SIMULATION_API_CALL");
+        console.log(action.payload)
+        return {
+            ...state,
+            listings: action.payload,
+            searchResult: []
+        }
+    // =========================================
+    
     case GET_LISTINGS_START: 
             return {
                 ...state,
@@ -70,14 +191,6 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 retrievingListings: false,
                 getListingsError: action.payload
-            }
-        case SIMULATION_API_CALL:
-            console.log("SIMULATION_API_CALL");
-            console.log(action.payload)
-            return {
-                ...state,
-                listings: action.payload,
-                searchResult: []
             }
         case GET_LISTINGS_SUCCESS:
             console.log("GET_LISTINGS");
@@ -95,6 +208,9 @@ export const reducer = (state = initialState, action) => {
                 listings: action.payload,
                 listingsRetrieved: true
             }
+            
+    // =========================================
+    
     case SET_SEARCH_MODE:
       console.log("SET_SEARCH_MODE_ON");
       console.log(action.payload);
@@ -110,6 +226,8 @@ export const reducer = (state = initialState, action) => {
         isDemo: action.payload
       };
 
+    // =========================================
+    
     //DELETE LISTING
     case DELETE_LISTING_START:
       return {
@@ -131,6 +249,8 @@ export const reducer = (state = initialState, action) => {
         error: action.payload
       };
 
+    // =========================================
+    
     //UPDATE LISTING
     case UPDATE_LISTING_START:
       return {

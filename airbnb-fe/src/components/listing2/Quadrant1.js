@@ -24,7 +24,6 @@ S.Container = styled.div`
 
 function Quadrant1(props) {
 
-
   return (
     <S.Container>
         <ResultBox listing={props.listing}/>

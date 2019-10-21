@@ -1,11 +1,29 @@
 import React, {useState, useEffect} from 'react';
 import { Line } from 'react-chartjs-2';
+import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
+import styled from 'styled-components';
+import Loader from 'react-loader-spinner';
+
+const LoaderContainer = styled.div`
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+const StyledLoader = styled(Loader)`
+`;
+
+
 
 
 function Chart2(props){
 
     const [data, setData] = useState({
-        labels: ["10", "20", "30", "40", "50", "60", "70"],
+        // labels: ["10", "20", "30", "40", "50", "60", "70"],
+        labels: [10, 20, 30, 40, 50, 60, 70],
         datasets: [
           {
               label: "Percentile",
@@ -20,31 +38,37 @@ function Chart2(props){
         ]
       })
 
-    // useEffect(() => {
-    //     if(data.labels.length === 0){
-    //         setData({
-    //             labels: ["1", "2", "3", "4", "5"],
-    //             datasets: [
-    //               {
-    //                   label: "Videos Mades",
-    //                   backgroundColor: "tomato",
-    //                   data: [4, 5, 1, 10, 32, 2, 12] 
-    //               },
-    //               {
-    //                   label: "Subscriptions",
-    //                   backgroundColor: "yellow",
-    //                   data: [14, 15, 21, 0, 12, 24, 32] 
-    //               },
-    //             ]
-    //           }
-    //         )
-    //     }
 
-    // }, [data])
+    
 
+    useEffect(() => {
+        if(props.pricingFetched){
+            setData({
+                ...data,
+                labels: props.pricingPercentile.percentiles,
+                datasets: [
+                    {
+                        label: "Count per price",
+                        backgroundColor: "#3be3ae",
+                        data: props.listingsPerPercentile
+                    }
+                ]
+            })
+        }
+    }, [props.pricingFetched])
+
+    if (!props.pricingFetched && !props.isDemo) {
+        return (
+            <div style = {{ position: "relative", width: "100%", height: "100%"}}>
+                <LoaderContainer>
+                    <StyledLoader type="TailSpin" color="grey" height={80} width={80} />
+                </LoaderContainer>
+            </div>
+        );
+      }
 
     return (
-        <div style = {{ position: "relative", width: "100%", height: "100%" }}>
+        <div style = {{ position: "relative", width: "100%", height: "100%"}}>
             <Line
                 options = {{
                     responsive: true,
@@ -53,6 +77,9 @@ function Chart2(props){
                         xAxes: [{
                             gridLines: {
                                 color: "rgba(0, 0, 0, 0)" //<- hides gridlines
+                            },
+                            ticks: {
+                                beginAtZero: true,
                             }
                         }],
                         yAxes: [{
@@ -68,4 +95,11 @@ function Chart2(props){
     )
 }
 
-export default Chart2;
+const mapStateToProps = (state) => {
+    return {
+        pricingFetched: state.pricingFetched,
+        isDemo: state.isDemo
+    }
+  }
+  
+  export default connect(mapStateToProps, {})(withRouter(Chart2));

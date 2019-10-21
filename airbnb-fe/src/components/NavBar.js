@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import ScrollableAnchor, { goToAnchor } from "react-scrollable-anchor";
 import device from "../devices";
 import SearchBarNav from './search/SearchBarNav';
+import SearchBar from './search/SearchBar';
 
 // import PrivateRoute from './PrivateRoute';
 import { connect } from 'react-redux';
@@ -43,9 +44,16 @@ const ProfileImgDiv = styled.div`
   align-items: center;
 `;
 
-const UserImgDiv = styled(ProfileImgDiv)`
-  background-color: black;
+const UserImg = styled.img`
+  border-radius: 50px;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  position: relative;
   left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Links = styled.div`
@@ -56,7 +64,12 @@ const Links = styled.div`
   font-size: 18px;
   line-height: 1.4;
   color: #484848;
+  margin-right: 10px;
 `;
+
+const LinksLoggedIn = styled(Links)`
+  width: 20vw;
+`
 
 const Button = styled.button`
   background: none;
@@ -82,8 +95,8 @@ const StyledLink = styled(Link)`
 const AnchorLink = styled.div`
   text-decoration: none;
   color: black;
-  line-height: 2.4rem;
-
+  display: flex;
+  align-items: center;
   &:hover {
     cursor: pointer;
   }
@@ -108,8 +121,14 @@ const SignUpButton = styled.button`
   }
 `;
 
+const DemoButton = styled(SignUpButton)`
+  width: 130px;
+  background-color: #00a699;
+  color: white;
+`
+
 const NavBar = props => {
-  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, loading, user } = useAuth0();
 
 
   const redirectToMediator = () => {
@@ -134,6 +153,12 @@ const NavBar = props => {
 let toggle = true;
 // toggle = false;
 
+if (loading) {
+  return (
+    <NavDiv />
+  );
+}
+
 if(!isAuthenticated){
   return (
     <NavDiv>
@@ -155,7 +180,7 @@ if(!isAuthenticated){
 
           <>
             <SignUpButton onClick={() => redirectToMediator()}>Sign Up</SignUpButton>
-            <SignUpButton onClick={() => initDemo()}>Try Our Demo</SignUpButton>
+            <DemoButton onClick={() => initDemo()}>Try Our Demo</DemoButton>
           </>
 
         {/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
@@ -173,18 +198,15 @@ if(!isAuthenticated){
       </Link>
     </ProfileImgDiv>
     <SearchBarNav />
-    <Links>
+    <LinksLoggedIn>
     <AnchorLink onClick={() => goToDash()}>
        Dashboard
-    </AnchorLink>
-    <AnchorLink onClick={() => goToDash()}>
-       My Listings
     </AnchorLink>
       {/* Redirects page to URL path if rendered-page doesn't correspond to that path */}
       {window.location.pathname !== props.location.pathname &&
         props.history.push(`${window.location.pathname}`)}
-    <UserImgDiv onClick = {() => logout()}></UserImgDiv>
-    </Links>
+    <UserImg onClick = {() => logout()} src={user.picture} alt="Profile" />
+    </LinksLoggedIn>
     </NavDiv>
   )
 }
