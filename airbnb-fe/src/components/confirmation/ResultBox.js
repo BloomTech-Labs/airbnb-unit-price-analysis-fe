@@ -103,9 +103,7 @@ function ResultBox(props) {
       <S.ConfirmButton onClick = {props.isDemo 
         ? (e) => redirectToListing(e) 
         : (e) => saveListing(e)}>This is my house</S.ConfirmButton>
-      <S.ConfirmButton onClick={(e) => cancelListing(e)}>
-        Cancel
-      </S.ConfirmButton>
+      <S.ConfirmButton onClick={(e) => cancelListing(e)}>Cancel</S.ConfirmButton>
     </S.Container>
   );
 }
