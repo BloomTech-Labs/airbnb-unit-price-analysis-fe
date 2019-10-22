@@ -24,8 +24,7 @@ export const FETCH_COMPARISON_START = "FETCH_COMPARISON_START";
 export const FETCH_COMPARISON_FAILURE = "FETCH_COMPARISON_FAILURE";
 export const FETCH_COMPARISON_SUCCESS = "FETCH_COMPARISON_SUCCESS";
 
-
-
+export const CLEAR_SEARCH_RESULT = "CLEAR_SEARCH_RESULT";
 
 let local = false;
 let cors = "https://cors-anywhere.herokuapp.com/";
@@ -120,7 +119,9 @@ export const getComparison = id => dispatch => {
     });
 };
 
-
+export const clearSearchResult = () => dispatch => {
+  dispatch({ type: CLEAR_SEARCH_RESULT });
+};
 
 export const saveListing = (listing, email) => dispatch => {
   axios
