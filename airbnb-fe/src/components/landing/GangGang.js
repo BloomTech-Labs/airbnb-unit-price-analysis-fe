@@ -6,6 +6,7 @@ import Lionel from "../../img/Lionel.png";
 import Ridley from "../../img/Ridley.png";
 import Vlad from "../../img/Vlad.png";
 import Zach from "../../img/Zach.png";
+import Alvin from '../../img/Alvin.jpg';
 
 const theGang = [
     {
@@ -59,6 +60,13 @@ const theGang = [
     },
     {
         index: 7,
+        name: "Alvin Walker",
+        picture: Alvin,
+        quote: "Price My Airbnb is awesome. I'm pumped to continue earning more!",
+        role: "Data Scientist"
+    },
+    {
+        index: 8,
         name: "Zach Christy",
         picture: Zach,
         quote: "After using PriceMyAirBnb I saw massive value added to the listings I have posted everyday. All thanks to the awesome team that created this app. Now I’m making an extra profit on my listings with ease!",
