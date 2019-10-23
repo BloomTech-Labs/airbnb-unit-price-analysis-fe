@@ -11,7 +11,7 @@ import SearchBar from './search/SearchBar';
 
 // import PrivateRoute from './PrivateRoute';
 import { connect } from 'react-redux';
-import { setSearchMode, setDemo } from '../store/actions';
+import { setSearchMode, setDemo, clearSearchResult } from '../store/actions';
 
 
 
@@ -167,7 +167,7 @@ if(!isAuthenticated){
   return (
     <NavDiv>
       <ProfileImgDiv>
-        <Link to="/">
+        <Link to="/" onClick={() => props.clearSearchResult()}>
           <img src={Logo}/>
         </Link>
       </ProfileImgDiv>
@@ -228,7 +228,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { setSearchMode, setDemo })(withRouter(NavBar));
+export default connect(mapStateToProps, { setSearchMode, setDemo, clearSearchResult })(withRouter(NavBar));
 
 
 
