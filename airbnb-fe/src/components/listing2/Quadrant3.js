@@ -55,7 +55,9 @@ S.HalfL = styled.div`
     // border: solid black 1px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     padding-left: 30px;
+   
 `
 S.HalfR = styled(S.HalfL)`
     border-left: dotted #00A699 8px;
@@ -104,7 +106,7 @@ function Quadrant3(props) {
                 <S.HalfL>
                     <h2 style= {{width: "100%", textAlign: "center"}}>Your Lisiting</h2>
                     {/* <div>Rating: ⭐⭐⭐⭐⭐</div> */}
-                    <div>Rating: {numberRatingToStars(props.listing.review_scores_rating)}</div>
+                    <div>{numberRatingToStars(props.listing.review_scores_rating)}</div>
                     <div>Current rate: ${props.listing.price}</div>
                     <div>Guests allowed: {props.listing.guests_included}</div>
                     <div>Beds: {props.listing.beds} 🛏</div>
@@ -114,8 +116,8 @@ function Quadrant3(props) {
                 </S.HalfL>
                 <S.HalfR>
                 <h2 style= {{width: "100%", textAlign: "center"}}>Most Popular Listing</h2>
-                    {/* <div>Rating: ⭐⭐⭐⭐⭐</div> */}
-                    <div>Rating: {numberRatingToStars(props.comparison.review_scores_rating)}</div>
+                    {/* <div>⭐⭐⭐⭐⭐</div> */}
+                    <div>{numberRatingToStars(props.comparison.review_scores_rating)}</div>
                     <div>Current rate: ${props.comparison.price}</div>
                     <div>Guests allowed: {props.comparison.guests_included}</div>
                     <div>Beds: {props.comparison.beds} 🛏</div>

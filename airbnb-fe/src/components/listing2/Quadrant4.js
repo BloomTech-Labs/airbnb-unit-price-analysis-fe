@@ -16,7 +16,7 @@ S.Container = styled.div`
     // border: solid black 1px;
     flex-direction: column;
     align-items: center;
-    height: 40vh;
+    // height: 40vh;
     filter: blur(${props => props.demo ? '10px' : '0px'});
     -webkit-filter: blur(${props => props.demo ? '10px' : '0px'});
     -moz-filter: blur(${props => props.demo ? '10px' : '0px'});
