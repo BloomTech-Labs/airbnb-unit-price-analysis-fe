@@ -64,7 +64,8 @@ function ResultBox(props) {
 
 
 
-  const saveListing = (e) => {
+  const saveListing1 = (e) => {
+    console.log("SAVE TRIGGER")
     e.preventDefault()
     props.saveListing(props.searchResult[0], user.email)
     setTimeout(props.history.push("/dashboard"), 3000);
@@ -84,7 +85,7 @@ function ResultBox(props) {
     if(props.isDemo) {
       props.history.push({
         pathname: '/demo-search',
-      }) ;
+      });
     } else {
       props.history.push({
         pathname: '/search'
@@ -100,7 +101,7 @@ function ResultBox(props) {
         <S.ImageDiv>
           <S.Image src = {props.searchResult[0].picture_url}/>
         </S.ImageDiv>
-        <Text searchResult = {props.searchResult} redirectToListing = {redirectToListing} cancelListing = {cancelListing}/>
+        <Text saveListing1 = {saveListing1} searchResult = {props.searchResult} redirectToListing = {redirectToListing} cancelListing = {cancelListing}/>
       </S.Result>
     </S.Container>
   );
