@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from 'react-redux';
-import { saveListing } from '../../store/actions';
+import { saveListing, clearSearchResult } from '../../store/actions';
 import { withRouter } from "react-router-dom";
 import { useAuth0 } from "../../react-auth0-wrapper";
 
@@ -77,6 +77,22 @@ function ResultBox(props) {
       // state: { detail: value }
     })
   }
+
+  const cancelListing = (e) => {
+    e.preventDefault();
+
+    if(props.isDemo) {
+      props.history.push({
+        pathname: '/demo-search',
+      }) ;
+    } else {
+      props.history.push({
+        pathname: '/search'
+      });
+    }
+
+    props.clearSearchResult();
+  };
   
   return (
     <S.Container>
@@ -84,7 +100,7 @@ function ResultBox(props) {
         <S.ImageDiv>
           <S.Image src = {props.searchResult[0].picture_url}/>
         </S.ImageDiv>
-        <Text searchResult = {props.searchResult} redirectToListing = {redirectToListing} />
+        <Text searchResult = {props.searchResult} redirectToListing = {redirectToListing} cancelListing = {cancelListing}/>
       </S.Result>
     </S.Container>
   );
@@ -99,4 +115,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {saveListing})(withRouter(ResultBox));
+export default connect(mapStateToProps, {saveListing, clearSearchResult})(withRouter(ResultBox));

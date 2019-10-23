@@ -24,6 +24,7 @@ import {
   UPDATE_LISTING_START,
   UPDATE_LISTING_SUCCESS,
   UPDATE_LISTING_FAILURE,
+  CLEAR_SEARCH_RESULT
 } from "../actions";
 
 const initialState = {
@@ -270,7 +271,11 @@ export const reducer = (state = initialState, action) => {
         updatingListing: false,
         error: action.payload
       };
-
+    case CLEAR_SEARCH_RESULT:
+      return {
+        ...state,
+        searchResult: []
+      }
     default:
       return state;
   }
