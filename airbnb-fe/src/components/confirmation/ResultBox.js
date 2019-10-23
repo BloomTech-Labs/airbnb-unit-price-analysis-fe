@@ -17,8 +17,6 @@ S.Container = styled.div`
   align-items: center;
   height: 100%;
   box-sizing: border-box;
-  padding-top: 30px;
-  background-color: #f0f0f0;
   border-radius: 6px;
   box-shadow: 0 8px 8px -5px gray;
 `;
@@ -26,24 +24,26 @@ S.Container = styled.div`
 S.Result = styled.div`
   display: flex;
   align-items: center;
-  height: 85%;
+  height: 100%;
   width: 100%;
   box-sizing: border-box;
 `;
 
 S.ImageDiv = styled.div`
-  width: 30%;
+  width: 52%;
   height: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 10px;
 `;
 
 S.Image = styled.img`
-  width: 75%;
-  height: 80%;
+  width: 95%;
+  height: 95%;
   background-color: #cfcfcf;
+  object-fit: cover;
 `;
 
 S.ConfirmButton = styled.button`
@@ -59,7 +59,9 @@ S.ConfirmButton = styled.button`
 `;
 
 function ResultBox(props) {
+
   const { user } = useAuth0();
+
 
 
   const saveListing = (e) => {
@@ -73,7 +75,7 @@ function ResultBox(props) {
     props.history.push({
       pathname: '/demo-listing',
       // state: { detail: value }
-    }) ;
+    })
   }
 
   const cancelListing = (e) => {
@@ -98,12 +100,8 @@ function ResultBox(props) {
         <S.ImageDiv>
           <S.Image src = {props.searchResult[0].picture_url}/>
         </S.ImageDiv>
-        <Text searchResult = {props.searchResult} />
+        <Text searchResult = {props.searchResult} redirectToListing = {redirectToListing} cancelListing = {cancelListing}/>
       </S.Result>
-      <S.ConfirmButton onClick = {props.isDemo 
-        ? (e) => redirectToListing(e) 
-        : (e) => saveListing(e)}>This is my house</S.ConfirmButton>
-      <S.ConfirmButton onClick={(e) => cancelListing(e)}>Cancel</S.ConfirmButton>
     </S.Container>
   );
 }
