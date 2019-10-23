@@ -140,7 +140,7 @@ function Text(props) {
       <DetailP>${props.searchResult[0].price}/Night</DetailP>
 
       <Buttons>
-        <Button onClick = {(e) => {}}>Cancel</Button>
+        <Button onClick = {(e) => props.cancelListing(e)}>Cancel</Button>
         <Button2 onClick = {props.isDemo 
           ? (e) => props.redirectToListing(e) 
           : (e) => props.saveListing(e)}>
