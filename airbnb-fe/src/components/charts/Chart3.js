@@ -74,7 +74,7 @@ function Chart3(props){
 
       if (!props.comparisonFetched && !props.isDemo) {
         return (
-            <div style = {{ position: "relative", width: "100%", height: "100%" }}>
+            <div style = {{ position: "relative", width: "100%", height: "30vh" }}>
                 <LoaderContainer>
                     <StyledLoader type="TailSpin" color="grey" height={80} width={80} />
                 </LoaderContainer>
@@ -83,9 +83,15 @@ function Chart3(props){
       }
 
     return (
-        <div style = {{ position: "relative", width: "100%", height: "100%" }}>
+        <div style = {{ position: "relative", width: "100%", height: "30vh", marginBottom: "50px" }}>
             <Bar
                 options = {{
+                    legend: {
+                        display: false
+                    },
+                    tooltips: {
+                        enabled: false
+                    },
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
@@ -95,11 +101,19 @@ function Chart3(props){
                             maxBarThickness: 70,
                             gridLines: {
                                 color: "rgba(0, 0, 0, 0)" //<- hides gridlines
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'category'
                             }
                         }],
                         yAxes: [{
                             gridLines: {
                                 color: "rgba(0, 0, 0, 0)" //<- hides gridlines
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'rating/10'
                             }
                         }]
                     }

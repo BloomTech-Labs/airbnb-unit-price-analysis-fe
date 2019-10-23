@@ -82,6 +82,12 @@ function Chart2(props){
         <div style = {{ position: "relative", width: "100%", height: "100%"}}>
             <Line
                 options = {{
+                    legend: {
+                        display: false
+                    },
+                    tooltips: {
+                        enabled: false
+                    },
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
@@ -91,11 +97,19 @@ function Chart2(props){
                             },
                             ticks: {
                                 beginAtZero: true,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'price range'
                             }
                         }],
                         yAxes: [{
                             gridLines: {
                                 color: "rgba(0, 0, 0, 0)" //<- hides gridlines
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'listings'
                             }
                         }]
                     }
