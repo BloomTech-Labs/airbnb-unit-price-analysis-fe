@@ -18,6 +18,7 @@ import { setSearchMode, setDemo } from '../store/actions';
 
 import { useAuth0 } from "../react-auth0-wrapper";
 
+
 const NavDiv = styled.div`
   width: 100vw;
   height: 9vh;

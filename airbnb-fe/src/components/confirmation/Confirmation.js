@@ -7,23 +7,22 @@ import FirstHalf from "./FirstHalf";
 import SecondHalf from "./SecondHalf";
 
 const Container = styled.div`
-  width: 85%;
+  width: 75%;
   margin: auto;
-  margin-top: 8%;
-  height: 80vh;
+  margin-top: 15%;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  font-family: "Varela Round", sans-serif;
+  font-family: "Montserrat", sans-serif;
 `;
 
 function Confirmation(props) {
   return (
     <Container>
       <FirstHalf />
-      {/* <SecondHalf /> */}
-    </Container>
+   </Container>
   );
 }
 
