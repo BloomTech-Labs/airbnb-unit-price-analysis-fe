@@ -81,10 +81,16 @@ const Button = styled.button`
   border-radius: 7px;
 `
 
-const Button2 = styled(Button)`
+const Button2 = styled.button`
+  width: 32%;
+  height: 100%;
+  border: none;
+  font-weight: 700;
+  border-radius: 7px;
   margin-left: 10px;
   background-color: #ff5a5f;
   color: white;
+
 
 `
 
@@ -143,7 +149,7 @@ function Text(props) {
         <Button onClick = {(e) => props.cancelListing(e)}>Cancel</Button>
         <Button2 onClick = {props.isDemo 
           ? (e) => props.redirectToListing(e) 
-          : (e) => props.saveListing(e)}>
+          : (e) => props.saveListing1(e)}>
             Confirm Listing
         </Button2>
       </Buttons>
@@ -151,7 +157,6 @@ function Text(props) {
   );
 }
 
-// export default Text;
 
 const mapStateToProps = (state) => {
   return {
